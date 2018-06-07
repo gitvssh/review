@@ -4,14 +4,14 @@ public class ManClass {
 
 	public static void main(String[] args) {
 		ThreadTest threadTest = new ThreadTest();
-//		ThreadTest2 threadTest2 = new ThreadTest2();
+		ThreadTest02 threadTest02 = new ThreadTest02();
 		
 		Thread thread = new Thread(threadTest,"A");
 //		Thread thread2 = new Thread(threadTest2,"B");
-		Thread thread3 = new Thread(threadTest,"C");
+		threadTest02.start();
 		thread.start();
 //		thread2.start();
-		thread3.start();
+//		thread3.start();
 		
 		System.out.println("["+Thread.currentThread().getName()+"]");
 		System.out.println("MainClass");
