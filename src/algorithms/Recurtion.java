@@ -1,6 +1,6 @@
 package algorithms;
 
-public class recurtion {
+public class Recurtion {
 
 	static int sum(int[] a){
 		if(a.length==1) {
