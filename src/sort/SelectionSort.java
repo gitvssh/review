@@ -1,6 +1,6 @@
 package sort;
 
-public class SelectSort {
+public class SelectionSort {
 
 	public static void main(String[] args) {
 		ExamList l = new ExamList();
@@ -39,7 +39,8 @@ public class SelectSort {
 		l.print(list);
 		/*선택정렬, 오름차순 내림차순은, 내부for문의 대소크기중 어떤것을 고르느냐에 따라 선택
 		 * 외부for문의 진행방향이 정렬의 진행방향
-		 * 시간복잡도 O(n^2),공간복잡도 O(n) 
+		 * 시간복잡도 O(n^2),공간복잡도 O(1)
+		 * 최초작성 18.5.29 
 		 */
 	}//end main
 
