@@ -7,7 +7,7 @@ public class Recurtion {
 			return a[0];
 		}
 		else {
-			int[] b = new int[a.length>1?a.length-1:0];
+			int[] b = new int[a.length-1];
 			System.arraycopy(a, 1, b, 0, a.length-1);
 			return a[0]+sum(b);
 		}

@@ -17,7 +17,7 @@ public class ArrayListEx1 {
 		
 		ArrayList list2 = new ArrayList(list1.subList(1, 4));
 		ArrayList list3 = new ArrayList(list1.subList(2, 3));
-		print(list1,list2);
+		print(list1,list3);
 		
 		Collections.sort(list1);
 		Collections.sort(list2);
