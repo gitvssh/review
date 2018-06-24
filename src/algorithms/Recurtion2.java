@@ -3,8 +3,13 @@ package algorithms;
 public class Recurtion2 {
 
 	static int count(int[] list) {
-		
-		return 0;
+		if(list.length==1) {
+			return 1;
+		}else {
+			int[] b = new int[list.length-1];
+			System.arraycopy(list, 1, b, 0, list.length-1);
+			return 1+count(b);
+		}
 	}
 	
 	public static void main(String[] args) {
