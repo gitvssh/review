@@ -12,12 +12,12 @@ public class ContentPaneEx extends JFrame{
 		contentPane.setBackground(Color.orange);
 		
 		
-		contentPane.setLayout(new FlowLayout());
-		contentPane.add(new JButton("OK"));
-		contentPane.add(new JButton("Cancel"));
-		contentPane.add(new JButton("Ignore"));
-		contentPane.add(new JButton("OK"));
-		contentPane.add(new JButton("Cancel"));
+		contentPane.setLayout(new BorderLayout(20,20));
+		contentPane.add(new JButton("OK"),BorderLayout.WEST);
+		contentPane.add(new JButton("Cancel"),BorderLayout.CENTER);
+		contentPane.add(new JButton("Ignore"),BorderLayout.EAST);
+		contentPane.add(new JButton("OK"),BorderLayout.NORTH);
+		contentPane.add(new JButton("Cancel"),BorderLayout.SOUTH);
 		contentPane.add(new JButton("Ignore"));
 		
 		setSize(350,150);
