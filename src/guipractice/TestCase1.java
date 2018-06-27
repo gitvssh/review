@@ -11,6 +11,7 @@ public class TestCase1 extends JFrame{
 		setVisible(true);
 		setSize(800,500);
 		Container pan = getContentPane();
+		pan.setLayout(null);
 		pan.setBackground(java.awt.Color.BLUE);
 		
 		JPanel j1 = new JPanel();
