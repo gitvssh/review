@@ -1,7 +1,6 @@
 package dataStructure;
 
 public abstract class MyArrayList {
-
 //	final int LIST_LEN = 100;
 //	int LData;
 //	
