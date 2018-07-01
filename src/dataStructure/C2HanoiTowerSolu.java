@@ -1,6 +1,6 @@
 package dataStructure;
 
-public class HanoiTowerSolu {
+public class C2HanoiTowerSolu {
 	
 	static void HanoiTowerMove(int num, char from, char by, char to) {
 		if(num==1) {

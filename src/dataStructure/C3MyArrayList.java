@@ -1,6 +1,6 @@
 package dataStructure;
 
-public abstract class MyArrayList {
+public abstract class C3MyArrayList {
 //	final int LIST_LEN = 100;
 //	int LData;
 //	

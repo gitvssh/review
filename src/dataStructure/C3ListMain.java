@@ -1,6 +1,6 @@
 package dataStructure;
 
-public class ListMain {
+public class C3ListMain {
 
 	public static void main(String[] args) {
 //		MYList list;

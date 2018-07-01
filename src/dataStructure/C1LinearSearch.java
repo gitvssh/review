@@ -1,6 +1,6 @@
 package dataStructure;
 
-public class LinearSearch {
+public class C1LinearSearch {
 
 	static int LSearch(int ar[], int len, int target) {
 		for(int i=0;i<len;i++) {

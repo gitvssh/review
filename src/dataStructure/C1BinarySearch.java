@@ -1,6 +1,6 @@
 package dataStructure;
 
-public class BinarySearch {
+public class C1BinarySearch {
 
 	static int BSearch(int ar[], int len, int target) {
 		int first = 0;

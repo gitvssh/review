@@ -1,6 +1,6 @@
 package dataStructure;
 
-public class RecursiveBinarySearch {
+public class C2RecursiveBinarySearch {
 	static int BsearchRecur(int ar[],int first, int last, int target) {
 		int mid;
 		if(first>last) {

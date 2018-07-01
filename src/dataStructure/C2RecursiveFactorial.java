@@ -1,6 +1,6 @@
 package dataStructure;
 
-public class RecursiveFactorial {
+public class C2RecursiveFactorial {
 	static int Factorial(int n) {
 		if(n==0)
 			return 1;

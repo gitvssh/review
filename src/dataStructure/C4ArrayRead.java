@@ -2,7 +2,7 @@ package dataStructure;
 
 import java.util.Scanner;
 
-public class ArrayRead {
+public class C4ArrayRead {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);

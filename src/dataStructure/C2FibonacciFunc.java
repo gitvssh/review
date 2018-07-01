@@ -1,6 +1,6 @@
 package dataStructure;
 
-public class FibonacciFunc {
+public class C2FibonacciFunc {
 
 	static int Fibo(int n) {
 		if(n==1) {

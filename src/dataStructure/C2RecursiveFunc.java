@@ -1,6 +1,6 @@
 package dataStructure;
 
-public class RecursiveFunc {
+public class C2RecursiveFunc {
 
 	static void Recursive(int num) {
 		if(num<=0)
