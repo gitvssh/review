@@ -1,29 +1,33 @@
+package hacckerRank_PS;
+
 import java.io.*;
 import java.util.*;
 import java.text.*;
 import java.math.*;
 import java.util.regex.*;
 
-public class Solution {
+public class BonAppetit {
+
     public static void main(String args[] ) throws Exception {
-        Scanner sc = new Scanner(System.in);
+         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         
-        sc.nextLine();
-        sc.useDelimiter(" ");
-        int n = Integer.parseInt(sc.next());
-        int anna = Integer.parseInt(sc.next());
+        String[] s = br.readLine().split(" ");
+
+        int n = Integer.parseInt(s[0]);
+        int anna = Integer.parseInt(s[1]);
         
         int[] meal = new int[n];
-        sc.nextLine();
-        int i=0;
-        while(sc.hasNext()){
-            meal[i] = Integer.parseInt(sc.next());
+        String[] f = br.readLine().split(" ");
+        
+        for(int i=0;i<f.length;i++){
+            meal[i] = Integer.parseInt(f[i]);
+        
         }
         //end Input
         
         int sum = 0;
         int actual = 0;
-        int charged = 0;
+        int charged = Integer.parseInt(br.readLine());
         for(int j=0;j<n;j++){
             if(j==anna){
                 continue;
@@ -31,11 +35,11 @@ public class Solution {
             sum += meal[j];
         }
         actual = sum/2;
-        charged = (sum+meal[anna])/2;
         if(actual==charged){
             System.out.println("Bon Appetit");
         }else{
             System.out.println(charged-actual);
         }
     }
+
 }
