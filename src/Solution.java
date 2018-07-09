@@ -1,46 +1,45 @@
-import java.io.*;
 import java.util.*;
-import java.text.*;
-import java.math.*;
-import java.util.regex.*;
-
-public class Solution {
-    public static void main(String args[] ) throws Exception {
-        /* Enter your code here. Read input from STDIN. Print output to STDOUT */
-        Scanner sc = new Scanner(System.in);
-        
-        sc.useDelimiter(" ");
-        sc.nextLine();
-        int n = Integer.parseInt(sc.next());
-        int s = Integer.parseInt(sc.next());//handle first line input 
-        int[] testCase = new int[n];
-        int anna = 0;
-        int sum = 0;
-        int i = 0;
-        sc.useDelimiter(" ");
-        sc.nextLine();
-        
-        while(sc.hasNext()){
-         testCase[i++]= Integer.parseInt(sc.next());
-        }//handle seconde line input
-        
-        anna = sc.nextInt();//handel third line input
-        
-        for(int j=0;j<n;j++){
-            if(i==anna){
-                continue;
-            }else{
-                sum+= testCase[i];
+class Solution{
+	
+	public static void main(String []argh)
+	{
+		Scanner sc = new Scanner(System.in);
+		
+		while (sc.hasNext()) {
+			String input=sc.next();
+            Stack s = new Stack();//괄호 체크 사용할 스택
+            //Complete the code
+            int len = input.length();//문자열 길이
+            char t = ' ';
+            for(int i=0;i<len;i++){//문자열길이만큼 작업
+                t = input.charAt(i);//char 추출
+                if(t!=')'&&t!='}'&&t!=']'){//닫는괄호인가 확인
+                s.push(input.charAt(i));//아닐경우 스택에 저장
+                    }
+                else{//닫는괄호일경우
+                    if(t==')'&&s.isEmpty()!=true){//괄호가 )일경우, (와 체크
+                        if((char)s.pop()=='(')
+                        continue;
+                    }else if(t=='}'&&s.isEmpty()!=true){//괄호가 }일경우 {와 체크
+                        if((char)s.pop()=='{')
+                        continue;
+                    }else if(t==']'&&s.isEmpty()!=true){//괄호가 ]일경우 [와 체크
+                        if((char)s.pop()=='[')
+                        continue;
+                    }else{//괄호가 일치하지 않는경우
+                        System.out.println("false");
+                        break;
+                    }
+                }
+               if(s.isEmpty()) {
+                   System.out.println("true");
+                   break;
+               }else{
+                   System.out.println("false");
+                    break;
+               }
             }
-        }//end for
-        
-        int result = (sum+testCase[anna])/2-sum/2;
-        
-        if(sum+testCase[anna]/2==sum/2){
-            System.out.println("Bon Appetit");
-        }else{
-            System.out.println(result);
-        }
-    
-    }//end main
-}//end class
+		}
+		
+	}
+}
