@@ -1,4 +1,4 @@
-package dataStructure;
+package dataStructure.chapter3;
 
 public abstract class C3MyArrayList {
 //	final int LIST_LEN = 100;

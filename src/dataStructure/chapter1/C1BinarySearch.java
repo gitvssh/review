@@ -1,4 +1,4 @@
-package dataStructure;
+package dataStructure.chapter1;
 
 public class C1BinarySearch {
 
