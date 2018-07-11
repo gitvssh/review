@@ -75,3 +75,21 @@ delete from result;
 insert into result values(1,'홍길동',82,99,89,'','','');
 
 insert into result values(2,'이순신',99,100,100,'','','');
+
+insert into result values(3,'김유신',89,97,95,'','','');
+
+insert into result(stu_id,stu_name) values(2,'이순신');
+
+insert into result values(4,'안창호',82,99,89,'','','');
+
+select * from result;
+
+desc result;
+
+delete from result where stu_id=2;
+
+update result set stu_id=2 where stu_name='김유신';
+
+commit;
+
+select stu_id,stu_name,kor,eng,math,(kor+eng+math)/3 "ave",kor+eng+math "합계" from result;
