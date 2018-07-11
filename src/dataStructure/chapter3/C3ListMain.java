@@ -1,4 +1,4 @@
-package dataStructure;
+package dataStructure.chapter3;
 
 public class C3ListMain {
 

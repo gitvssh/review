@@ -1,4 +1,4 @@
-package dataStructure;
+package dataStructure.chapter2;
 
 public class C2RecursiveFactorial {
 	static int Factorial(int n) {
