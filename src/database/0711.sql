@@ -224,3 +224,17 @@ select salary from employees where salary in(5000,6000,7000);
 //and Á¶°Ç½Ä
 select salary from employees where salary=5000 and salary=6000 and salary=7000;
 select salary from employees where salary = all(5000,6000,7000);
+
+select manager_id from employees where manager_id=148 or manager_id=149;
+select manager_id from employees where manager_id = any(148,149);
+select manager_id from employees where manager_id = some(148,149);
+select manager_id from employees where manager_id in(148,149);
+
+select salary from employees where salary>=4000 and salary<=8000;
+select salary from employees where salary between 4000 and 8000;
+
+select hire_date from employees where hire_date>'07/12/31' and hire_date>'05/09/21';
+
+select employee_id from employees where employee_id in(100,150,160,170);
+select employee_id from employees where employee_id = any(100,150,160,170);
+select employee_id from employees where employee_id = some(100,150,160,170);
