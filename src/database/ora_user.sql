@@ -58,3 +58,20 @@ select a.prod_id,a.cust_id,a.channel_id,a.employee_id,b.emp_name "EMPLOYEE_NAME"
 select a.prod_id,a.cust_id,c.cust_name,a.channel_id,a.employee_id,b.emp_name "EMPLOYEE_NAME",a.sales_date 
 from sales a,employees b,customers c 
 where a.employee_id=b.employee_id and a.cust_id=c.cust_id;
+
+select emp_name from employees where employee_id=157;
+
+select * from employees;
+
+select employee_id, emp_name, salary*12/11 "연봉(만원)" from employees;
+select employee_id, emp_name,salary,nvl(commission_pct,0), salary*(1+nvl(commission_pct,0)) "월급" from employees;
+
+select * from employees where hire_date >'00/03/19';
+
+select * from result;
+
+delete from result;
+
+insert into result values(1,'홍길동',82,99,89,'','','');
+
+insert into result values(2,'이순신',99,100,100,'','','');
