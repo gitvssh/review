@@ -166,3 +166,5 @@ when floor(months_between(sysdate,hire_date)/12)<=15 then salary*0.97*floor(mont
 else salary*floor(months_between(sysdate,hire_date))
 end "ÃÑ ¿ù±Þ"
 from employees;
+
+commit;
