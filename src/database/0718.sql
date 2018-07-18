@@ -37,7 +37,7 @@ update menu set vat=0.1;
 select * from menu;
 desc menu;
 alter table m_add rename column amout to amount;
-alter table menu modify m_num char(10);
+alter table m_add modify m_num varchar2(10);
 
 select a.o_num,c.m_num,b.m_name,c.amount 
 from h_order a,menu b,m_add c
