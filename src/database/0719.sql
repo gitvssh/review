@@ -124,3 +124,89 @@ intersect
 select goods from exp_goods_asia
 where country='ÀÏº»'
 ;
+
+select period, gubun, sum(loan_jan_amt)
+from kor_loan_status
+where period like '2013%'
+group by grouping sets(period, gubun);
+
+select period, gubun, sum(loan_jan_amt)
+from kor_loan_status
+where period like '2013%'
+group by rollup(period, gubun);
+
+select employee_id, sales_month,sum(amount_sold)
+from sales
+group by grouping sets(employee_id,sales_month);
+
+select substr(hire_date,1,2),count(substr(hire_date,1,2))
+from employees
+group by substr(hire_date,1,2)
+order by 1;
+
+select department_id, count(department_id)
+from employees
+group by department_id;
+desc kor_loan_status;
+
+select period, region, sum(loan_jan_amt)
+from kor_loan_status
+where period like '2012%'
+group by grouping sets(period,region);
+
+select substr(period,1,4), region, sum(loan_jan_amt)
+from kor_loan_status
+group by substr(period,1,4),region
+having sum(loan_jan_amt)>=100000
+order by 1;
+
+select region,max(loan_jan_amt)
+from kor_loan_status
+group by region;
+
+select region,min(loan_jan_amt)
+from kor_loan_status
+group by region;
+
+select a.department_id, b.department_name 
+from employees a, departments b
+where a.department_id=b.department_id
+;
+
+select distinct a.job_id, b.job_title
+from employees a,jobs b
+where a.job_id=b.job_id;
+
+select department_id, department_name
+from departments a
+where exists
+(select * from employees b
+where a.department_id = b.department_id 
+and b.salary>3000);
+
+select job_id, job_title
+from jobs a
+where exists
+(select * from employees b
+where b.manager_id between 120 and 130 and a.job_id=b.job_id);
+
+select distinct a.job_id, a.job_title
+from jobs a,employees b
+where b.manager_id between 120 and 130 and b.job_id=a.job_id;
+
+select department_id, department_name
+from departments a
+where a.department_id in(select b.department_id 
+from employees b
+where b.salary>3000);
+
+select job_id, job_title
+from jobs a
+where a.job_id in
+(select b.job_id from employees b
+where b.manager_id between 120 and 130);
+
+select a.department_id, a.department_name
+from departments a, employees b
+where a.department_id = b.department_id and b.salary>3000;
+
