@@ -1,4 +1,4 @@
-package test;
+package painter;
 import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Font;
@@ -15,10 +15,14 @@ import javax.swing.JButton;
 import javax.swing.JColorChooser;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
- 
-public class Paint extends JFrame {
+
+
+public class Painter extends JFrame {
     
     JPanel gui_panel, paint_panel; 
     // 현 그림판 프레임은 GUI구성 패널, 그려지는 패널로 구성
@@ -50,9 +54,9 @@ public class Paint extends JFrame {
      * 뭐 그리 중요한 변수는 아니다..
      */
     
-    public Paint() { // Paint클래스의 디폴트(Default)생성자로 기본적인 GUI구성을 해주는 역할을 한다.
+    public Painter() { // Paint클래스의 디폴트(Default)생성자로 기본적인 GUI구성을 해주는 역할을 한다.
         setLayout(null); // 기본 프레임의 레이아웃을 초기화 시켜 패널을 개발자가 직접 다룰수 있게 됨
-        setTitle("그림판"); // 프레임 타이틀 지정
+        setTitle("Painter"); // 프레임 타이틀 지정
         setSize(900,750); // 프레임 사이즈 지정
         setLocationRelativeTo(null); // 프로그램 실행시 화면 중앙에 출력
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
@@ -62,7 +66,19 @@ public class Paint extends JFrame {
         gui_panel.setBackground(Color.GRAY); // 패널의 배경색을 회색으로 지정
         gui_panel.setLayout(null); 
         // gui_panel의 레이아웃을 null지정하여 컴포넌트들의 위치를 직접 지정해줄수 있다.
-        
+        JMenuBar menuBar = new JMenuBar();
+        setJMenuBar(menuBar);
+        JMenu mnFile = new JMenu("File");
+        menuBar.add(mnFile);
+        JMenuItem mntmQuit = new JMenuItem("Quit");
+        mnFile.add(mntmQuit);
+        mntmQuit.addActionListener(new ActionListener()
+        {
+        	public void actionPerformed(ActionEvent e) 
+        	{
+        		System.exit(0);
+        	}
+        });
         pencil_bt = new JButton("연필"); // 연필 버튼 생성
         pencil_bt.setFont(new Font("함초롱돋움", Font.BOLD, 25)); // 버튼 폰트및 글씨 크기 지정
         pencil_bt.setBackground(Color.LIGHT_GRAY); // 연필버튼 배경색 밝은회색으로 지정
@@ -200,7 +216,7 @@ public class Paint extends JFrame {
     }
     
     public static void main(String[] args) { // 메인메소드
-        new Paint(); // Paint클래스의 디폴트(=Default)생성자 실행
+        new Painter(); // Paint클래스의 디폴트(=Default)생성자 실행
     }
 }
 
