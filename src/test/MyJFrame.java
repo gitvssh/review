@@ -89,7 +89,8 @@ class Oval extends Shape implements Serializable
 
 class Rect extends Shape implements Serializable
 {
-   void draw(Graphics g)
+
+	void draw(Graphics g)
    {
       g.setColor(color);
       g.drawRect(Math.min(startX, lastX), Math.min(startY, lastY), Math.abs(lastX - startX), Math.abs(lastY - startY));

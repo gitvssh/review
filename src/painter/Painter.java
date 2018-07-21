@@ -25,12 +25,9 @@ import javax.swing.JTextField;
 public class Painter extends JFrame {
     
     JPanel gui_panel, paint_panel; 
-    
     JButton pencil_bt, eraser_bt; // 연필,지우개 도구를 선택하는 버튼
     JButton colorSelect_bt; // 색선택 버튼
-    
     JLabel thicknessInfo_label; // 도구굵기 라벨
-    
     JTextField thicknessControl_tf; // 도구굵기가 정해질 텍스트필드
     
     Color selectedColor; 
@@ -40,11 +37,11 @@ public class Painter extends JFrame {
     Graphics2D g;
     // Graphics2D는 쉽게 말해 기존 graphics의 상위버전이라고 생각하시먄 됩니다.
     
-    int thickness = 10; // 현 변수는 그려지는 선의 굴기를 변경할때 변경값이 저장되는 변수
-    int startX; // 마우스클릭시작의 X좌표값이 저장될 변수
-    int startY; // 마우스클릭시작의 Y좌표값이 저장될 변수
-    int endX; // 마우스클릭종료의 X좌표값이 저장될 변수
-    int endY; // 마우스클릭종료의 Y좌표값이 저장될 변수
+    int thickness = 10;
+    int startX; 
+    int startY;
+    int endX;
+    int endY;
     
     boolean tf = false; 
     /* 변 boolean 변수는 처음에 연필로 그리고 지우개로 지운다음 다시 연필로 그릴때
@@ -53,14 +50,16 @@ public class Painter extends JFrame {
      * 뭐 그리 중요한 변수는 아니다..
      */
     
-    public Painter() { // Paint클래스의 디폴트(Default)생성자로 기본적인 GUI구성을 해주는 역할을 한다.
-        setLayout(null); // 기본 프레임의 레이아웃을 초기화 시켜 패널을 개발자가 직접 다룰수 있게 됨
-        setTitle("Painter"); // 프레임 타이틀 지정
-        setSize(900,750); // 프레임 사이즈 지정
-        setLocationRelativeTo(null); // 프로그램 실행시 화면 중앙에 출력
+    public Painter() {
+        setLayout(null);
+        setTitle("Painter");
+        setSize(900,750);
+        setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
-        // 프레임 우측상단에 X버튼을 눌렀을떄의 기능 정의
         
+        /* 메뉴라인
+         * 종료버튼, 이벤트리스너 작성
+         */
         gui_panel = new JPanel(); // 프레임 상단에 버튼, 텍스트필드, 라벨등이 UI가 들어갈 패널
         gui_panel.setBackground(Color.GRAY); // 패널의 배경색을 회색으로 지정
         gui_panel.setLayout(null); 
@@ -78,6 +77,10 @@ public class Painter extends JFrame {
         		System.exit(0);
         	}
         });
+        
+        /* 도구라인
+         * 연필, 지우개, 채우기, 색선택, 도형그리기 버튼
+         */
         pencil_bt = new JButton("연필"); // 연필 버튼 생성
         pencil_bt.setFont(new Font("함초롱돋움", Font.BOLD, 25)); // 버튼 폰트및 글씨 크기 지정
         pencil_bt.setBackground(Color.LIGHT_GRAY); // 연필버튼 배경색 밝은회색으로 지정
@@ -112,8 +115,9 @@ public class Painter extends JFrame {
         
         gui_panel.setBounds(0,0,900,75); // gui_panel이 프레임에 배치될 위치 지정
         
-        ////////////////////////////////////////////////// ↑ 패널 구분 ↓
-        
+        /* 패널라인
+         * 
+         */
         paint_panel = new JPanel(); // 그림이 그려질 패널 생성
         paint_panel.setBackground(Color.WHITE); // 패널의 배경색 하얀색
         paint_panel.setLayout(null); 
@@ -134,8 +138,9 @@ public class Painter extends JFrame {
         g.setColor(selectedColor); 
         // 그려질 선(=선도 그래픽)의 색상을 selectedColor의 값으로 설정
         
-        /////////////////////////////////////////////////// ↓ 액션 처리부분
-        
+        /* 이벤트리스너
+         * 
+         */
         paint_panel.addMouseListener(new MouseListener() { 
             // paint_panel에서의 MouseListener 이벤트 처리
             public void mousePressed(MouseEvent e) { 
