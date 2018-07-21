@@ -35,7 +35,7 @@ public class Painter extends JFrame {
     
     Graphics graphics; // Graphics2D 클래스의 사용을 위해 선언
     Graphics2D g;
-    // Graphics2D는 쉽게 말해 기존 graphics의 상위버전이라고 생각하시먄 됩니다.1
+    // Graphics2D는 쉽게 말해 기존 graphics의 상위버전이라고 생각하시먄 됩니다.2
     
     int thickness = 10;
     int startX; 
