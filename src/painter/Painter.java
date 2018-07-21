@@ -25,7 +25,6 @@ import javax.swing.JTextField;
 public class Painter extends JFrame {
     
     JPanel gui_panel, paint_panel; 
-    // 현 그림판 프레임은 GUI구성 패널, 그려지는 패널로 구성
     
     JButton pencil_bt, eraser_bt; // 연필,지우개 도구를 선택하는 버튼
     JButton colorSelect_bt; // 색선택 버튼
@@ -192,10 +191,6 @@ public class Painter extends JFrame {
         }
         @Override
         public void mouseMoved(MouseEvent e) {}
-        /* 인터페이스화 했기 때문에 그 인터페이스 에 정의된  메소드를 전부다 오버라이딩 해줘야 함으로 구지 사용되지지   
-             않는 메소드도 서브 클래스에서 전부다 오버라이딩 해줘야한다. */
-
-
 
     }
     
@@ -210,13 +205,12 @@ public class Painter extends JFrame {
                  // 지우개버튼이 눌렸을떄 밑 if문장 블록범위내 문장 실행
                 g.setColor(Color.WHITE);
             // 그려지는 색상을 흰색으로 해줬기 때문에 흰색으로 펜이 그려져 지워지는 것처럼 보이게 한다.
-
             }
         }
     }
     
-    public static void main(String[] args) { // 메인메소드
-        new Painter(); // Paint클래스의 디폴트(=Default)생성자 실행
+    public static void main(String[] args) {
+        new Painter();
     }
 }
 
