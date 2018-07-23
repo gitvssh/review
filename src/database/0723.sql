@@ -131,5 +131,43 @@ from employees a, job_history b
 where a.job_id=b.job_id(+);
 
 select a.employee_id, a.emp_name, a.department_id, b.department_name
+from employees a
+inner join departments b on(a.department_id=b.department_id)
+where a.hire_date >'03/01/01' and a.department_id=b.department_id;
+
+select a.employee_id, a.emp_name, job_id, b.job_title
+from employees a
+inner join jobs b
+using(job_id)
+;
+
+select a.employee_id, a.emp_name, department_id, b.department_name, a.salary
+from employees a
+inner join departments b
+using(department_id)
+where 12000>=a.salary and a.salary>=9000;
+
+select a.employee_id, a.emp_name, a.department_id, b.department_name, a.salary
 from employees a, departments b
-where a.hire_date >'03/01/01';
+where a.department_id=b.department_id and a.salary between 9000 and 12000;
+
+select department_id, a.department_name, avg(b.salary)
+from departments a
+inner join employees b
+using(department_id)
+group by department_id, a.department_name
+having avg(b.salary)=(
+select max(avg(salary))
+from employees
+group by department_id);
+
+
+select a.department_id, a.department_name, b.job_id, b.department_id
+from departments a
+left outer join job_history b
+on(a.department_id=b.department_id);
+
+select a.employee_id,a.emp_name,a.job_id,department_id
+from employees a
+right outer join departments
+using(department_id);

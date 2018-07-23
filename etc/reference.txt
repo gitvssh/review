@@ -39,3 +39,5 @@ solid, ..  dry kiss yagni
 oop에서 Switch가 과하게 등장하면, 추상화 개념을 아직 적용못했다
 
 함수 단위의 사고 적용 
+
+jira - 이슈추적 프로그램
