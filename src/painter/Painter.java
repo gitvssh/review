@@ -1,4 +1,4 @@
-package test;
+package painter;
 import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Font;
@@ -15,19 +15,19 @@ import javax.swing.JButton;
 import javax.swing.JColorChooser;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
- 
-public class Paint extends JFrame {
+
+
+public class Painter extends JFrame {
     
     JPanel gui_panel, paint_panel; 
-    // 현 그림판 프레임은 GUI구성 패널, 그려지는 패널로 구성
-    
     JButton pencil_bt, eraser_bt; // 연필,지우개 도구를 선택하는 버튼
     JButton colorSelect_bt; // 색선택 버튼
-    
     JLabel thicknessInfo_label; // 도구굵기 라벨
-    
     JTextField thicknessControl_tf; // 도구굵기가 정해질 텍스트필드
     
     Color selectedColor; 
@@ -35,34 +35,51 @@ public class Paint extends JFrame {
     
     Graphics graphics; // Graphics2D 클래스의 사용을 위해 선언
     Graphics2D g;
-    // Graphics2D는 쉽게 말해 기존 graphics의 상위버전이라고 생각하시먄 됩니다.
+    // Graphics2D는 쉽게 말해 기존 graphics의 상위버전이라고 생각하시먄 됩니다.2
     
-    int thickness = 10; // 현 변수는 그려지는 선의 굴기를 변경할때 변경값이 저장되는 변수
-    int startX; // 마우스클릭시작의 X좌표값이 저장될 변수
-    int startY; // 마우스클릭시작의 Y좌표값이 저장될 변수
-    int endX; // 마우스클릭종료의 X좌표값이 저장될 변수
-    int endY; // 마우스클릭종료의 Y좌표값이 저장될 변수
+    int thickness = 10;
+    int startX; 
+    int startY;
+    int endX;
+    int endY;
     
     boolean tf = false; 
     /* 변 boolean 변수는 처음에 연필로 그리고 지우개로 지운다음 다시 연필로 그릴때
      * 기본색인 검은색으로 구분시키고 만약 프로그램 시작시 색선택후 그 선택된 색이
      * 지우개로 지우고 다시 연필로 그릴때 미리 정해진 색상으로 구분하는 변수인데..
-     * 뭐 그리 중요한 변수는 아니다..
      */
     
-    public Paint() { // Paint클래스의 디폴트(Default)생성자로 기본적인 GUI구성을 해주는 역할을 한다.
-        setLayout(null); // 기본 프레임의 레이아웃을 초기화 시켜 패널을 개발자가 직접 다룰수 있게 됨
-        setTitle("그림판"); // 프레임 타이틀 지정
-        setSize(900,750); // 프레임 사이즈 지정
-        setLocationRelativeTo(null); // 프로그램 실행시 화면 중앙에 출력
+    public Painter() {
+        setLayout(null);
+        setTitle("Painter");
+        setSize(900,750);
+        setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
-        // 프레임 우측상단에 X버튼을 눌렀을떄의 기능 정의
         
+        /* 메뉴라인
+         * 종료버튼, 이벤트리스너 작성
+         */
         gui_panel = new JPanel(); // 프레임 상단에 버튼, 텍스트필드, 라벨등이 UI가 들어갈 패널
         gui_panel.setBackground(Color.GRAY); // 패널의 배경색을 회색으로 지정
         gui_panel.setLayout(null); 
         // gui_panel의 레이아웃을 null지정하여 컴포넌트들의 위치를 직접 지정해줄수 있다.
+        JMenuBar menuBar = new JMenuBar();
+        setJMenuBar(menuBar);
+        JMenu mnFile = new JMenu("File");
+        menuBar.add(mnFile);
+        JMenuItem mntmQuit = new JMenuItem("Quit");
+        mnFile.add(mntmQuit);
+        mntmQuit.addActionListener(new ActionListener()
+        {
+        	public void actionPerformed(ActionEvent e) 
+        	{
+        		System.exit(0);
+        	}
+        });
         
+        /* 도구라인
+         * 연필, 지우개, 채우기, 색선택, 도형그리기 버튼
+         */
         pencil_bt = new JButton("연필"); // 연필 버튼 생성
         pencil_bt.setFont(new Font("함초롱돋움", Font.BOLD, 25)); // 버튼 폰트및 글씨 크기 지정
         pencil_bt.setBackground(Color.LIGHT_GRAY); // 연필버튼 배경색 밝은회색으로 지정
@@ -97,8 +114,9 @@ public class Paint extends JFrame {
         
         gui_panel.setBounds(0,0,900,75); // gui_panel이 프레임에 배치될 위치 지정
         
-        ////////////////////////////////////////////////// ↑ 패널 구분 ↓
-        
+        /* 패널라인
+         * 
+         */
         paint_panel = new JPanel(); // 그림이 그려질 패널 생성
         paint_panel.setBackground(Color.WHITE); // 패널의 배경색 하얀색
         paint_panel.setLayout(null); 
@@ -119,8 +137,9 @@ public class Paint extends JFrame {
         g.setColor(selectedColor); 
         // 그려질 선(=선도 그래픽)의 색상을 selectedColor의 값으로 설정
         
-        /////////////////////////////////////////////////// ↓ 액션 처리부분
-        
+        /* 이벤트리스너
+         * 
+         */
         paint_panel.addMouseListener(new MouseListener() { 
             // paint_panel에서의 MouseListener 이벤트 처리
             public void mousePressed(MouseEvent e) { 
@@ -176,10 +195,6 @@ public class Paint extends JFrame {
         }
         @Override
         public void mouseMoved(MouseEvent e) {}
-        /* 인터페이스화 했기 때문에 그 인터페이스 에 정의된  메소드를 전부다 오버라이딩 해줘야 함으로 구지 사용되지지   
-             않는 메소드도 서브 클래스에서 전부다 오버라이딩 해줘야한다. */
-
-
 
     }
     
@@ -194,13 +209,12 @@ public class Paint extends JFrame {
                  // 지우개버튼이 눌렸을떄 밑 if문장 블록범위내 문장 실행
                 g.setColor(Color.WHITE);
             // 그려지는 색상을 흰색으로 해줬기 때문에 흰색으로 펜이 그려져 지워지는 것처럼 보이게 한다.
-
             }
         }
     }
     
-    public static void main(String[] args) { // 메인메소드
-        new Paint(); // Paint클래스의 디폴트(=Default)생성자 실행
+    public static void main(String[] args) {
+        new Painter();
     }
 }
 
