@@ -129,3 +129,7 @@ where a.department_id(+)=b.department_id;
 select a.employee_id, a.emp_name, a.job_id, b.department_id
 from employees a, job_history b
 where a.job_id=b.job_id(+);
+
+select a.employee_id, a.emp_name, a.department_id, b.department_name
+from employees a, departments b
+where a.hire_date >'03/01/01';
