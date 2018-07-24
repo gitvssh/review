@@ -41,3 +41,24 @@ oop에서 Switch가 과하게 등장하면, 추상화 개념을 아직 적용못했다
 함수 단위의 사고 적용 
 
 jira - 이슈추적 프로그램
+
+* 웹 개발의 이해
+  * 웹 프로토콜
+  * hello git
+  * HTTP/HTML/JSON
+
+* 데이터 입출력
+  * 함수, UnitTest
+  * 데이터 영속성
+  * SQL vs NoSQL
+
+* 애자일 개발 방법론
+  * 이슈 트래커
+  * MarkDown
+  * Collaboration
+  * Continuous Integration / Continuous Development
+
+* 메시징 기술
+  * Ajax
+  * 웹소켓
+  * Redis
