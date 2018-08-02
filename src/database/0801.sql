@@ -9,8 +9,13 @@ m_event varchar2(20)
 );
 
 
-insert into member values('a0001','123123123','이순신',880101,'남',11111111111,'이벤트');
-insert into member values('a0002','123123123','이순신2',880102,'여',11111111111,'이벤트');
-insert into member values('a0003','123123123','이순신3',880103,'남',11111111111,'이벤트');
-insert into member values('a0004','123123123','이순신4',880104,'여',11111111111,'이벤트');
-insert into member values('a0005','123123123','이순신5',880105,'남',11111111111,'이벤트');
+select * from member;
+
+update member set m_event='0'
+where m_sex = '여';
+
+select m_id "아이디", m_password "비번", m_name "이름", m_birth "생년월일", m_sex "성별", m_phonenum "전화번호" ,
+case when m_event ='1' then '대상'
+else '비대상'
+end "이벤트"
+from member;
