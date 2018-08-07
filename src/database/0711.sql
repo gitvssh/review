@@ -9,21 +9,21 @@ create table result(
     rank number(3)
 );
 
-//ÀÔ·Â½Ã ºó°ø¹é, number ÀÚ¸®¼ö
-insert into result(stu_id,stu_name,kor,eng,math,ave,total,rank) values(1,'È«±æµ¿',80,80,80,(80+80+80)/3,80+80+80,'');
+//ìž…ë ¥ì‹œ ë¹ˆê³µë°±, number ìžë¦¬ìˆ˜
+insert into result(stu_id,stu_name,kor,eng,math,ave,total,rank) values(1,'í™ê¸¸ë™',80,80,80,(80+80+80)/3,80+80+80,'');
 
-//desc ¿À¸§Â÷¼ø, order by default ³»¸²Â÷¼ø(asc)
+//desc ì˜¤ë¦„ì°¨ìˆœ, order by default ë‚´ë¦¼ì°¨ìˆœ(asc)
 select * from employees order by employee_id desc;
 
 commit;
 
-//where Á¶°Ç
+//where ì¡°ê±´
 select * from employees where employee_id>150 and salary>8300;
 
 select * from employees where salary=9500 order by employee_id;
 
 select * from employees where salary>10000 and department_id=80 order by employee_id;
-//ÇÑ°³¾¿
+//í•œê°œì”©
 select distinct department_id from employees;
 
 select * from departments;
@@ -33,7 +33,7 @@ select emp_name,salary,department_id  from employees order by salary;
 select distinct employee_id, emp_name, email, phone_number, hire_date, salary,parent_id, employees.department_id from employees, departments where employees.department_id=departments.department_id;
 
 select * from employees where job_id='IT_PROG' and salary>5000;
-//°Ë»öÁ¶°Ç
+//ê²€ìƒ‰ì¡°ê±´
 select * from employees where employee_id>=140 or job_id='SA_REP' order by employee_id asc;
 
 //join
@@ -46,9 +46,9 @@ select distinct employees.job_id,jobs.job_title from employees,jobs where employ
 select distinct job_id from employees;
 
 select * from departments;
-//±³Â÷°Ë»ö
+//êµì°¨ê²€ìƒ‰
 select departments.*,employees.emp_name "manager ID" from departments,employees where departments.manager_id=employees.employee_id;
-//°¡¸í
+//ê°€ëª…
 select a.*,b.emp_name "manager ID" from departments a,employees b where a.manager_id=b.employee_id;
 
 select emp_name from employees where employee_id=200;
@@ -63,8 +63,8 @@ select emp_name from employees where employee_id=157;
 
 select * from employees;
 
-select employee_id, emp_name, salary*12/11 "¿¬ºÀ(¸¸¿ø)" from employees;
-select employee_id, emp_name,salary,nvl(commission_pct,0), salary*(1+nvl(commission_pct,0)) "¿ù±Þ" from employees;
+select employee_id, emp_name, salary*12/11 "ì—°ë´‰(ë§Œì›)" from employees;
+select employee_id, emp_name,salary,nvl(commission_pct,0), salary*(1+nvl(commission_pct,0)) "ì›”ê¸‰" from employees;
 
 select * from employees where hire_date >'00/03/19';
 
@@ -72,15 +72,15 @@ select * from result;
 
 delete from result;
 
-insert into result values(1,'È«±æµ¿',82,99,89,'','','');
+insert into result values(1,'í™ê¸¸ë™',82,99,89,'','','');
 
-insert into result values(2,'ÀÌ¼ø½Å',99,100,100,'','','');
+insert into result values(2,'ì´ìˆœì‹ ',99,100,100,'','','');
 
-insert into result values(3,'±èÀ¯½Å',89,97,95,'','','');
+insert into result values(3,'ê¹€ìœ ì‹ ',89,97,95,'','','');
 
-insert into result(stu_id,stu_name) values(2,'ÀÌ¼ø½Å');
+insert into result(stu_id,stu_name) values(2,'ì´ìˆœì‹ ');
 
-insert into result values(4,'¾ÈÃ¢È£',82,99,89,'','','');
+insert into result values(4,'ì•ˆì°½í˜¸',82,99,89,'','','');
 
 select * from result;
 
@@ -90,11 +90,11 @@ delete from result where stu_id=2;
 
 update result set stu_id=3;
 
-update result set stu_id=2 where stu_name='±èÀ¯½Å';
+update result set stu_id=2 where stu_name='ê¹€ìœ ì‹ ';
 
 commit;
 
-select stu_id,stu_name,kor,eng,math,(kor+eng+math)/3 "ave",kor+eng+math "ÇÕ°è" from result;
+select stu_id,stu_name,kor,eng,math,(kor+eng+math)/3 "ave",kor+eng+math "í•©ê³„" from result;
 
 create table result2(
     stu_id number(3),
@@ -109,13 +109,13 @@ create table result2(
     total number(5)
 );
 
-insert into result2(stu_id,stu_name,stu_major,kor,eng,math,science1) values (3,'ÀÌ¼ø½Å','ÀÌ°ú',100,100,100,100);
+insert into result2(stu_id,stu_name,stu_major,kor,eng,math,science1) values (3,'ì´ìˆœì‹ ','ì´ê³¼',100,100,100,100);
 
 update result2 set science1=90 where stu_id=1;
 
 select * from result2;
 
-select stu_id,stu_name,(kor+eng+math+nvl(science1,0)+nvl(science2,0))/4 "Æò±Õ",(kor+eng+math+nvl(science1,0)+nvl(science2,0)) "ÇÕ°è" from result2;
+select stu_id,stu_name,(kor+eng+math+nvl(science1,0)+nvl(science2,0))/4 "í‰ê· ",(kor+eng+math+nvl(science1,0)+nvl(science2,0)) "í•©ê³„" from result2;
 
 update result2 set kor=87,eng=97,math=100,science1=88 where stu_id=1;
 update result2 set kor=90,eng=100,math=95,science2=99 where stu_id=2;
@@ -128,7 +128,7 @@ commit;
 
 select * from employees;
 
-select salary "±âº»±Þ", salary*12 "¿¬ºÀ", salary*(1+nvl(commission_pct,0))"ÀÌ´ÞÀÇ ¿ù±Þ" from employees;
+select salary "ê¸°ë³¸ê¸‰", salary*12 "ì—°ë´‰", salary*(1+nvl(commission_pct,0))"ì´ë‹¬ì˜ ì›”ê¸‰" from employees;
 
 create table join(
     id varchar2(10),
@@ -148,9 +148,9 @@ desc join;
 
 commit;
 
-insert into join values('aaa','a111','È«±æµ¿','010','1111','1111','¼­¿ï½Ã','aaa@naver.com');
-insert into join values('bbb','b222','ÀÌ¼ø½Å','010','2222','2222','ºÎ»ê½Ã','bbb@daum.net');
-insert into join values('ccc','c333','±èÀ¯½Å','010','3333','3333','°æÁÖ½Ã','ccc@google.com');
+insert into join values('aaa','a111','í™ê¸¸ë™','010','1111','1111','ì„œìš¸ì‹œ','aaa@naver.com');
+insert into join values('bbb','b222','ì´ìˆœì‹ ','010','2222','2222','ë¶€ì‚°ì‹œ','bbb@daum.net');
+insert into join values('ccc','c333','ê¹€ìœ ì‹ ','010','3333','3333','ê²½ì£¼ì‹œ','ccc@google.com');
 
 select * from join;
 
@@ -159,29 +159,29 @@ alter table join add(post_num2 number(3));
 alter table join add(nation_num varchar2(3));
 update join set nation_num='82';
 
-select p_num||'-'||p_num2||'-'||p_num3 "ÀüÈ­¹øÈ£" from join;
+select p_num||'-'||p_num2||'-'||p_num3 "ì „í™”ë²ˆí˜¸" from join;
 
-select '+'||nation_num||')'||p_num||'-'||p_num2||'-'||p_num3 "±¹Á¦ÀüÈ­" from join;
+select '+'||nation_num||')'||p_num||'-'||p_num2||'-'||p_num3 "êµ­ì œì „í™”" from join;
 
 select emp_name, salary from employees where salary>=5000 and salary<=10000;
 
 select emp_name, salary from employees where salary <> 10000;
 
 select emp_name, salary,
-case when salary<=5000 then 'cµî±Þ'
-when salary>5000 and salary<10000 then 'bµî±Þ'
-when salary>=10000 and salary<1100 then 'aµî±Þ'
-else 'a+µî±Þ'
-end "¿ù±Þµî±ÞÇ¥"
+case when salary<=5000 then 'cë“±ê¸‰'
+when salary>5000 and salary<10000 then 'bë“±ê¸‰'
+when salary>=10000 and salary<1100 then 'aë“±ê¸‰'
+else 'a+ë“±ê¸‰'
+end "ì›”ê¸‰ë“±ê¸‰í‘œ"
 from employees;
 
 select * from employees;
 
 select employee_id, emp_name,
-case when employee_id>=100 and employee_id<=140 then '1¹øÂ÷·Î ÀÌµ¿'
-when employee_id>140 and employee_id<=180 then '2¹øÂ÷·Î ÀÌµ¿'
-else '3¹øÂ÷·Î ÀÌµ¿'
-end "Â÷·®¹èÄ¡"
+case when employee_id>=100 and employee_id<=140 then '1ë²ˆì°¨ë¡œ ì´ë™'
+when employee_id>140 and employee_id<=180 then '2ë²ˆì°¨ë¡œ ì´ë™'
+else '3ë²ˆì°¨ë¡œ ì´ë™'
+end "ì°¨ëŸ‰ë°°ì¹˜"
 from employees;
 
 create table result3(
@@ -197,31 +197,31 @@ create table result3(
 
 
 
-insert into result3(name, java, html, js, oracle) values('°­Çö¼®',90,100,100,90);
-insert into result3(name, java, html, js, oracle) values('±è¹Î±Ô',98,95,90,90);
-insert into result3(name, java, html, js, oracle) values('È«±æµ¿',82,79,99,81);
-insert into result3(name, java, html, js, oracle) values('ÀÌ¼ø½Å',70,75,81,79);
+insert into result3(name, java, html, js, oracle) values('ê°•í˜„ì„',90,100,100,90);
+insert into result3(name, java, html, js, oracle) values('ê¹€ë¯¼ê·œ',98,95,90,90);
+insert into result3(name, java, html, js, oracle) values('í™ê¸¸ë™',82,79,99,81);
+insert into result3(name, java, html, js, oracle) values('ì´ìˆœì‹ ',70,75,81,79);
 
-select name,java,html,js,oracle,(java+html+js+oracle)/4 "Æò±Õ", (java+html+js+oracle) "ÇÕ°è",
-case when (java+html+js+oracle)/4 >=90 then 'Aµî±Þ'
-when (java+html+js+oracle)/4<90 and (java+html+js+oracle)/4>=80 then'Bµî±Þ'
-when (java+html+js+oracle)/4<80 and (java+html+js+oracle)/4>=70 then'Cµî±Þ'
-else 'Dµî±Þ'
-end "µî±Þ"
+select name,java,html,js,oracle,(java+html+js+oracle)/4 "í‰ê· ", (java+html+js+oracle) "í•©ê³„",
+case when (java+html+js+oracle)/4 >=90 then 'Aë“±ê¸‰'
+when (java+html+js+oracle)/4<90 and (java+html+js+oracle)/4>=80 then'Bë“±ê¸‰'
+when (java+html+js+oracle)/4<80 and (java+html+js+oracle)/4>=70 then'Cë“±ê¸‰'
+else 'Dë“±ê¸‰'
+end "ë“±ê¸‰"
 from result3;
 
 select * from employees;
-//»çÀÌ Á¶°Ç½Ä
+//ì‚¬ì´ ì¡°ê±´ì‹
 select salary from employees where salary>5000 and salary<=10000;
 select salary from employees where salary between 5000 and 10000;
 
-//or Á¶°Ç½Ä
+//or ì¡°ê±´ì‹
 select salary from employees where salary=5000 or salary=6000 or salary=7000;
 select salary from employees where salary = any(5000,6000,7000);
 select salary from employees where salary = some(5000,6000,7000);
 select salary from employees where salary in(5000,6000,7000);
 
-//and Á¶°Ç½Ä
+//and ì¡°ê±´ì‹
 select salary from employees where salary=5000 and salary=6000 and salary=7000;
 select salary from employees where salary = all(5000,6000,7000);
 
@@ -238,3 +238,4 @@ select hire_date from employees where hire_date>'07/12/31' and hire_date>'05/09/
 select employee_id from employees where employee_id in(100,150,160,170);
 select employee_id from employees where employee_id = any(100,150,160,170);
 select employee_id from employees where employee_id = some(100,150,160,170);
+
