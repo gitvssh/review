@@ -16,24 +16,24 @@ desc ex01;
 rollback;
 commit;
 
-insert into ex01 values('a0001','È«±æµ¿','ÄÄÇ»ÅÍ°øÇĞ',3,'010','1111','1111');
-insert into ex01 values('a0002','ÀÌ¼ø½Å','ÄÄÇ»ÅÍ°øÇĞ',4,'010','2222','2222');
-insert into ex01(stu_id,name,major) values('a0003','°­°¨Âù','ÄÄÇ»ÅÍ°øÇĞ');
-insert into ex01 values('a0004','À¯°ü¼ø','¿µ¹®ÇĞ°ú',3,'010','8787','8787');
-insert into ex01 values('a0005','°­°¨Âù','µµ¼­ÇĞ°ú',2,'010','9999','9999');
-insert into ex01 values('a0006','±èÀ¯½Å','°æ¿µÇĞ°ú',1,'010','8484','8484');
+insert into ex01 values('a0001','í™ê¸¸ë™','ì»´í“¨í„°ê³µí•™',3,'010','1111','1111');
+insert into ex01 values('a0002','ì´ìˆœì‹ ','ì»´í“¨í„°ê³µí•™',4,'010','2222','2222');
+insert into ex01(stu_id,name,major) values('a0003','ê°•ê°ì°¬','ì»´í“¨í„°ê³µí•™');
+insert into ex01 values('a0004','ìœ ê´€ìˆœ','ì˜ë¬¸í•™ê³¼',3,'010','8787','8787');
+insert into ex01 values('a0005','ê°•ê°ì°¬','ë„ì„œí•™ê³¼',2,'010','9999','9999');
+insert into ex01 values('a0006','ê¹€ìœ ì‹ ','ê²½ì˜í•™ê³¼',1,'010','8484','8484');
 
 //is not null
 select * from ex01;
 alter table ex01 add(address varchar2(10));
-update ex01 set address='¼­¿ï' where name='ÀÌ¼ø½Å';
-update ex01 set address='°æ±â' where name='À¯°ü¼ø';
-update ex01 set address='ÀÇÁ¤ºÎ' where name='°­°¨Âù';
-update ex01 set address='°æÁÖ' where name='±èÀ¯½Å';
-update ex01 set major='Á¤º¸Ã³¸®ÇĞ°ú' where name='ÀÌ¼ø½Å';
-update ex01 set phone3='4545' where name='À¯°ü¼ø';
-update ex01 set address='°­¿øµµ' where name='°­°¨Âù';
-update ex01 set phone3='2323' where name='±èÀ¯½Å';
+update ex01 set address='ì„œìš¸' where name='ì´ìˆœì‹ ';
+update ex01 set address='ê²½ê¸°' where name='ìœ ê´€ìˆœ';
+update ex01 set address='ì˜ì •ë¶€' where name='ê°•ê°ì°¬';
+update ex01 set address='ê²½ì£¼' where name='ê¹€ìœ ì‹ ';
+update ex01 set major='ì •ë³´ì²˜ë¦¬í•™ê³¼' where name='ì´ìˆœì‹ ';
+update ex01 set phone3='4545' where name='ìœ ê´€ìˆœ';
+update ex01 set address='ê°•ì›ë„' where name='ê°•ê°ì°¬';
+update ex01 set phone3='2323' where name='ê¹€ìœ ì‹ ';
 delete ex01 where stu_id='a0001';
 
 select * from employees;
@@ -47,9 +47,9 @@ select employee_id,emp_name,salary from employees where salary between 5000 and 
 select cust_id,cust_name,cust_year_of_birth from customers where cust_year_of_birth between '1948' and '1981';
 select a.employee_id,a.emp_name,b.department_id,b.department_name from employees a,departments b where a.department_id=b.department_id;
 select a.employee_id,a.emp_name,a.salary,a.manager_id,b.emp_name from employees a, employees b where a.manager_id=124 and a.manager_id=b.employee_id and  a.salary between 2000 and 3000;
-//Å×ÀÌºí ÀüÃ¼º¹»ç
+//í…Œì´ë¸” ì „ì²´ë³µì‚¬
 create table employees_02 as select * from employees;
-//Å×ÀÌºí ¼±ÅÃº¹»ç
+//í…Œì´ë¸” ì„ íƒë³µì‚¬
 insert into employees_02 select * from employees where manager_id=147;
 
 create table ex01(
@@ -63,9 +63,9 @@ create table ex01(
     total number(3)
 );
 
-insert into ex01(stu_id,name,kor,eng,math) values('001','È«±æµ¿',100,89,95);
-insert into ex01(stu_id,name,kor,eng,math) values('002','ÀÌ¼ø½Å',99,92,98);
-insert into ex01(stu_id,name,kor,eng,math) values('003','À¯°ü¼ø',88,100,100);
+insert into ex01(stu_id,name,kor,eng,math) values('001','í™ê¸¸ë™',100,89,95);
+insert into ex01(stu_id,name,kor,eng,math) values('002','ì´ìˆœì‹ ',99,92,98);
+insert into ex01(stu_id,name,kor,eng,math) values('003','ìœ ê´€ìˆœ',88,100,100);
 select * from ex01;
 alter table ex01 drop column rank;
 alter table ex01 add rank varchar2(3);
@@ -76,9 +76,9 @@ commit;
 select * from result;
 insert into result(stu_id,name,kor,eng,math,ave,total) 
 select stu_id,name,kor,eng,math,(kor+eng+math)/3,kor+eng+math from ex01;
-insert into result(stu_id,name,kor,eng,math) values('004','±èÀ¯½Å',88,80,79);
-insert into result(stu_id,name,kor,eng,math) values('005','°­°¨Âù',79,75,75);
-insert into result(stu_id,name,kor,eng,math) values('006','¾ÈÃ¢È£',66,65,68);
+insert into result(stu_id,name,kor,eng,math) values('004','ê¹€ìœ ì‹ ',88,80,79);
+insert into result(stu_id,name,kor,eng,math) values('005','ê°•ê°ì°¬',79,75,75);
+insert into result(stu_id,name,kor,eng,math) values('006','ì•ˆì°½í˜¸',66,65,68);
 update result set ave=(kor+eng+math)/3;
 update result set total=kor+eng+math;
 
@@ -95,16 +95,16 @@ create table ex01(
     science2 number(3)
 );
 select * from ex01;
-insert into ex01(id,name,major,kor,eng,math,science1) values('a001','ÀÌ¼ø½Å','ÀÌ°ú',100,85,100,99);
-insert into ex01(id,name,major,kor,eng,math,science1) values('a002','È«±æµ¿','ÀÌ°ú',99,99,88,80);
-insert into ex01(id,name,major,kor,eng,math,science2) values('a003','¾ÈÃ¢È£','¹®°ú',100,70,80,80);
-insert into ex01(id,name,major,kor,eng,math,science2) values('a004','±èÀ¯½Å','¹®°ú',70,75,78,78);
-insert into ex01(id,name,major,kor,eng,math,science1) values('a005','°­°¨Âù','ÀÌ°ú',65,66,69,69);
-insert into ex01(id,name,major,kor,eng,math,science1) values('a006','°­Çö¼®','ÀÌ°ú',89,100,90,100);
-insert into ex01(id,name,major,kor,eng,math,science2) values('a007','ÀÌ¹ÎÇÏ','¹®°ú',100,100,90,90);
+insert into ex01(id,name,major,kor,eng,math,science1) values('a001','ì´ìˆœì‹ ','ì´ê³¼',100,85,100,99);
+insert into ex01(id,name,major,kor,eng,math,science1) values('a002','í™ê¸¸ë™','ì´ê³¼',99,99,88,80);
+insert into ex01(id,name,major,kor,eng,math,science2) values('a003','ì•ˆì°½í˜¸','ë¬¸ê³¼',100,70,80,80);
+insert into ex01(id,name,major,kor,eng,math,science2) values('a004','ê¹€ìœ ì‹ ','ë¬¸ê³¼',70,75,78,78);
+insert into ex01(id,name,major,kor,eng,math,science1) values('a005','ê°•ê°ì°¬','ì´ê³¼',65,66,69,69);
+insert into ex01(id,name,major,kor,eng,math,science1) values('a006','ê°•í˜„ì„','ì´ê³¼',89,100,90,100);
+insert into ex01(id,name,major,kor,eng,math,science2) values('a007','ì´ë¯¼í•˜','ë¬¸ê³¼',100,100,90,90);
 commit;
 
-select (kor+eng+math+nvl(science1,0)+nvl(science2,0))/4 "Æò±Õ",(kor+eng+math+nvl(science1,0)+nvl(science2,0)) "ÇÕ°è",
+select (kor+eng+math+nvl(science1,0)+nvl(science2,0))/4 "í‰ê· ",(kor+eng+math+nvl(science1,0)+nvl(science2,0)) "í•©ê³„",
 case when (kor+eng+math+nvl(science1,0)+nvl(science2,0))/4 >=90 then 'A'
 when (kor+eng+math+nvl(science1,0)+nvl(science2,0))/4>= 80 then 'B'
 when (kor+eng+math+nvl(science1,0)+nvl(science2,0))/4>= 70 then 'C'
@@ -142,9 +142,9 @@ where exists ( select * from employees b where a.job_id=b.job_id and b.salary be
 
 select job_id, salary from employees a
 where exists ( select * from jobs b where a.job_id=b.job_id and a.salary between 3000and 12000);
-//¼ıÀÚ°ü·ÃÇÔ¼ö abs
+//ìˆ«ìê´€ë ¨í•¨ìˆ˜ abs
 select abs(10), abs(-10), abs(-10.123) from dual;
-//ceil ¿Ã¸², floor ¹ö¸², round ¹İ¿Ã¸²
+//ceil ì˜¬ë¦¼, floor ë²„ë¦¼, round ë°˜ì˜¬ë¦¼
 select ceil(10.123), ceil(10.541), ceil(11.001) from dual;
 select floor(10.123), floor(10.541), floor(11.001) from dual;
 select round(10.123,2), round(10.541,2), round(11.001,2) from dual;
@@ -196,13 +196,13 @@ create table result(
 );
 
 insert into result(stu_id,name,major,kor,eng,math,sc1,sc2) 
-values('a01','È«±æµ¿','ÀÌ°ú',100,99,98,100,'');
+values('a01','í™ê¸¸ë™','ì´ê³¼',100,99,98,100,'');
 insert into result(stu_id,name,major,kor,eng,math,sc1,sc2) 
-values('a02','ÀÌ¼ø½Å','ÀÌ°ú',80,88,87,80,'');
+values('a02','ì´ìˆœì‹ ','ì´ê³¼',80,88,87,80,'');
 insert into result(stu_id,name,major,kor,eng,math,sc1,sc2) 
-values('a03','À¯°ü¼ø','¹®°ú',70,77,74,'',76);
+values('a03','ìœ ê´€ìˆœ','ë¬¸ê³¼',70,77,74,'',76);
 insert into result(stu_id,name,major,kor,eng,math,sc1,sc2) 
-values('a04','¾ÈÃ¢È£','¹®°ú',60,65,67,'',69);
+values('a04','ì•ˆì°½í˜¸','ë¬¸ê³¼',60,65,67,'',69);
 
 select * from result;
 
@@ -227,11 +227,11 @@ create table day_sal(
     y_salary number(12,2)
 );
 
-insert into day_sal(id,name,d_salary) values('a01','È«±æµ¿',180780);
-insert into day_sal(id,name,d_salary) values('a02','ÀÌ¼ø½Å',145682);
-insert into day_sal(id,name,d_salary) values('a03','±èÀ¯½Å',234560);
-insert into day_sal(id,name,d_salary) values('a04','¾ÈÃ¢È£',280123);
-insert into day_sal(id,name,d_salary) values('a05','À¯°ü¼ø',127856);
+insert into day_sal(id,name,d_salary) values('a01','í™ê¸¸ë™',180780);
+insert into day_sal(id,name,d_salary) values('a02','ì´ìˆœì‹ ',145682);
+insert into day_sal(id,name,d_salary) values('a03','ê¹€ìœ ì‹ ',234560);
+insert into day_sal(id,name,d_salary) values('a04','ì•ˆì°½í˜¸',280123);
+insert into day_sal(id,name,d_salary) values('a05','ìœ ê´€ìˆœ',127856);
 commit;
 
 select * from day_sal;
@@ -241,3 +241,5 @@ update day_sal set m_salary=d_salary*20, y_salary=m_salary*12;
 
 drop table result;
 drop table day_sal;
+
+reviewd 08/09/18
