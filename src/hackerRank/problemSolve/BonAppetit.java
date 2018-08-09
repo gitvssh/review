@@ -1,4 +1,4 @@
-package hacckerRank_PS;
+package hackerRank.problemSolve;
 
 import java.io.*;
 import java.util.*;

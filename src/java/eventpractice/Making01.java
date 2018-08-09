@@ -1,4 +1,4 @@
-package eventpractice;
+package java.eventpractice;
 
 import javax.swing.JFrame;
 

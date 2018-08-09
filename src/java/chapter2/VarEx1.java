@@ -1,4 +1,4 @@
-package chapter2;
+package java.chapter2;
 
 public class VarEx1 {
 

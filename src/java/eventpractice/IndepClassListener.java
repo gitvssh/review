@@ -1,4 +1,4 @@
-package eventpractice;
+package java.eventpractice;
 
 import java.awt.*;
 import javax.swing.*;

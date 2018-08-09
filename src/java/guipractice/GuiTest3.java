@@ -1,4 +1,4 @@
-package guipractice;
+package java.guipractice;
 import java.util.*;
 
 import javax.swing.JButton;

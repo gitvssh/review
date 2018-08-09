@@ -1,4 +1,4 @@
-package chapter13;
+package java.chapter13;
 
 public class ThreadTest implements Runnable {
 

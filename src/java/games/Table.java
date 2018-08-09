@@ -1,4 +1,4 @@
-package games;
+package java.games;
 import java.util.*;
 public class Table {
 	/*게임 1회 진행에 쓰이는 테이블

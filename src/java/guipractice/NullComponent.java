@@ -1,4 +1,4 @@
-package guipractice;
+package java.guipractice;
 import javax.swing.*;
 import java.awt.*;
 

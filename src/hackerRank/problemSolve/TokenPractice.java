@@ -1,4 +1,4 @@
-package hacckerRank_PS;
+package hackerRank.problemSolve;
 
 import java.util.Scanner;
 import java.util.StringTokenizer;

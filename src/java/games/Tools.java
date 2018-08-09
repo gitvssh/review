@@ -1,4 +1,4 @@
-package games;
+package java.games;
 import java.util.*;
 public class Tools {
 Scanner sc = new Scanner(System.in);

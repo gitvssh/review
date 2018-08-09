@@ -1,16 +1,16 @@
-package sort;
+package algorithms.sort;
 
 public class InsertSort {
 
 	public static void main(String[] args) {
 		ExamList l = new ExamList();
 		
-int[] list = new int[10];//±âº»¹è¿­ 10°³ »ý¼º
+int[] list = new int[10];//ï¿½âº»ï¿½è¿­ 10ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		
-		for(int i=0;i<10;i++) {//1~10 ¼ýÀÚ ´ëÀÔ
+		for(int i=0;i<10;i++) {//1~10 ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 			list[i] = i+1;
 		}
-		for(int i=0;i<1000;i++) {//1000È¸ ·£´ý¼ýÀÚ¼¯±â
+		for(int i=0;i<1000;i++) {//1000È¸ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú¼ï¿½ï¿½ï¿½
 			int tmp =0;
 			int tmp_num = (int)(Math.random()*10);
 			tmp = list[tmp_num];

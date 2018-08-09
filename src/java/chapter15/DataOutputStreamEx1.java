@@ -1,4 +1,4 @@
-package chapter15;
+package java.chapter15;
 import java.io.*;
 
 public class DataOutputStreamEx1 {
