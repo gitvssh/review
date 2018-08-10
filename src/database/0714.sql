@@ -12,19 +12,19 @@ select mod(11,2) from dual;
 
 select employee_id from employees where mod(employee_id,2)=1;
 select employee_id, 
-case when mod(employee_id,2)=1 then 'È¦¼ö'
-when mod(employee_id,2)=0 then 'Â¦¼ö'
-end "È¦ºñ", emp_name from employees;
+case when mod(employee_id,2)=1 then 'í™€ìˆ˜'
+when mod(employee_id,2)=0 then 'ì§ìˆ˜'
+end "í™€ë¹„", emp_name from employees;
 
 select * from employees where emp_name = 'William Smith';
-//´ë¼Ò¹®ÀÚ ±¸º° X
+//ëŒ€ì†Œë¬¸ì êµ¬ë³„ X
 select * from employees where lower(emp_name) = 'william smith';
 select * from employees where upper(emp_name) = 'WILLIAM SMITH';
 select initcap(emp_name) from employees where upper(emp_name) = 'WILLIAM SMITH';
-//¹®ÀÚ¿­ µ¿½ÃÃâ·Â
+//ë¬¸ìì—´ ë™ì‹œì¶œë ¥
 select concat('ezen','academy'),'Happy'||'birthday to you'from dual;
 select concat(emp_name,email) from employees;
-select emp_name||' + '||email||' + '||employee_id "ÀÌ¸§ÀÌ¶û ÀÌ¸ŞÀÏ µ¿½ÃÃâ·Â" from employees;
+select emp_name||' + '||email||' + '||employee_id "ì´ë¦„ì´ë‘ ì´ë©”ì¼ ë™ì‹œì¶œë ¥" from employees;
 
 create table ex01(
     id varchar2(10),
@@ -38,23 +38,23 @@ create table ex01(
     address varchar2(30)
 );
 
-insert into ex01 values('a001','ÀÌ','¼ø½Å','³²','010','1111','1111',19880101,'¼­¿ï');
-insert into ex01 values('a002','À¯','°ü¼ø','¿©','010','2222','2222',19780401,'ºÎ»ê');
-insert into ex01 values('a003','±è','À¯½Å','³²','010','3333','3333',19680701,'°æÁÖ');
-insert into ex01 values('a004','ÃÖ','¿µÈñ','¿©','010','4444','4444',19981001,'±¤ÁÖ');
-insert into ex01 values('a005','¾È','Ã¢È£','³²','010','5555','5555',20000201,'´ëÀü');
+insert into ex01 values('a001','ì´','ìˆœì‹ ','ë‚¨','010','1111','1111',19880101,'ì„œìš¸');
+insert into ex01 values('a002','ìœ ','ê´€ìˆœ','ì—¬','010','2222','2222',19780401,'ë¶€ì‚°');
+insert into ex01 values('a003','ê¹€','ìœ ì‹ ','ë‚¨','010','3333','3333',19680701,'ê²½ì£¼');
+insert into ex01 values('a004','ìµœ','ì˜í¬','ì—¬','010','4444','4444',19981001,'ê´‘ì£¼');
+insert into ex01 values('a005','ì•ˆ','ì°½í˜¸','ë‚¨','010','5555','5555',20000201,'ëŒ€ì „');
 
 select * from ex01;
 
-select concat(f_name,l_name) "Ç®³×ÀÓ",tel1||'-'||tel2||'-'||tel3 "ÀüÈ­¹øÈ£" from ex01;
+select concat(f_name,l_name) "í’€ë„¤ì„",tel1||'-'||tel2||'-'||tel3 "ì „í™”ë²ˆí˜¸" from ex01;
 select substr(birth,5,2) from ex01;
 
-select concat(f_name,l_name) "name", birth as birth, substr(birth,5,2) "ÅÂ¾î³­ ´Ş", 
-case when substr(birth,5,2) in(12,01,02) then '°Ü¿ï'
-when substr(birth,5,2) = any(03,04,05) then 'º½'
-when substr(birth,5,2) = some(06,07,08) then '¿©¸§'
-else '°¡À»'
-end "°èÀı" from ex01;
+select concat(f_name,l_name) "name", birth as birth, substr(birth,5,2) "íƒœì–´ë‚œ ë‹¬", 
+case when substr(birth,5,2) in(12,01,02) then 'ê²¨ìš¸'
+when substr(birth,5,2) = any(03,04,05) then 'ë´„'
+when substr(birth,5,2) = some(06,07,08) then 'ì—¬ë¦„'
+else 'ê°€ì„'
+end "ê³„ì ˆ" from ex01;
 
 select * from employees;
 
@@ -64,7 +64,7 @@ select rtrim('abcdeghabc','abc') from dual;
 select rtrim('    abcdefg       ') from dual;
 select trim('    abcd  efg       ') from dual;
 select ltrim('010-1111-1111',0) from dual;
-//ÀÚ¸®¼ö¸¸Å­, ¹®ÀÚ¿­ Ãß°¡, ¹İº¹
+//ìë¦¬ìˆ˜ë§Œí¼, ë¬¸ìì—´ ì¶”ê°€, ë°˜ë³µ
 select lpad(tel1,7,'0') from ex01;
 desc ex01;
 select * from ex01;
@@ -89,27 +89,27 @@ alter table ex02 modify phone varchar2(15);
 
 select * from ex02;
 select mem_id, mem_name, gender, phone, birth, address,
-case when address='¼­¿ï' then lpad(fax,13,'(02)')
-when address='ºÎ»ê' then lpad(fax,14,'(051)')
-when address='°æÁÖ' then lpad(fax,14,'(052)')
-when address='±¤ÁÖ' then lpad(fax,14,'(041)')
+case when address='ì„œìš¸' then lpad(fax,13,'(02)')
+when address='ë¶€ì‚°' then lpad(fax,14,'(051)')
+when address='ê²½ì£¼' then lpad(fax,14,'(052)')
+when address='ê´‘ì£¼' then lpad(fax,14,'(041)')
 else lpad(fax,14,'(053)')
 end 
 from ex02;
 
 select mem_id,mem_name,address,
-case when address='¼­¿ï' then '´çÃ·'
-else '²Î'
+case when address='ì„œìš¸' then 'ë‹¹ì²¨'
+else 'ê½'
 end as event
 from ex02;
 
-select replace('³ª´Â ³Ê¸¦ ¸ğ¸£´Âµ¥ ³Ê´Â ³ª¸¦ ¾Ë°Ù´Â°¡?','³ª','³Ê') "1" from dual;
+select replace('ë‚˜ëŠ” ë„ˆë¥¼ ëª¨ë¥´ëŠ”ë° ë„ˆëŠ” ë‚˜ë¥¼ ì•Œê²ŸëŠ”ê°€?','ë‚˜','ë„ˆ') "1" from dual;
 
-select replace(mem_name,'ÀÌ','±è') from ex02;
+select replace(mem_name,'ì´','ê¹€') from ex02;
 
 select * from employees;
 
-select replace(lower(emp_name),'m','aa') "º¯°æ" from employees;
+select replace(lower(emp_name),'m','aa') "ë³€ê²½" from employees;
 
 select trim('        a      bbb      ') from dual;
 select replace('    a  b    ',' ','') from dual;
@@ -128,8 +128,8 @@ else concat(a.email,'@ssg.com')
 end "email"
 from employees a, jobs b where a.job_id=b.job_id;
 
-select instr('³»°¡ ¸¸¾à ¿Ü·Î¿ï ¶§¸é, ³»°¡ ¸¸¾à ±«·Î¿ï ¶§¸é, ³»°¡ ¸¸¾à Áñ°Å¿ï ¶§¸é','¸¸¾à',5,2) as i01 from dual;
-select length('´ëÇÑ¹Î±¹') from dual;
+select instr('ë‚´ê°€ ë§Œì•½ ì™¸ë¡œìš¸ ë•Œë©´, ë‚´ê°€ ë§Œì•½ ê´´ë¡œìš¸ ë•Œë©´, ë‚´ê°€ ë§Œì•½ ì¦ê±°ìš¸ ë•Œë©´','ë§Œì•½',5,2) as i01 from dual;
+select length('ëŒ€í•œë¯¼êµ­') from dual;
 
 select a.employee_id, a.job_id, b.job_title, a.email,
 case when lower(a.job_id)='st_man' then rpad(a.email,length(a.email)+7,'@st.com')
@@ -142,10 +142,10 @@ where a.job_id=b.job_id;
 
 select sysdate,systimestamp from dual
 
-select (sysdate-hire_date)/365 "ÃÑ±Ù¹«ÀÏ¼ö" from employees;
+select (sysdate-hire_date)/365 "ì´ê·¼ë¬´ì¼ìˆ˜" from employees;
 
 select 'D-day : '||floor((to_date('22/11/22')-sysdate)) from dual;
-select add_months(sysdate,1) "´ÙÀ½´Ş",sysdate "ÀÌ¹ø´Ş", add_months(sysdate,-1)"Áö³­´Ş" from dual;
+select add_months(sysdate,1) "ë‹¤ìŒë‹¬",sysdate "ì´ë²ˆë‹¬", add_months(sysdate,-1)"ì§€ë‚œë‹¬" from dual;
 
 select hire_date, add_months(hire_date,1) from employees;
 select trunc(months_between(sysdate,hire_date),-1) from employees;
@@ -153,18 +153,20 @@ select trunc(months_between(sysdate,hire_date),-1) from employees;
 select months_between(to_date('22/02/04'),sysdate) from dual;
 select last_day(sysdate) from dual;
 
-select ceil(months_between(sysdate,hire_date))*salary "ÇöÀç±îÁö ¹ŞÀº ¿ù±Ş" from employees;
+select ceil(months_between(sysdate,hire_date))*salary "í˜„ì¬ê¹Œì§€ ë°›ì€ ì›”ê¸‰" from employees;
 select * from employees;
 
 select case when floor(months_between(sysdate,hire_date)/12)<=10 then salary*floor(months_between(sysdate,hire_date))
 when floor(months_between(sysdate,hire_date)/12)<=15 then salary*floor(months_between(sysdate,hire_date))
 else salary*ceil(months_between(sysdate,hire_date))
-end "100% ¿ù±Ş"
-,floor(months_between(sysdate,hire_date)/12) "±Ù¼Ó³â¼ö"
+end "100% ì›”ê¸‰"
+,floor(months_between(sysdate,hire_date)/12) "ê·¼ì†ë…„ìˆ˜"
 ,case when floor(months_between(sysdate,hire_date)/12)<=10 then salary*0.94*floor(months_between(sysdate,hire_date))
 when floor(months_between(sysdate,hire_date)/12)<=15 then salary*0.97*floor(months_between(sysdate,hire_date))
 else salary*floor(months_between(sysdate,hire_date))
-end "ÃÑ ¿ù±Ş"
+end "ì´ ì›”ê¸‰"
 from employees;
 
 commit;
+
+reviewd 08/10/18
