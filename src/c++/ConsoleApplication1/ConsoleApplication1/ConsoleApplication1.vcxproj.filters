@@ -21,10 +21,22 @@
     <ClInclude Include="targetver.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="ALGraph.h">
+    <ClInclude Include="DLinkedList.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="DLinkedList.h">
+    <ClInclude Include="ArrayBaseStack.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="PriorityQueue.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="UsefulHeap.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="ALEdge.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="ALGraphKruskal.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
@@ -35,10 +47,19 @@
     <ClCompile Include="DLinkedList.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="ALGraphMain.cpp">
+    <ClCompile Include="ArrayBaseStack.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="ALGraph.cpp">
+    <ClCompile Include="DFSMain.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="PriorityQueue.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="UsefulHeap.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="ALGraphKruskal.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
