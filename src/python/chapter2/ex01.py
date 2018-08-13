@@ -22,3 +22,16 @@ print(a[4])
 
 print(a[0:4])
 print(a[12:17])
+
+a="20010331Rainy"
+date=a[:8]
+weather = a[8:]
+print(date)
+print(weather)
+year=a[:4]
+day=a[4:8]
+print("Year : %s" %year)
+print("Day : %s" %weather)
+a = "Pithon"
+a[1] = "y"
+print(a)
