@@ -1,16 +1,16 @@
 select * from employees 
 where substr(hire_date,4,2)=substr(add_months(sysdate,2),4,2);
 
-select next_day(sysdate,'ÀÏ¿äÀÏ') from dual;
+select next_day(sysdate,'ì¼ìš”ì¼') from dual;
 
-select hire_date, next_day(hire_date,'ÀÏ¿äÀÏ') "´ÙÀ½ÀÏ¿äÀÏ" from employees;
-select hire_date, last_day(hire_date) "¸¶Áö¸·³¯" from employees;
-select floor(salary/to_number(substr(last_day(sysdate),7,2))) "ÀÏ´ç" from employees;
+select hire_date, next_day(hire_date,'ì¼ìš”ì¼') "ë‹¤ìŒì¼ìš”ì¼" from employees;
+select hire_date, last_day(hire_date) "ë§ˆì§€ë§‰ë‚ " from employees;
+select floor(salary/to_number(substr(last_day(sysdate),7,2))) "ì¼ë‹¹" from employees;
 
 select to_date('22/11/21')-sysdate "1" from dual;
 
-select sysdate-hire_date "±Ù¹«ÀÏ¼ö" from employees;
-select months_between(sysdate,hire_date) "±Ù¹«¿ù¼ö" from employees;
+select sysdate-hire_date "ê·¼ë¬´ì¼ìˆ˜" from employees;
+select months_between(sysdate,hire_date) "ê·¼ë¬´ì›”ìˆ˜" from employees;
 
 create table membership(
     mem_id varchar2(10),
@@ -27,26 +27,26 @@ create table membership(
     birth date
 );
 
-insert into membership values('a0001','ÀÌ','¼ø½Å','010','1111','1111','1234-1234','³²','¼­¿ï','Ã¥º¸±â',sysdate,to_date('2000/12/31'));
-insert into membership values('a0002','À¯','°ü¼ø','010','2222','2222','2345-2345','¿©','°æ±â','¿îµ¿',sysdate,to_date('1999/03/01'));
-insert into membership values('a0003','±è','À¯½Å','010','3333','3333','3456-3456','³²','°æÁÖ','¸»Å¸±â',sysdate,to_date('1988/07/17'));
-insert into membership values('a0004','¾È','Ã¢È£','010','4444','4444','4567-4567','³²','±¤ÁÖ','»ç°İ',sysdate,to_date('1977/09/20'));
-insert into membership values('a0005','ÃÖ','¿µÈñ','010','5555','5555','5678-5678','¿©','´ëÀü','¿©Çà',sysdate,to_date('2001/01/30'));
+insert into membership values('a0001','ì´','ìˆœì‹ ','010','1111','1111','1234-1234','ë‚¨','ì„œìš¸','ì±…ë³´ê¸°',sysdate,to_date('2000/12/31'));
+insert into membership values('a0002','ìœ ','ê´€ìˆœ','010','2222','2222','2345-2345','ì—¬','ê²½ê¸°','ìš´ë™',sysdate,to_date('1999/03/01'));
+insert into membership values('a0003','ê¹€','ìœ ì‹ ','010','3333','3333','3456-3456','ë‚¨','ê²½ì£¼','ë§íƒ€ê¸°',sysdate,to_date('1988/07/17'));
+insert into membership values('a0004','ì•ˆ','ì°½í˜¸','010','4444','4444','4567-4567','ë‚¨','ê´‘ì£¼','ì‚¬ê²©',sysdate,to_date('1977/09/20'));
+insert into membership values('a0005','ìµœ','ì˜í¬','010','5555','5555','5678-5678','ì—¬','ëŒ€ì „','ì—¬í–‰',sysdate,to_date('2001/01/30'));
 
 select * from membership;
 
-update membership set name1='ÃÖ' where mem_id='a0001';
+update membership set name1='ìµœ' where mem_id='a0001';
 
-select mem_id, name1||name2 "ÀÌ¸§", phone1||'-'||phone2||'-'||phone3 "ÈŞ´ëÆù¹øÈ£" from membership
-where gender='³²' and substr(birth,4,2)='07';
+select mem_id, name1||name2 "ì´ë¦„", phone1||'-'||phone2||'-'||phone3 "íœ´ëŒ€í°ë²ˆí˜¸" from membership
+where gender='ë‚¨' and substr(birth,4,2)='07';
 
-select mem_id, name1||name2 "ÀÌ¸§",
-case when address='¼­¿ï' then lpad(phone1,6,'02-')||'-'||phone2||'-'||phone3
-when address='°æ±â' then lpad(phone1,7,'031-')||'-'||phone2||'-'||phone3
-when address='°æÁÖ' then lpad(phone1,7,'053-')||'-'||phone2||'-'||phone3
-when address='±¤ÁÖ' then lpad(phone1,7,'041-')||'-'||phone2||'-'||phone3
+select mem_id, name1||name2 "ì´ë¦„",
+case when address='ì„œìš¸' then lpad(phone1,6,'02-')||'-'||phone2||'-'||phone3
+when address='ê²½ê¸°' then lpad(phone1,7,'031-')||'-'||phone2||'-'||phone3
+when address='ê²½ì£¼' then lpad(phone1,7,'053-')||'-'||phone2||'-'||phone3
+when address='ê´‘ì£¼' then lpad(phone1,7,'041-')||'-'||phone2||'-'||phone3
 else lpad(phone1,7,'063-')||'-'||phone2||'-'||phone3
-end "ÀüÈ­¹øÈ£"
+end "ì „í™”ë²ˆí˜¸"
 from membership;
 
 select to_char(12345,'$999,9999,9999') from dual;
@@ -71,13 +71,13 @@ select employee_id,
 nvl2(commission_pct,salary*(1+commission_pct)||'++',salary)
 from employees;
 
-select mem_id, name1||name2 "ÀÌ¸§",
-case when address='¼­¿ï' then lpad(replace(tel,'-','.'),12,'02)')
-when address='°æ±â' then lpad(replace(tel,'-','.'),13,'031)')
-when address='°æÁÖ' then lpad(replace(tel,'-','.'),13,'053)')
-when address='±¤ÁÖ' then lpad(replace(tel,'-','.'),13,'041)')
+select mem_id, name1||name2 "ì´ë¦„",
+case when address='ì„œìš¸' then lpad(replace(tel,'-','.'),12,'02)')
+when address='ê²½ê¸°' then lpad(replace(tel,'-','.'),13,'031)')
+when address='ê²½ì£¼' then lpad(replace(tel,'-','.'),13,'053)')
+when address='ê´‘ì£¼' then lpad(replace(tel,'-','.'),13,'041)')
 else lpad(replace(tel,'-','.'),13,'063)')
-end "ÀüÈ­¹øÈ£"
+end "ì „í™”ë²ˆí˜¸"
 from membership;
 
 select * from customers;
@@ -85,11 +85,11 @@ select * from customers;
 select  from customers;
 
 select cust_name, cust_year_of_birth, 
-case when to_char(sysdate,'yyyy')-cust_year_of_birth<40 then '30´ë'
-when to_char(sysdate,'yyyy')-cust_year_of_birth<50 then '40´ë'
-when to_char(sysdate,'yyyy')-cust_year_of_birth<60 then '50´ë'
-else '60´ë ÀÌ»ó'
-end "¿¬·É´ë"
+case when to_char(sysdate,'yyyy')-cust_year_of_birth<40 then '30ëŒ€'
+when to_char(sysdate,'yyyy')-cust_year_of_birth<50 then '40ëŒ€'
+when to_char(sysdate,'yyyy')-cust_year_of_birth<60 then '50ëŒ€'
+else '60ëŒ€ ì´ìƒ'
+end "ì—°ë ¹ëŒ€"
 from customers;
 
 select greatest(1,2,3,4,5) from dual;
@@ -104,10 +104,10 @@ group by department_id
 order by department_id;
 
 select count(distinct manager_id) from employees;
-//ÇÕ°è
-select to_char(sum(salary)/11,'l999,999,999,999')||'¸¸¿ø' "º¯¼ö" from employees;
-//Æò±Õ
-select to_char(avg(salary)/11,'l999,999,999,999')||'¸¸¿ø' "º¯¼ö" from employees;
+//í•©ê³„
+select to_char(sum(salary)/11,'l999,999,999,999')||'ë§Œì›' "ë³€ìˆ˜" from employees;
+//í‰ê· 
+select to_char(avg(salary)/11,'l999,999,999,999')||'ë§Œì›' "ë³€ìˆ˜" from employees;
 select * from kor_loan_status;
 select region, sum(loan_jan_amt) from kor_loan_status group by region;
 select period, sum(loan_jan_amt) from kor_loan_status group by period;
@@ -117,7 +117,7 @@ from kor_loan_status
 where period like '2013%'
 group by period,region;
 
-select a.manager_id,b.emp_name,sum(a.salary) "°ü¸® ¿ù±Ş", round(avg(a.salary),1) "Æò±Õ"
+select a.manager_id,b.emp_name,sum(a.salary) "ê´€ë¦¬ ì›”ê¸‰", round(avg(a.salary),1) "í‰ê· "
 from employees a, employees b
 where a.manager_id=b.employee_id
 group by a.manager_id,b.emp_name
@@ -127,7 +127,7 @@ select * from sales;
 
 select period, sum(loan_jan_amt) from kor_loan_status
 group by period;
-//min ÃÖ¼Ò°ª ¹İÈ¯ ÇÔ¼ö
+//min ìµœì†Œê°’ ë°˜í™˜ í•¨ìˆ˜
 select min(salary),max(salary) from employees;
 select min(loan_jan_amt),max(loan_jan_amt) from kor_loan_status;
 
@@ -138,10 +138,10 @@ order by max(loan_jan_amt);
 select * from kor_loan_status
 order by loan_jan_amt;
 
-select department_id,max(avg(salary)) "ºÎ¼­Æò±Õ±Ş¿©" from employees
+select department_id,max(avg(salary)) "ë¶€ì„œí‰ê· ê¸‰ì—¬" from employees
 group by department_id;
 
-select job_id, sum(salary) "¿ù±ŞÇÕ°è"
+select job_id, sum(salary) "ì›”ê¸‰í•©ê³„"
 from employees
 group by job_id;
 
@@ -169,10 +169,10 @@ order by sum(salary);
 select * from employees
 where lower(emp_name) like '%e%';
 
-select department_id,to_char(sum(salary*(1+nvl(commission_pct,0))),'$999,999,999,999') "ÇÕ°è",
-to_char(avg(salary*(1+nvl(commission_pct,0))),'$999,999,999,999') "Æò±Õ",
-to_char(max(salary*(1+nvl(commission_pct,0))),'$999,999,999,999') "ÃÖ´ë",
-to_char(min(salary*(1+nvl(commission_pct,0))),'$999,999,999,999') "ÃÖ¼Ò"
+select department_id,to_char(sum(salary*(1+nvl(commission_pct,0))),'$999,999,999,999') "í•©ê³„",
+to_char(avg(salary*(1+nvl(commission_pct,0))),'$999,999,999,999') "í‰ê· ",
+to_char(max(salary*(1+nvl(commission_pct,0))),'$999,999,999,999') "ìµœëŒ€",
+to_char(min(salary*(1+nvl(commission_pct,0))),'$999,999,999,999') "ìµœì†Œ"
 from employees
 where to_char(hire_date,'yyyy') between'1998' and '2000'  and department_id is not null
 group by department_id;
@@ -181,3 +181,4 @@ select distinct job_id
 from employees
 where to_char(hire_date,'yyyy') between'1998' and '2000'  and department_id is not null;
 
+reviewed 08/14/18
