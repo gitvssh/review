@@ -19,18 +19,18 @@ create table menu(
     m_name varchar2(16)
 );
 
-insert into h_order values('a0001',sysdate,0,10000,'Ä«µå');
-insert into h_order values('a0002',sysdate,0.1,4500,'Ä«µå');
-insert into h_order values('a0003',sysdate,0,5000,'Ä«µå');
+insert into h_order values('a0001',sysdate,0,10000,'ì¹´ë“œ');
+insert into h_order values('a0002',sysdate,0.1,4500,'ì¹´ë“œ');
+insert into h_order values('a0003',sysdate,0,5000,'ì¹´ë“œ');
 
 insert into m_add values('a0001','1',1,5000);
 insert into m_add values('a0001','2',1,5000);
 insert into m_add values('a0002','1',1,5000);
 insert into m_add values('a0003','3',1,5000);
 
-insert into menu values('1','¿ÍÆÛ¼¼Æ®');
-insert into menu values('2','Å©·±Ä¡Ä¡Å²');
-insert into menu values('3','Ä¥¸®Ä¡Áî¹ö°Å');
+insert into menu values('1','ì™€í¼ì„¸íŠ¸');
+insert into menu values('2','í¬ëŸ°ì¹˜ì¹˜í‚¨');
+insert into menu values('3','ì¹ ë¦¬ì¹˜ì¦ˆë²„ê±°');
 
 alter table menu add(vat number(3,2));
 update menu set vat=0.1;
@@ -42,4 +42,6 @@ alter table m_add modify m_num varchar2(10);
 select a.o_num,c.m_num,b.m_name,c.amount 
 from h_order a,menu b,m_add c
 where a.o_num=c.o_num and b.m_num=c.m_num
+
+
 ;
