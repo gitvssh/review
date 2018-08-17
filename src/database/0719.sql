@@ -54,7 +54,7 @@ select period,gubun, sum(loan_jan_amt)
 from kor_loan_status
 where period like '2013%'
 group by period, gubun;
-//·Ñ¾÷? Ãß°¡Á¤º¸Áý°è, ???
+//ë¡¤ì—…? ì¶”ê°€ì •ë³´ì§‘ê³„, ???
 select period,gubun, sum(loan_jan_amt)
 from kor_loan_status
 where period like '2013%'
@@ -84,29 +84,29 @@ create table exp_goods_asia(
     goods varchar2(80)
 )
 
-insert into exp_goods_asia values('ÇÑ±¹',1,'¿øÀ¯Á¦¿Ü ¼®À¯·ù');
-insert into exp_goods_asia values('ÇÑ±¹',2,'ÀÚµ¿Â÷');
-insert into exp_goods_asia values('ÇÑ±¹',3,'ÀüÀÚÁ÷Á¢È¸·Î');
-insert into exp_goods_asia values('ÇÑ±¹',4,'¼±¹Ú');
-insert into exp_goods_asia values('ÇÑ±¹',5,'LCD');
-insert into exp_goods_asia values('ÇÑ±¹',6,'ÀÚµ¿Â÷ºÎÇ°');
-insert into exp_goods_asia values('ÇÑ±¹',7,'ÈÞ´ëÀüÈ­');
-insert into exp_goods_asia values('ÇÑ±¹',8,'È¯½ÄÅºÈ­¼ö¼Ò');
-insert into exp_goods_asia values('ÇÑ±¹',9,'¹«¼±¼Û½Å±â µð½ºÇÃ·¹ÀÌ ºÎ¼ÓÇ°');
-insert into exp_goods_asia values('ÇÑ±¹',10,'Ã¶ ¶Ç´Â ºñÇÕ±Ý°­');
+insert into exp_goods_asia values('í•œêµ­',1,'ì›ìœ ì œì™¸ ì„ìœ ë¥˜');
+insert into exp_goods_asia values('í•œêµ­',2,'ìžë™ì°¨');
+insert into exp_goods_asia values('í•œêµ­',3,'ì „ìžì§ì ‘íšŒë¡œ');
+insert into exp_goods_asia values('í•œêµ­',4,'ì„ ë°•');
+insert into exp_goods_asia values('í•œêµ­',5,'LCD');
+insert into exp_goods_asia values('í•œêµ­',6,'ìžë™ì°¨ë¶€í’ˆ');
+insert into exp_goods_asia values('í•œêµ­',7,'íœ´ëŒ€ì „í™”');
+insert into exp_goods_asia values('í•œêµ­',8,'í™˜ì‹íƒ„í™”ìˆ˜ì†Œ');
+insert into exp_goods_asia values('í•œêµ­',9,'ë¬´ì„ ì†¡ì‹ ê¸° ë””ìŠ¤í”Œë ˆì´ ë¶€ì†í’ˆ');
+insert into exp_goods_asia values('í•œêµ­',10,'ì²  ë˜ëŠ” ë¹„í•©ê¸ˆê°•');
 
-insert into exp_goods_asia values('ÀÏº»',1,'ÀÚµ¿Â÷');
-insert into exp_goods_asia values('ÀÏº»',2,'ÀÚµ¿Â÷ºÎÇ°');
-insert into exp_goods_asia values('ÀÏº»',3,'ÀüÀÚÁ÷Á¢È¸·Î');
-insert into exp_goods_asia values('ÀÏº»',4,'¼±¹Ú');
-insert into exp_goods_asia values('ÀÏº»',5,'¹ÝµµÃ¼¿þÀÌÆÛ');
-insert into exp_goods_asia values('ÀÏº»',6,'È­¹°Â÷');
-insert into exp_goods_asia values('ÀÏº»',7,'¿øÀ¯Á¦¿Ü ¼®À¯·ù');
-insert into exp_goods_asia values('ÀÏº»',8,'°Ç¼³±â°è');
-insert into exp_goods_asia values('ÀÏº»',9,'´ÙÀÌ¿Àµå,Æ®·»Áö½ºÅÍ');
-insert into exp_goods_asia values('ÀÏº»',10,'±â°è·ù');
+insert into exp_goods_asia values('ì¼ë³¸',1,'ìžë™ì°¨');
+insert into exp_goods_asia values('ì¼ë³¸',2,'ìžë™ì°¨ë¶€í’ˆ');
+insert into exp_goods_asia values('ì¼ë³¸',3,'ì „ìžì§ì ‘íšŒë¡œ');
+insert into exp_goods_asia values('ì¼ë³¸',4,'ì„ ë°•');
+insert into exp_goods_asia values('ì¼ë³¸',5,'ë°˜ë„ì²´ì›¨ì´í¼');
+insert into exp_goods_asia values('ì¼ë³¸',6,'í™”ë¬¼ì°¨');
+insert into exp_goods_asia values('ì¼ë³¸',7,'ì›ìœ ì œì™¸ ì„ìœ ë¥˜');
+insert into exp_goods_asia values('ì¼ë³¸',8,'ê±´ì„¤ê¸°ê³„');
+insert into exp_goods_asia values('ì¼ë³¸',9,'ë‹¤ì´ì˜¤ë“œ,íŠ¸ë Œì§€ìŠ¤í„°');
+insert into exp_goods_asia values('ì¼ë³¸',10,'ê¸°ê³„ë¥˜');
 delete exp_goods_asia where seq=1 and country is null;
-update exp_goods_asia set goods='ÀÚµ¿Â÷' where country='ÀÏº»' and seq=2;
+update exp_goods_asia set goods='ìžë™ì°¨' where country='ì¼ë³¸' and seq=2;
 select * from exp_goods_asia;
 
 create sequence seq_trade
@@ -119,10 +119,10 @@ select employee_id,sum(salary) from employees;
 insert into exp_goods_asia(seq) values (seq_trade.nextval);
 
 select goods from exp_goods_asia
-where country='ÇÑ±¹'
+where country='í•œêµ­'
 intersect
 select goods from exp_goods_asia
-where country='ÀÏº»'
+where country='ì¼ë³¸'
 ;
 
 select period, gubun, sum(loan_jan_amt)
@@ -210,3 +210,4 @@ select a.department_id, a.department_name
 from departments a, employees b
 where a.department_id = b.department_id and b.salary>3000;
 
+revieiwed 08/17/18
