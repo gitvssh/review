@@ -27,3 +27,5 @@ from departments a
 where a.department_id in(select b.department_id
 from employees b
 where b.salary>3000);
+
+reviewed 08/18/18
