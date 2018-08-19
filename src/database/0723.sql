@@ -3,11 +3,11 @@ order by seq;
 
 select goods
 from exp_goods_asia
-where country = 'ÇÑ±¹'
+where country = 'í•œêµ­'
 minus
 select goods
 from exp_goods_asia
-where country = 'ÀÏº»';
+where country = 'ì¼ë³¸';
 
 select * from exp_goods_asia;
 desc kor_loan_status;
@@ -22,18 +22,18 @@ from employees a,departments b
 where a.department_id=b.department_id
 group by a.department_id,b.department_name;
 
-select a.department_id "ºÎ¼­¹øÈ£",b.department_name "ºÎ¼­¸í",to_char(a.hire_date,'yyyy') "ÀÔ»ç³âµµ",sum(a.salary) "ÇÕ°è"
+select a.department_id "ë¶€ì„œë²ˆí˜¸",b.department_name "ë¶€ì„œëª…",to_char(a.hire_date,'yyyy') "ì…ì‚¬ë…„ë„",sum(a.salary) "í•©ê³„"
 from employees a,departments b
 where a.department_id=b.department_id
 group by a.department_id,b.department_name,rollup(to_char(a.hire_date,'yyyy'));
 
 
-select a.department_id "ºÎ¼­¹øÈ£",b.department_name "ºÎ¼­¸í",to_char(a.hire_date,'yyyy') "ÀÔ»ç³âµµ",avg(a.salary) "Æò±Õ"
+select a.department_id "ë¶€ì„œë²ˆí˜¸",b.department_name "ë¶€ì„œëª…",to_char(a.hire_date,'yyyy') "ì…ì‚¬ë…„ë„",avg(a.salary) "í‰ê· "
 from employees a,departments b
 where a.department_id=b.department_id
 group by a.department_id,b.department_name,rollup(to_char(a.hire_date,'yyyy'));
 
-select a.department_id "ºÎ¼­¹øÈ£", b.department_name "ºÎ¼­¸í", avg(salary)
+select a.department_id "ë¶€ì„œë²ˆí˜¸", b.department_name "ë¶€ì„œëª…", avg(salary)
 from employees a, departments b
 where a.department_id=b.department_id
 group by a.department_id, b.department_name
@@ -45,7 +45,7 @@ select avg(avg(salary))
 from employees
 group by department_id;
 
-select a.department_id "ºÎ¼­¹øÈ£", b.department_name "ºÎ¼­¸í", avg(salary)
+select a.department_id "ë¶€ì„œë²ˆí˜¸", b.department_name "ë¶€ì„œëª…", avg(salary)
 from employees a, departments b
 where a.department_id=b.department_id
 group by a.department_id, b.department_name
@@ -107,9 +107,9 @@ create table ex02(
     score number(3)
 );
 
-insert into ex01 values('±¹¾î',100);
-insert into ex01 values('¿µ¾î',100);
-insert into ex01 values('¼öÇĞ',100);
+insert into ex01 values('êµ­ì–´',100);
+insert into ex01 values('ì˜ì–´',100);
+insert into ex01 values('ìˆ˜í•™',100);
 
 insert into ex02 values('b0001',5);
 insert into ex02 values('b0002',5);
@@ -171,3 +171,5 @@ select a.employee_id,a.emp_name,a.job_id,department_id
 from employees a
 right outer join departments
 using(department_id);
+
+reviwed 08/19/18
