@@ -56,7 +56,7 @@ on( a.employee_id = b.employee_id
 and a.department_id = b.department_id);
 
 select distinct department_id from employees;
-//Ä«Å¸½Ã¾È Á¶ÀÎ, Å©·Î½º Á¶ÀÎ
+//ì¹´íƒ€ì‹œì•ˆ ì¡°ì¸, í¬ë¡œìŠ¤ ì¡°ì¸
 select a.employee_id, a.emp_name, a.department_id, b.department_name
 from employees a
 cross join departments b
@@ -79,11 +79,11 @@ insert into ex02 values(30);
 select * from ex02;
 
 commit;
-//³»ºÎÁ¶ÀÎ
+//ë‚´ë¶€ì¡°ì¸
 select a.exp_id, b.exp_id
 from ex01 a, ex02 b
 where a.exp_id=b.exp_id;
-//¾È½ÃÁ¶ÀÎ
+//ì•ˆì‹œì¡°ì¸
 select a.exp_id, b.exp_id
 from ex01 a
 left join ex02 b
@@ -116,7 +116,7 @@ using(department_id)
 where a.salary>(
 select avg(a.salary)
 from employees a,departments b
-where a.department_id=b.department_id and b.department_name = '°æ¸®ºÎ');
+where a.department_id=b.department_id and b.department_name = 'ê²½ë¦¬ë¶€');
 
 commit;
 
@@ -164,4 +164,6 @@ from employees
 group by department_id
 having avg(salary)>4000);
 
-//job_history¿¡ department_id°¡ ÀÖ´Â ºÎ¼­ÀÇ ÀÌ¸§
+//job_historyì— department_idê°€ ìˆëŠ” ë¶€ì„œì˜ ì´ë¦„
+
+reviewed 08/20/18
