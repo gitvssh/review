@@ -1,4 +1,4 @@
-package dataStructure.chapter2;
+package dataStructure.chapter02;
 
 public class C2RecursiveBinarySearch {
 	static int BsearchRecur(int ar[],int first, int last, int target) {

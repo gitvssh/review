@@ -1,4 +1,4 @@
-package dataStructure.chapter1;
+package dataStructure.chapter01;
 
 public class C1LinearSearch {
 

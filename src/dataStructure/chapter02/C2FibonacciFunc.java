@@ -1,4 +1,4 @@
-package dataStructure.chapter2;
+package dataStructure.chapter02;
 
 public class C2FibonacciFunc {
 
