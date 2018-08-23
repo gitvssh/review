@@ -12,10 +12,12 @@ m_event varchar2(20)
 select * from member;
 
 update member set m_event='0'
-where m_sex = '¿©';
+where m_sex = 'ì—¬';
 
-select m_id "¾ÆÀÌµğ", m_password "ºñ¹ø", m_name "ÀÌ¸§", m_birth "»ı³â¿ùÀÏ", m_sex "¼ºº°", m_phonenum "ÀüÈ­¹øÈ£" ,
-case when m_event ='1' then '´ë»ó'
-else 'ºñ´ë»ó'
-end "ÀÌº¥Æ®"
+select m_id "ì•„ì´ë””", m_password "ë¹„ë²ˆ", m_name "ì´ë¦„", m_birth "ìƒë…„ì›”ì¼", m_sex "ì„±ë³„", m_phonenum "ì „í™”ë²ˆí˜¸" ,
+case when m_event ='1' then 'ëŒ€ìƒ'
+else 'ë¹„ëŒ€ìƒ'
+end "ì´ë²¤íŠ¸"
 from member;
+
+reviewed 08/23/18
