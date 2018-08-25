@@ -13,4 +13,3 @@ database
 
 dataStructure
 06.29.18~ 08.12.18(1st)
-1
