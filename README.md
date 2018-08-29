@@ -13,3 +13,6 @@ database
 
 dataStructure
 06.29.18~ 08.12.18(1st)
+
+android
+08/06/18~
