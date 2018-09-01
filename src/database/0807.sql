@@ -5,16 +5,16 @@ where b.hire_date between '98/01/01' and '01/12/31' and a.employee_id= b.employe
 select * from employees
 where salary = (select min(salary) from employees);
 
-select a.employee_id "»ç¿ø¹øÈ£", a.emp_name "»ç¿øÀÌ¸§", a.department_id "ºÎ¼­¹øÈ£", b.department_name "ºÎ¼­¸í", a.salary "¿ù±Ş" from employees a, departments b
+select a.employee_id "ì‚¬ì›ë²ˆí˜¸", a.emp_name "ì‚¬ì›ì´ë¦„", a.department_id "ë¶€ì„œë²ˆí˜¸", b.department_name "ë¶€ì„œëª…", a.salary "ì›”ê¸‰" from employees a, departments b
 where a.department_id=b.department_id and lower(substr(a.job_id,1,2))='mk' and salary=(select min(salary) from employees where lower(substr(job_id,1,2))='mk');
 
 select to_char(sum(salary),'$000,000'), to_char(avg(salary),'$000,000'), to_char(max(salary),'$000,000'), to_char(min(salary),'$000,000')
 from employees
 group by department_id;
 
-Á÷±Şº° ÀüÃ¼ ±Ş¿© Æò±ÕÀÌ $10,000º¸´Ù Å«
-Á÷±Şº° ±İ¿© Æò±ÕÀ» Ãâ·ÂÇÏ½Ã¿À.
-´Ü ¾÷¹«¿¡ »ç¿øÀº Á¦ÇÏ°í Ãâ·ÂÇÏ½Ã¿À.
+ì§ê¸‰ë³„ ì „ì²´ ê¸‰ì—¬ í‰ê· ì´ $10,000ë³´ë‹¤ í°
+ì§ê¸‰ë³„ ê¸ˆì—¬ í‰ê· ì„ ì¶œë ¥í•˜ì‹œì˜¤.
+ë‹¨ ì—…ë¬´ì— ì‚¬ì›ì€ ì œí•˜ê³  ì¶œë ¥í•˜ì‹œì˜¤.
 select  from employees;
 
 select * from jobs;
@@ -29,39 +29,41 @@ select * from employees
 where salary>(select salary from employees
 where lower(emp_name) like '%tucker%');
 
-select a.employee_id "»ç¿ø¹øÈ£", a.emp_name "»ç¿ø¸í", a.department_id "ºÎ¼­¹øÈ£",c.department_name "ºÎ¼­¸í", a.job_id "Á÷±Ş¹øÈ£", b.job_title "Á÷±Ş¸í", a.salary "±Ş¿©", a.hire_date "ÀÔ»çÀÏ" 
+select a.employee_id "ì‚¬ì›ë²ˆí˜¸", a.emp_name "ì‚¬ì›ëª…", a.department_id "ë¶€ì„œë²ˆí˜¸",c.department_name "ë¶€ì„œëª…", a.job_id "ì§ê¸‰ë²ˆí˜¸", b.job_title "ì§ê¸‰ëª…", a.salary "ê¸‰ì—¬", a.hire_date "ì…ì‚¬ì¼" 
 from employees a, jobs b , departments c
 where a.job_id = b.job_id  and a.department_id = c.department_id and (a.department_id, a.salary) in(
 select department_id, min(salary)
 from employees
 group by department_id);
 
-//8¹ø
-select emp_name "»ç¿øÀÌ¸§", case
+//8ë²ˆ
+select emp_name "ì‚¬ì›ì´ë¦„", case
 when lower(job_id) ='hr_rep' then salary*1.1
 when lower(job_id) = 'mk_rep' then salary*1.12
 when lower(job_id) ='pr_rep' then salary*1.15
 when lower(job_id) ='sa_rep' then salary*1.18
 when lower(job_id) ='it_prog' then salary*1.2
 else salary
-end "ÀÎ»ó±Ş¿©",case
+end "ì¸ìƒê¸‰ì—¬",case
 when lower(job_id) ='hr_rep' then salary*0.1
 when lower(job_id) = 'mk_rep' then salary*0.12
 when lower(job_id) ='pr_rep' then salary*0.15
 when lower(job_id) ='sa_rep' then salary*0.18
 when lower(job_id) ='it_prog' then salary*0.2
 else 0
-end "ÀÎ»ó±İ¾×", (select sum(case
+end "ì¸ìƒê¸ˆì•¡", (select sum(case
 when lower(job_id) ='hr_rep' then salary*0.1
 when lower(job_id) = 'mk_rep' then salary*0.12
 when lower(job_id) ='pr_rep' then salary*0.15
 when lower(job_id) ='sa_rep' then salary*0.18
 when lower(job_id) ='it_prog' then salary*0.2
 else 0
-end) "ÀÎ»ó±İ¾×" from employees) "ÃÑÀÎ»ó±İ¾×" from employees;
+end) "ì¸ìƒê¸ˆì•¡" from employees) "ì´ì¸ìƒê¸ˆì•¡" from employees;
 
 
 select department_id, job_id, sum(salary), count(employee_id)
 from employees
 group by department_id, job_id
 order by department_id;
+
+reviewed 09/01/18
