@@ -9,21 +9,21 @@ create table result(
     rank number(3)
 );
 
-//ÀÔ·Â½Ã ºó°ø¹é, number ÀÚ¸®¼ö
-insert into result(stu_id,stu_name,kor,eng,math,ave,total,rank) values(1,'È«±æµ¿',80,80,80,(80+80+80)/3,80+80+80,'');
+//ì…ë ¥ì‹œ ë¹ˆê³µë°±, number ìë¦¬ìˆ˜
+insert into result(stu_id,stu_name,kor,eng,math,ave,total,rank) values(1,'í™ê¸¸ë™',80,80,80,(80+80+80)/3,80+80+80,'');
 
-//desc ¿À¸§Â÷¼ø, order by default ³»¸²Â÷¼ø(asc)
+//desc ì˜¤ë¦„ì°¨ìˆœ, order by default ë‚´ë¦¼ì°¨ìˆœ(asc)
 select * from employees order by employee_id desc;
 
 commit;
 
-//where Á¶°Ç
+//where ì¡°ê±´
 select * from employees where employee_id>150 and salary>8300;
 
 select * from employees where salary=9500 order by employee_id;
 
 select * from employees where salary>10000 and department_id=80 order by employee_id;
-//ÇÑ°³¾¿
+//í•œê°œì”©
 select distinct department_id from employees;
 
 select * from departments;
@@ -33,7 +33,7 @@ select emp_name,salary,department_id  from employees order by salary;
 select distinct employee_id, emp_name, email, phone_number, hire_date, salary,parent_id, employees.department_id from employees, departments where employees.department_id=departments.department_id;
 
 select * from employees where job_id='IT_PROG' and salary>5000;
-//°Ë»öÁ¶°Ç
+//ê²€ìƒ‰ì¡°ê±´
 select * from employees where employee_id>=140 or job_id='SA_REP' order by employee_id asc;
 
 //join
@@ -46,9 +46,9 @@ select distinct employees.job_id,jobs.job_title from employees,jobs where employ
 select distinct job_id from employees;
 
 select * from departments;
-//±³Â÷°Ë»ö
+//êµì°¨ê²€ìƒ‰
 select departments.*,employees.emp_name "manager ID" from departments,employees where departments.manager_id=employees.employee_id;
-//°¡¸í
+//ê°€ëª…
 select a.*,b.emp_name "manager ID" from departments a,employees b where a.manager_id=b.employee_id;
 
 select emp_name from employees where employee_id=200;
@@ -63,8 +63,8 @@ select emp_name from employees where employee_id=157;
 
 select * from employees;
 
-select employee_id, emp_name, salary*12/11 "¿¬ºÀ(¸¸¿ø)" from employees;
-select employee_id, emp_name,salary,nvl(commission_pct,0), salary*(1+nvl(commission_pct,0)) "¿ù±Ş" from employees;
+select employee_id, emp_name, salary*12/11 "ì—°ë´‰(ë§Œì›)" from employees;
+select employee_id, emp_name,salary,nvl(commission_pct,0), salary*(1+nvl(commission_pct,0)) "ì›”ê¸‰" from employees;
 
 select * from employees where hire_date >'00/03/19';
 
@@ -72,15 +72,15 @@ select * from result;
 
 delete from result;
 
-insert into result values(1,'È«±æµ¿',82,99,89,'','','');
+insert into result values(1,'í™ê¸¸ë™',82,99,89,'','','');
 
-insert into result values(2,'ÀÌ¼ø½Å',99,100,100,'','','');
+insert into result values(2,'ì´ìˆœì‹ ',99,100,100,'','','');
 
-insert into result values(3,'±èÀ¯½Å',89,97,95,'','','');
+insert into result values(3,'ê¹€ìœ ì‹ ',89,97,95,'','','');
 
-insert into result(stu_id,stu_name) values(2,'ÀÌ¼ø½Å');
+insert into result(stu_id,stu_name) values(2,'ì´ìˆœì‹ ');
 
-insert into result values(4,'¾ÈÃ¢È£',82,99,89,'','','');
+insert into result values(4,'ì•ˆì°½í˜¸',82,99,89,'','','');
 
 select * from result;
 
@@ -88,8 +88,10 @@ desc result;
 
 delete from result where stu_id=2;
 
-update result set stu_id=2 where stu_name='±èÀ¯½Å';
+update result set stu_id=2 where stu_name='ê¹€ìœ ì‹ ';
 
 commit;
 
-select stu_id,stu_name,kor,eng,math,(kor+eng+math)/3 "ave",kor+eng+math "ÇÕ°è" from result;
+select stu_id,stu_name,kor,eng,math,(kor+eng+math)/3 "ave",kor+eng+math "í•©ê³„" from result;
+ 
+reviewed 09/02/18
