@@ -8,9 +8,9 @@ desc ex01;
 
 select table_name from user_tables;
 
-insert into ex01 values(5,'id','ÀÌ½ÂÇö');
-insert into ex01 values(5,'id','ÀÌÁö¼ö');
-insert into ex01 values(5,'id','±è°ÇÁÖ');
+insert into ex01 values(5,'id','Ã€ÃŒÂ½Ã‚Ã‡Ã¶');
+insert into ex01 values(5,'id','Ã€ÃŒÃÃ¶Â¼Ã¶');
+insert into ex01 values(5,'id','Â±Ã¨Â°Ã‡ÃÃ–');
 
 select * from ex01;
 
@@ -25,3 +25,5 @@ minvalue 0
 maxvalue 100
 nocycle
 nocache;
+
+reviewed 09/03/18
