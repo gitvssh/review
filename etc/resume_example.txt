@@ -1,0 +1,9 @@
+-jdk 설치 java 기본문법 숙지(자료형,연산자,제어문,배열)
+
+- 객체지향:메서드,클래스,상속,인터페이스,추상클래스
+
+exception,i/o,serializable
+
+util(iterator,vecor,list,arraylist,map,hashmap,properties
+
+thread,applet,swing,network,db연결
