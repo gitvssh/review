@@ -28,3 +28,5 @@ public class Problem011 {
 //
 //	What is the greatest product of four adjacent numbers in the same direction (up, down, left, right, or diagonally) in the 20×20 grid?
 }
+//2차원배열로 테스트케이스 파싱해서 넣고
+//5가지 형태 알고리즘으로 결과값 케이스 순회하면서 비교해서 찾아냄
