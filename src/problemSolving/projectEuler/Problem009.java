@@ -1,4 +1,4 @@
-package problemSolving.projectEuler.java;
+package problemSolving.projectEuler;
 
 public class Problem009 {
 //	A Pythagorean triplet is a set of three natural numbers, a < b < c, for which,

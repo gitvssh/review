@@ -1,4 +1,4 @@
-package problemSolving.projectEuler.java;
+package problemSolving.projectEuler;
 
 public class Problem006 {
 //	The sum of the squares of the first ten natural numbers is,

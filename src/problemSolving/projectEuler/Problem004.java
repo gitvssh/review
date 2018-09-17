@@ -1,4 +1,4 @@
-package problemSolving.projectEuler.java;
+package problemSolving.projectEuler;
 
 public class Problem004 {
 //	A palindromic number reads the same both ways. 
