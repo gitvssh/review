@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>MemberForm.html</title>
+	<script type="text/javascript">
+		function check(){
+			if(document.ff.id.value==""){
+				alert("id를 입력하세요");
+				document.ff.id.focus();
+				return false;
+			}
+			if(document.ff.pwd.value==""){
+				alert("pwd를 입력하세요");
+				document.ff.pwd.focus();
+				return false;
+			}
+			if(document.ff.pwd2.value==""){
+				alert("pwd2를 입력하세요");
+				document.ff.pwd2.focus();
+				return false;
+			}
+			if(document.ff.pwd2.value!=document.ff.pwd2.value){
+				alert("패스워드 확인이 일치하지 않습니다.");
+				document.ff.pwd.value="";
+				document.ff.pwd2.value="";
+				document.ff.pwd.focus();
+				return false;
+			}
+			document.ff.submit();
+		}//check
+	</script>
+</head>
+	<body bgcolor="margenta">
+		<center><h2>회원가입</h2></center>
+		<form method="post" name="ff" action="/03_ServletProject/MemberInput">
+			<table border="1" width="70%">
+			
+				<tr>
+					<td>ID</td>
+					<td><input type="text" name="id" size="10" required>*필수입력란</td>
+				</tr>
+			
+				<tr>
+					<td>PWD</td>
+					<td><input type="password" name="pwd" size="8" required>*필수입력란</td>
+				</tr>
+				
+				<tr>
+					<td>암호확인</td>
+					<td><input type="password" name="pwd2" size="8" required>*필수입력란</td>
+				</tr>
+				
+				<tr>
+					<td>이름</td>
+					<td><input type="text" name="name" size="16" required>*필수입력란</td>
+				</tr>
+				
+				<tr>
+					<td>Email</td>
+					<td><input type="email" name="email" size="30" placeholder="abc@naver.com"></td>
+				</tr>
+				
+				<tr>
+					<td>tel</td>
+					<td><input type="text" name="tel" size="14" placeholder="01012125656">
+						<font color="red">하이픈(-)은 넣지 마세요</font>
+					</td>
+				</tr>
+				
+				<tr>
+					<td>주소</td>
+					<td><input type="text" name="addr" size="50"></td>
+				</tr>
+				
+				<tr>
+					<td colspan="2" align="center">
+						<input type="button" value="회원가입" onClick="check()">
+						&nbsp;
+						<input type="reset" value="취소">
+					</td>
+				</tr>
+			</table>
+		</form>
+	</body>
+</html>
