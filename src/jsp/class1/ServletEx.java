@@ -1,4 +1,4 @@
-package jsp;
+package jsp.class1;
 //package jsp;
 //
 //import java.io.IOException;
