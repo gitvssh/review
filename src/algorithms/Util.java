@@ -68,4 +68,44 @@ public class Util {
 		}
 		return result;
 	}
+	
+	/**
+	 * CollatzSequence
+	 * 
+	 * @author SH Lee
+	 * @param num
+	 * @return
+	 */
+	static long collatzSequence(long num){
+		if(num%2==0){
+			num=num/2;
+			if(num!=1){
+				return collatzSequence(num);
+			}
+		}else{
+			num=num*3+1;
+			return collatzSequence(num);
+		}
+		return num;
+	}
+	
+	/**
+	 * calculate factorial
+	 * 
+	 * Time Complexity : O(n)
+	 * Space Complexity : O(n)
+	 * @author SH Lee
+	 * @param n
+	 * @return
+	 */
+	public static double factorial(long n){
+		if(n==1)
+			return 1;
+		return n*factorial(n-1);
+	}
+	public static double factorial(long n,long t){
+		if(n==t)
+			return 1;
+		return n*factorial(n-1,t);
+	}
 }
