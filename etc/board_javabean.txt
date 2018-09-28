@@ -1,0 +1,76 @@
+자바빈을 이용한 게시판
+
+DB작업
+
+BoardDto.java 모델빈(DTO-data transfer object, getter,setter)
+BoardDao.java 비지니스 로직(DAO-data access object)<= db 처리 부분
+
+Post.jsp 글쓰기 화면
+PostProc.jsp 글쓰기 DAO 메서드를 호출하여
+
+List.jsp 글목록 보여주기, 페이지 처리
+Read.jsp 글내용 보기
+
+Update.jsp 수정화면
+UpdateProc 글수정
+
+Reply.jsp 답글쓰기 화면, DAO 메서드 호출하여
+ReplyProc.jsp 답글쓰기, DAO 메서드 호출하여
+
+Delete.jsp 글삭제, DAO메서드 호출하여
+================================================
+DB작업
+------------------------------------------------
+mysql -u root -p
+12345
+
+user mydb;
+
+create table board(
+num int(4) auto_increment primary key,
+name varchar(2) not null,
+email varchar(30),
+homepage varchar(30),
+subject varchar(30) not null,
+content text not null,
+post int(11),
+depth int(5),
+regdate date,
+pass varchar(20),
+count int(5) default 0,
+ip varchar(20)
+);
+
+num int(4) auto_increment primary key, 일련번호 p.k
+name varchar(2) not null,	글쓴이
+email varchar(30),		이메일
+homepage varchar(30),	홈페이지
+subject varchar(30) not null,	글제목
+content text not null,		글내용
+post int(11),		답글과 원글 순서처리하려고
+depth int(5),		답글 들여쓰기
+regdate date,		게시날짜
+pass varchar(20),		암호
+count int(5) default 0,	조회수
+ip varchar(20)
+===========================================
+src/boardre.BoardDto.java
+src/boardre.BoardDao.java
+
+WebContent
+  ch19_boardre 폴더
+      문서           폴더
+
+  ch19_boardre 폴더
+     Post.jsp ==> PostProc.jsp
+-------------------------------
+//DAO 작업
+//List
+//리스트, 검색
+public Vector getBoardList(String keyField, String keyWord){
+}
+
+List.jsp
+
+Read.jsp
+--------------------------------
