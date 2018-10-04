@@ -1,0 +1,30 @@
+
+테이블생성
+
+====================
+src/member.MemberDTO.java 모델빈
+src/member.MemberDAO.java DAO(비지니스 로직)
+====================
+
+WebContent
+	view/복사
+	01_member 폴더 만들고
+		inputForm.jsp
+		ID중복체크(confirmId.jsp)==Ajax
+		주소자동비력 : daum API 사용
+		inputPro.jsp
+		----회원가입 끝
+
+	로그인(DAO추가)
+		loginForm.jsp 대신 main.jsp
+		loginPro.jsp
+		logout.jsp
+
+	회원정보 수정
+		modifyForm.jsp
+		modifyPro.jsp
+		
+	회원탈퇴
+		deleteForm.jsp
+		deletePro.jsp
+		
