@@ -1,0 +1,65 @@
+====================================
+DB작업
+====================================
+
+use ch20;
+
+drop table board;
+
+create table board(
+num int not null primary key auto_increment, 글번호
+writer varchar(10) not null,		글쓴이
+email varchar(30),					이메일
+subject varchar(50) not null,		글제목
+passwd varchar(12) not null,		암호
+regdate Timestamp,					날짜
+readcount int default 0,			조회수
+ref int not null,					답글그룹
+re_step smallint not null,			답글 순서 처리
+re_level smallint not null,			답글 들여쓰기
+content text not null,				글내용
+ip varchar(20)						ip
+);
+====================================mysql 끝
+
+alter table board modify regdate Timestamp;
+
+alter table board modify regdate datetime;
+
+=====================================mysql 끝
+
+
+오라클 테이블
+
+create table board(
+num number(4) primary key,
+writer varchar2(10) not null,
+email varchar2(30),
+subject varchar2(50) not null,
+passwd varchar2(12) not null,
+
+regdate date,
+readcount number(4) default 0,
+
+ref number(4) not null,
+re_step number(4) not null,
+re_lever number(4) not null,
+content varchar2(4000) not null,
+ip varchar2(20)
+);
+
+
+src/boardmysql.BoardDTO.java
+    boardmysql.BoardDAO.java
+    
+WebContent/02_board
+
+writeForm.jsp : 원글,답글
+writePro.jsp
+list.jsp
+
+content.jsp 글내용 보기
+
+updateForm.jsp / updatePro.jsp 글 수정
+deleteForm.jsp/ deletePro.jsp 글 삭제
+========================================
