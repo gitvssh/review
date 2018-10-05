@@ -63,3 +63,8 @@ content.jsp 글내용 보기
 updateForm.jsp / updatePro.jsp 글 수정
 deleteForm.jsp/ deletePro.jsp 글 삭제
 ========================================
+
+웹 어플리케이션 = 프로젝트 = 컨텍스트 이름
+--------------------------
+root(프로젝트 이름)
+	WEB-INF
