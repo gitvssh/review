@@ -163,3 +163,54 @@ ProductDetail.jsp-->CartProc.jsp
 -->CartList.jsp(장바구니 내용 보기)
 
 2018-10-08
+shopdb.ProductMgr.java(남은물량 계산)
+shopdb.OrderMgr.java(주문처리 DAO)
+
+-->CartList.jsp-->
+OrderProc.jsp
+OrderList.jsp(주문 목록 리스트)
+
+
+WebContent
+	admin 폴더
+	
+use shopdb;
+
+Table 작성
+-----------------------------------
+create table admin(
+admin_id varchar(20) not null,
+admin_pwd varchar(20) not null,
+primary key (admin_id)
+);	
+----------------------------------
+WebContent
+	admin 폴더
+		AdminLogin.jsp
+		AdminLoginProc.jsp
+		AdminLogout.jsp
+		
+		Top.jsp
+		Bottom.jsp
+		Index.jsp
+		
+		script.js
+		style.css
+		
+ProductMgr.java(관리자)
+
+상품등록
+public boolean insertProduct(HttpServletRequest req)
+
+상품업데이트
+public boolean updateProduct(HttpsServletRequest req)
+
+상품삭제
+public boolean deleteProduct(String no)
+--------------------------------------------
+ProductList.jsp 상품목록
+ProductInsertForm.jsp 상품등록 폼=>ProductProc.jsp 상품등록
+
+ProductUpdate.jsp 수정/삭제 =>ProductProc.jsp 상푸믕록, 수정, 삭제
+ProductDetail.jsp 상세보기
+ProductDetail.jsp 수정/삭제
