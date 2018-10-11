@@ -136,11 +136,22 @@ function loginCheck(){
 	}
 
 	//          
-	function productDetail(code) {
+	function productDetail(code,pro_no) {
 		 
 		document.detail.code.value=code;//////
+		document.detail.pro_no.value=pro_no;//////
 		//document.detail.action="ProductDetail.jsp";
 		document.detail.submit();
+	}
+	
+	function productUpdate(pro_no){
+		document.update.pro_no.value=pro_no;//////
+		document.update.submit();
+	}
+	
+	function productDelete(pro_no){
+		document.del.pro_no.value=pro_no;//////
+		document.del.submit();
 	}
 	
 
