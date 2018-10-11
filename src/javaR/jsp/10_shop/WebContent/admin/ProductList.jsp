@@ -14,7 +14,6 @@ ProductMgr proMgr=ProductMgr.getDao();
 <link href="style.css" rel="stylesheet" type="text/css">
 <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
 <script type="text/javascript" src="script.js"></script>
-
 </head>
 <body topmargin="20">
 <%@ include file="Top.jsp" %>
@@ -59,8 +58,12 @@ ProductMgr proMgr=ProductMgr.getDao();
 								</td>
 								
 								<td align="center">
-									<a href="javascript:productDetail('<%=proDto.getCode() %>')">
+									<a href="javascript:productDetail('<%=proDto.getCode()%>','<%=proDto.getPro_no()%>')">
+									
+									
+									
 									상세보기</a>
+									<%=proDto.getPro_no()%>
 								</td>
 							</tr>
 							<%
