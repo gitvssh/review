@@ -117,3 +117,9 @@ email varchar(30)
 insert into test values('홍길동','h123','h@daum.net');
 insert into test values('이순신','l123','l@naver.com');
 insert into test values('박문수','p123','p@daum.net');
+
+
+sevlet/jsp sevlet(컨트롤러)
+MVC
+Model	View	Control
+dto,dao	jsp		Servlet

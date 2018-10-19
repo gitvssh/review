@@ -1,0 +1,63 @@
+MVC 프로젝트
+
+작업순서
+
+14_MVC 프로젝트 만들고
+	web.xml 체크
+	
+커넥션 풀 세팅
+META-INF/context.xml
+WEB-INF/web.xml	
+
+Model 부분
+2. BoardDto.java (모델빈) 이미 작성 되어 있음
+3. BoardDao.java (비지니스 로직) 이미 작성 되어 있음
+=========================================================
+Action 작성 : jsp로직처리를 모두 Action으로 옮긴다.
+
+4. ch19.action.CommandAction.java 인터페이스 작성 = Action
+
+5. WEB-INF/CommandPro.properties 작성
+
+6. web.xml 수정
+
+7. ch19.controller.ControllerAction.java (컨트롤러) 서블릿 작성
+
+=========================================================
+4. ch19.action.CommandAction.java 인터페이스 작성 = Action
+public interface CommandAction{} 을 상속받아서
+클래스 작성한다.
+
+ListAction : 글목록 보기 명령을 처리하는 클래스 
+WriteFormAction : 글쓰기 폼 명령을 처리하는 클래스 
+WriteProAction : 글 저장 명령을 처리하는 클래스
+ContentAction : 글 내용을 보기 명령을 처리하는 클래스
+UpdateFormAction : 글수정 폼 명령을 처리하는 클래스
+UpdateProAction : 수정한 글 저장 명령을 처리하는 클래스
+DeleteFormAction : 글 삭제 폼을 명령을 처리하는 클래스
+DeleteProAction : 글 삭제 명령을 처리하는 클래스
+
+=============================================
+5. WEB-INF/CommandPro.properties 작성
+
+/ch19/list.do=ch19.action.ListAction
+/ch19/writeForm.do=ch19.action.WriteFormAction
+/ch19/writePro.do=ch19.action.WriteProAction
+/ch19/content.do=ch19.action.ContentAction
+/ch19/updateForm.do=ch19.action.UpdateFormAction
+/ch19/updatePro.do=ch19.action.UpdateProAction
+/ch19/deleteForm.do=ch19.action.DeleteFormAction
+/ch19/deletePro.do=ch19.action.DeleteProAction
+==============================================
+6. web.xml 수정
+
+==============================================
+7. ch19.controller.ControllerAction.java (컨트롤러) 서블릿 작성
+	코딩
+	
+8. ListAction.java
+	코딩
+9. 뷰 작업
+	WebContent/ch19/list.jsp
+	WebContent/ch19/imgs 복사
+	WEB-INF/lib/jstl.jar, standar.jar를 넣는다.
