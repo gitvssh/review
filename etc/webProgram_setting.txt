@@ -1,0 +1,25 @@
+DB 백업
+
+mysql 백업
+mysqldump -u root -p -A>파일명.sql
+
+mysql 복원
+bin>mysql -u root -p -A<파일명.sql   DB이름까지 복원
+
+bin>mysql -u root -p DB이름<파일명.sql
+
+-A 명령어 쓰면 데이터베이스 모두 백업
+데이터베이스만 백업할때는 DB이름 넣어야됨
+그리고 DB명 변경할때는, 해당 db만 백업한뒤, 새로운 db명 만들고, 그곳에 넣은뒤 기존db drop
+
+# mysqldump -u root -p original_database > original_database.sql
+# mysql -u root -p -e "create database my_new_database"
+# mysql -u root -p my_new_database < original_database.sql
+# mysql -u root -p -e "drop database original_database"
+
+서버배포, 프로젝트 옮기기
+새로운 workspace 작업
+tomcat 설정
+프로젝트 만들고
+소스랑 webcontent 복사
+

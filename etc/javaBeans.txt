@@ -1,36 +1,36 @@
-<Beans:ºóÁî> jsp¿¡¼­ javaÅ¬·¡½º¸¦ »ç¿ëÇÏ´Â °Í
+<Beans:ë¹ˆì¦ˆ> jspì—ì„œ javaí´ëž˜ìŠ¤ë¥¼ ì‚¬ìš©í•˜ëŠ” ê²ƒ
 
-- ÀÚ¹ÙºóÁî : Å¬·¡½ºÀÌ´Ù(ÄÄÆ÷³ÍÆ®)
-- ÄÄÆ÷³ÍÆ® : ÀÚ¹ÙºóÁî,Button, Label, TextField
+- ìžë°”ë¹ˆì¦ˆ : í´ëž˜ìŠ¤ì´ë‹¤(ì»´í¬ë„ŒíŠ¸)
+- ì»´í¬ë„ŒíŠ¸ : ìžë°”ë¹ˆì¦ˆ,Button, Label, TextField
 
-- ÀÚ¹ÙºóÁî´Â ÀÚ¹Ù·Î ÀÛ¼ºµÈ ¼ÒÇÁÆ®¿þ¾î ÄÄÆ÷³ÍÆ®(ºÎÇ°)ÀÌ´Ù.
-"ºô´õ Çü½ÄÀÇ °³¹ßµµ±¸¿¡¼­ °¡½ÃÀûÀ¸·Î Á¶ÀÛÀÌ °¡´ÉÇÏ°í ¶ÇÇÑ Àç»ç¿ëÀÌ °¡´ÉÇÑ ¼ÒÇÁÆ®¿þ¾î ÄÄÆ÷³ÍÆ®"
+- ìžë°”ë¹ˆì¦ˆëŠ” ìžë°”ë¡œ ìž‘ì„±ëœ ì†Œí”„íŠ¸ì›¨ì–´ ì»´í¬ë„ŒíŠ¸(ë¶€í’ˆ)ì´ë‹¤.
+"ë¹Œë” í˜•ì‹ì˜ ê°œë°œë„êµ¬ì—ì„œ ê°€ì‹œì ìœ¼ë¡œ ì¡°ìž‘ì´ ê°€ëŠ¥í•˜ê³  ë˜í•œ ìž¬ì‚¬ìš©ì´ ê°€ëŠ¥í•œ ì†Œí”„íŠ¸ì›¨ì–´ ì»´í¬ë„ŒíŠ¸"
 
-- ÀÚ¹ÙºóÁî¸¦ »ç¿ëÇÏ´Â ÀÌÀ¯ : µðÀÚÀÎ ºÎºÐ°ú ·ÎÁ÷ ºÎºÐÀ» ºÐ¸®ÇÏ¿© ÀÛ¾÷ÇÒ ¼ö ÀÖ´Ù.
-ÀåÁ¡ : Àç»ç¿ë
+- ìžë°”ë¹ˆì¦ˆë¥¼ ì‚¬ìš©í•˜ëŠ” ì´ìœ  : ë””ìžì¸ ë¶€ë¶„ê³¼ ë¡œì§ ë¶€ë¶„ì„ ë¶„ë¦¬í•˜ì—¬ ìž‘ì—…í•  ìˆ˜ ìžˆë‹¤.
+ìž¥ì  : ìž¬ì‚¬ìš©
 
--  ÀÚ¹ÙºóÀÌ µîÀåÇÏ°Ô µÈ ÀÌÀ¯
-ÀÏ¹ÝÀûÀ¸·Î À¥»çÀÌÆ®´Â µðÀÚÀÌ³Ê¿Í ÇÁ·Î±×·¡¸Ó°¡ Çù·ÂÇÏ¿© °³¹ßÇÏ°Ô µÈ´Ù.
-±×·±µ¥ ÇÁ·Î±×·¡¸Ó°¡ JSP ÆäÀÌÁöÀÇ ÀÌ°÷ Àú°÷¿¡ ÀÚ¹ÙÄÚµå¸¦ ÀÔ·ÂÇßÀ» ¶§
-µðÀÚÀÌ³Ê´Â ÀÌ ÆäÀÌÁö¸¦ ÇØ¼®ÇÏ±â ¾î·Á¿öÁö°Ô µÇ°í
-°³¹ß È¿À² ¶ÇÇÑ ¸Å¿ì ¶³¾îÁö°Ô µÈ´Ù.
+-  ìžë°”ë¹ˆì´ ë“±ìž¥í•˜ê²Œ ëœ ì´ìœ 
+ì¼ë°˜ì ìœ¼ë¡œ ì›¹ì‚¬ì´íŠ¸ëŠ” ë””ìžì´ë„ˆì™€ í”„ë¡œê·¸ëž˜ë¨¸ê°€ í˜‘ë ¥í•˜ì—¬ ê°œë°œí•˜ê²Œ ëœë‹¤.
+ê·¸ëŸ°ë° í”„ë¡œê·¸ëž˜ë¨¸ê°€ JSP íŽ˜ì´ì§€ì˜ ì´ê³³ ì €ê³³ì— ìžë°”ì½”ë“œë¥¼ ìž…ë ¥í–ˆì„ ë•Œ
+ë””ìžì´ë„ˆëŠ” ì´ íŽ˜ì´ì§€ë¥¼ í•´ì„í•˜ê¸° ì–´ë ¤ì›Œì§€ê²Œ ë˜ê³ 
+ê°œë°œ íš¨ìœ¨ ë˜í•œ ë§¤ìš° ë–¨ì–´ì§€ê²Œ ëœë‹¤.
 
-ÀÚ¹ÙºóÀº JSPÆäÀÌÁöÀÇ µðÀÚÀÎ ºÎºÐ°ú ·ÎÁ÷ºÎºÐÀ» ³ª´®À¸·Î½á º¹ÀâÇÑ ÄÚµå¸¦ ÁÙÀÌ°í
-ÇÁ·Î±×·¥ÀÇ È¿À²À» ³ôÀÏ ¼ö ÀÖ´Ù.
+ìžë°”ë¹ˆì€ JSPíŽ˜ì´ì§€ì˜ ë””ìžì¸ ë¶€ë¶„ê³¼ ë¡œì§ë¶€ë¶„ì„ ë‚˜ëˆ”ìœ¼ë¡œì¨ ë³µìž¡í•œ ì½”ë“œë¥¼ ì¤„ì´ê³ 
+í”„ë¡œê·¸ëž¨ì˜ íš¨ìœ¨ì„ ë†’ì¼ ìˆ˜ ìžˆë‹¤.
 
-<<ºó ÀÛ¼º ±ÔÄ¢>>
-1. ¸â¹ö º¯¼ö´Â private À¸·Î ¼±¾ðÇÑ´Ù.
+<<ë¹ˆ ìž‘ì„± ê·œì¹™>>
+1. ë©¤ë²„ ë³€ìˆ˜ëŠ” private ìœ¼ë¡œ ì„ ì–¸í•œë‹¤.
 
-¿¹½Ã
+ì˜ˆì‹œ
 private String id;
 private String pwd;
 private String name;
 
-2. ¸â¹ö º¯¼ö °ª ¼³Á¤Àº ¸Þ¼­µå¸¦ ÅëÇØ¼­ ÇÑ´Ù.
-setXXX() : º¯¼ö°ª ¼³Á¤
-getXXX() : º¯¼ö°ª ¾ò±â
+2. ë©¤ë²„ ë³€ìˆ˜ ê°’ ì„¤ì •ì€ ë©”ì„œë“œë¥¼ í†µí•´ì„œ í•œë‹¤.
+setXXX() : ë³€ìˆ˜ê°’ ì„¤ì •
+getXXX() : ë³€ìˆ˜ê°’ ì–»ê¸°
 
-¿¹½Ã
+ì˜ˆì‹œ
 private String name;
 public void setName(String name);
 {this.name=name;}
@@ -38,22 +38,22 @@ public void setName(String name);
 public String getName();
 {return this.name;}
 
-3. ¸Þ¼­µå Á¢±Ù Á¦ÇÑÀÚ´Â publicÀ¸·Î ÇÑ´Ù.
+3. ë©”ì„œë“œ ì ‘ê·¼ ì œí•œìžëŠ” publicìœ¼ë¡œ í•œë‹¤.
 
-4. ¸Þ¼­µå ÀÌ¸§(setXXX(), getXXX())Àº º¯¼ö ÀÌ¸§À¸·Î ÇÑ´Ù.
+4. ë©”ì„œë“œ ì´ë¦„(setXXX(), getXXX())ì€ ë³€ìˆ˜ ì´ë¦„ìœ¼ë¡œ í•œë‹¤.
 
-5. ¸â¹öº¯¼ö°¡ boolean ÇüÀÏ °æ¿ì getXXX() ´ë½Å isXXX()¸Þ¼­µå¸¦ ¸¸µç´Ù.
+5. ë©¤ë²„ë³€ìˆ˜ê°€ boolean í˜•ì¼ ê²½ìš° getXXX() ëŒ€ì‹  isXXX()ë©”ì„œë“œë¥¼ ë§Œë“ ë‹¤.
 
-6. ±âÅ¸ ÇÊ¿äÇÑ ¸â¹öº¯¼ö, ¸â¹ö ¸Þ¼­µå¸¦ »ç¿ëÇÒ ¼ö µµ ÀÖ´Ù.
+6. ê¸°íƒ€ í•„ìš”í•œ ë©¤ë²„ë³€ìˆ˜, ë©¤ë²„ ë©”ì„œë“œë¥¼ ì‚¬ìš©í•  ìˆ˜ ë„ ìžˆë‹¤.
 
-<<ºó ¸¸µé±â>>
+<<ë¹ˆ ë§Œë“¤ê¸°>>
 
 package mypa;
 import ~
 import ~
 
 public class TestBean{
-  private String id;// ÇÊµå=Àü¿ªº¯¼ö=ÇÁ·ÎÆÛÆ¼=property
+  private String id;// í•„ë“œ=ì „ì—­ë³€ìˆ˜=í”„ë¡œí¼í‹°=property
 
     public void setId(String id){
     this.id=id;
@@ -66,49 +66,49 @@ public class TestBean{
 }//class
 
 ---------------------------
-//ÄÄÆÄÀÏ¸¸ ÇÑ´Ù
+//ì»´íŒŒì¼ë§Œ í•œë‹¤
 ---------------------------
-¡Ø jsp ¾×¼Ç
+â€» jsp ì•¡ì…˜
 <jsp:forward page="a.jsp"/>
 <jsp:include page="a.jsp"/>
 <jsp:useBean id="" clase="" scope=""/>
-  <jsp:setProperty name="id¸í" property="ÇÁ·ÎÆÛÆ¼¸í" value="°ª"/>
-  <jsp:set property name="id¸í" property="ÇÁ·ÎÆÛÆ¼¸í"/>
+  <jsp:setProperty name="idëª…" property="í”„ë¡œí¼í‹°ëª…" value="ê°’"/>
+  <jsp:set property name="idëª…" property="í”„ë¡œí¼í‹°ëª…"/>
 
-¡Ø <jsp:useBean id="t" clase="ÆÐÅ°Áö.Test" scope="(»ý·«ÇÏ¸é page)"/>
+â€» <jsp:useBean id="t" clase="íŒ¨í‚¤ì§€.Test" scope="(ìƒëžµí•˜ë©´ page)"/>
 
 Test t=new Test();
-id="Bean name" => °´Ã¼ÀÌ¸§ => Å¬·¡½ºº¯¼ö
-class="ÆÐÅ°Áö.Å¬·¡½ºÀÌ¸§"
-scope="¹üÀ§ÁöÁ¤"(page,session, request, application)
-page:µðÆúÆ®
-request, session : ¸¹ÀÌ »ç¿ëÇÑ´Ù.
+id="Bean name" => ê°ì²´ì´ë¦„ => í´ëž˜ìŠ¤ë³€ìˆ˜
+class="íŒ¨í‚¤ì§€.í´ëž˜ìŠ¤ì´ë¦„"
+scope="ë²”ìœ„ì§€ì •"(page,session, request, application)
+page:ë””í´íŠ¸
+request, session : ë§Žì´ ì‚¬ìš©í•œë‹¤.
 -------------------------------------------
-<jsp:useBean id="°´Ã¼¸í" class="" scope="">
-  <%--ºó¿¡ °ªÀ» ¼¼ÆÃ--%>
-  <jsp:setProperty name="id¸í" property="ÇÁ·ÎÆÛÆ¼¸í" value="°ª"/>
-  <jsp:setProperty name="°´Ã¼¸í" property="id" value="kim"/>
-  ¡Úsetter ¸Þ¼­µå È£Ãâ°ú °°Àº ±â´É
+<jsp:useBean id="ê°ì²´ëª…" class="" scope="">
+  <%--ë¹ˆì— ê°’ì„ ì„¸íŒ…--%>
+  <jsp:setProperty name="idëª…" property="í”„ë¡œí¼í‹°ëª…" value="ê°’"/>
+  <jsp:setProperty name="ê°ì²´ëª…" property="id" value="kim"/>
+  â˜…setter ë©”ì„œë“œ í˜¸ì¶œê³¼ ê°™ì€ ê¸°ëŠ¥
 
-  <%--ºóÀ¸·ÎºÎÅÍ °ªÀ» ¾ò¾î¿Ã¶§ --%>
-  <jsp:getProperty name="id¸í" property="ÇÁ·ÎÆÛÆ¼¸í"/>
-  <jsp:getProperty name="°´Ã¼¸í" property="id"/>
-  ¡Úgetter ¸Þ¼­µå È£Ãâ°ú °°Àº ±â´É
+  <%--ë¹ˆìœ¼ë¡œë¶€í„° ê°’ì„ ì–»ì–´ì˜¬ë•Œ --%>
+  <jsp:getProperty name="idëª…" property="í”„ë¡œí¼í‹°ëª…"/>
+  <jsp:getProperty name="ê°ì²´ëª…" property="id"/>
+  â˜…getter ë©”ì„œë“œ í˜¸ì¶œê³¼ ê°™ì€ ê¸°ëŠ¥
 </jsp:useBean>
 --------------------------------------------
-¼³¸í
-<jsp:setProperty>:ÀÌ ¾×¼ÇÀº ºóÀÇ º¯¼ö(property=¼Ó¼º)¿¡ °ªÀ» ³Ö¾îÁÙ¶§ »ç¿ëÇÑ´Ù.
-<jsp:getProperty>:ÀÌ ¾×¼ÇÀº ºóÀÇ º¯¼ö(property=¼Ó¼º)°ªÀ» °¡Á®¿Ã¶§ »ç¿ëÇÑ´Ù.
+ì„¤ëª…
+<jsp:setProperty>:ì´ ì•¡ì…˜ì€ ë¹ˆì˜ ë³€ìˆ˜(property=ì†ì„±)ì— ê°’ì„ ë„£ì–´ì¤„ë•Œ ì‚¬ìš©í•œë‹¤.
+<jsp:getProperty>:ì´ ì•¡ì…˜ì€ ë¹ˆì˜ ë³€ìˆ˜(property=ì†ì„±)ê°’ì„ ê°€ì ¸ì˜¬ë•Œ ì‚¬ìš©í•œë‹¤.
 --------------------------------------------
-jsp¿¡¼­ ºó °ªÀ» ¼¼ÆÃÇÏ´Â ¹æ¹ý 4°¡Áö
+jspì—ì„œ ë¹ˆ ê°’ì„ ì„¸íŒ…í•˜ëŠ” ë°©ë²• 4ê°€ì§€
 --------------------------------------------
-1. <jsp:setProperty name="id¸í" property="ÇÁ·ÎÆÛÆ¼¸í" value="°ª"/>
+1. <jsp:setProperty name="idëª…" property="í”„ë¡œí¼í‹°ëª…" value="ê°’"/>
 
-2. <jsp:setProperty name="id¸í" property="ÇÁ·ÎÆÛÆ¼¸í" param="ÆÄ¶ó¹ÌÅÍ¸í"/>
-                                             bean º¯¼ö                      htmlÀÇ ÆÄ¶ó¹ÌÅÍ¸í
+2. <jsp:setProperty name="idëª…" property="í”„ë¡œí¼í‹°ëª…" param="íŒŒë¼ë¯¸í„°ëª…"/>
+                                             bean ë³€ìˆ˜                      htmlì˜ íŒŒë¼ë¯¸í„°ëª…
 
-3. <jsp:setProperty name="id¸í" property="ÇÁ·ÎÆÛÆ¼¸í"/>
-     paam»ý·«Àº ÇÁ·ÎÆÛÆ¼¸í°ú ÆÄ¶ó¹ÌÅÍ¸íÀÌ °°À»¶§
+3. <jsp:setProperty name="idëª…" property="í”„ë¡œí¼í‹°ëª…"/>
+     paamìƒëžµì€ í”„ë¡œí¼í‹°ëª…ê³¼ íŒŒë¼ë¯¸í„°ëª…ì´ ê°™ì„ë•Œ
 
-4. <jsp:setProperty name="id¸í" property="*"/>
-    ¸ðµç ÇÁ·ÎÆÛÆ¼¸í°ú ÆÄ¶ó¹ÌÅÍ¸íÀÌ °°À»¶§
+4. <jsp:setProperty name="idëª…" property="*"/>
+    ëª¨ë“  í”„ë¡œí¼í‹°ëª…ê³¼ íŒŒë¼ë¯¸í„°ëª…ì´ ê°™ì„ë•Œ

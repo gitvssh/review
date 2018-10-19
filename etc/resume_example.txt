@@ -1,9 +1,9 @@
--jdk ¼³Ä¡ java ±âº»¹®¹ı ¼÷Áö(ÀÚ·áÇü,¿¬»êÀÚ,Á¦¾î¹®,¹è¿­)
+-jdk ì„¤ì¹˜ java ê¸°ë³¸ë¬¸ë²• ìˆ™ì§€(ìë£Œí˜•,ì—°ì‚°ì,ì œì–´ë¬¸,ë°°ì—´)
 
-- °´Ã¼ÁöÇâ:¸Ş¼­µå,Å¬·¡½º,»ó¼Ó,ÀÎÅÍÆäÀÌ½º,Ãß»óÅ¬·¡½º
+- ê°ì²´ì§€í–¥:ë©”ì„œë“œ,í´ë˜ìŠ¤,ìƒì†,ì¸í„°í˜ì´ìŠ¤,ì¶”ìƒí´ë˜ìŠ¤
 
 exception,i/o,serializable
 
 util(iterator,vecor,list,arraylist,map,hashmap,properties
 
-thread,applet,swing,network,db¿¬°á
+thread,applet,swing,network,dbì—°ê²°

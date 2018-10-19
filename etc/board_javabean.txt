@@ -1,25 +1,25 @@
-ÀÚ¹ÙºóÀ» ÀÌ¿ëÇÑ °Ô½ÃÆÇ
+ìë°”ë¹ˆì„ ì´ìš©í•œ ê²Œì‹œíŒ
 
-DBÀÛ¾÷
+DBì‘ì—…
 
-BoardDto.java ¸ğµ¨ºó(DTO-data transfer object, getter,setter)
-BoardDao.java ºñÁö´Ï½º ·ÎÁ÷(DAO-data access object)<= db Ã³¸® ºÎºĞ
+BoardDto.java ëª¨ë¸ë¹ˆ(DTO-data transfer object, getter,setter)
+BoardDao.java ë¹„ì§€ë‹ˆìŠ¤ ë¡œì§(DAO-data access object)<= db ì²˜ë¦¬ ë¶€ë¶„
 
-Post.jsp ±Û¾²±â È­¸é
-PostProc.jsp ±Û¾²±â DAO ¸Ş¼­µå¸¦ È£ÃâÇÏ¿©
+Post.jsp ê¸€ì“°ê¸° í™”ë©´
+PostProc.jsp ê¸€ì“°ê¸° DAO ë©”ì„œë“œë¥¼ í˜¸ì¶œí•˜ì—¬
 
-List.jsp ±Û¸ñ·Ï º¸¿©ÁÖ±â, ÆäÀÌÁö Ã³¸®
-Read.jsp ±Û³»¿ë º¸±â
+List.jsp ê¸€ëª©ë¡ ë³´ì—¬ì£¼ê¸°, í˜ì´ì§€ ì²˜ë¦¬
+Read.jsp ê¸€ë‚´ìš© ë³´ê¸°
 
-Update.jsp ¼öÁ¤È­¸é
-UpdateProc ±Û¼öÁ¤
+Update.jsp ìˆ˜ì •í™”ë©´
+UpdateProc ê¸€ìˆ˜ì •
 
-Reply.jsp ´ä±Û¾²±â È­¸é, DAO ¸Ş¼­µå È£ÃâÇÏ¿©
-ReplyProc.jsp ´ä±Û¾²±â, DAO ¸Ş¼­µå È£ÃâÇÏ¿©
+Reply.jsp ë‹µê¸€ì“°ê¸° í™”ë©´, DAO ë©”ì„œë“œ í˜¸ì¶œí•˜ì—¬
+ReplyProc.jsp ë‹µê¸€ì“°ê¸°, DAO ë©”ì„œë“œ í˜¸ì¶œí•˜ì—¬
 
-Delete.jsp ±Û»èÁ¦, DAO¸Ş¼­µå È£ÃâÇÏ¿©
+Delete.jsp ê¸€ì‚­ì œ, DAOë©”ì„œë“œ í˜¸ì¶œí•˜ì—¬
 ================================================
-DBÀÛ¾÷
+DBì‘ì—…
 ------------------------------------------------
 mysql -u root -p
 12345
@@ -41,32 +41,32 @@ count int(5) default 0,
 ip varchar(20)
 );
 
-num int(4) auto_increment primary key, ÀÏ·Ã¹øÈ£ p.k
-name varchar(2) not null,	±Û¾´ÀÌ
-email varchar(30),		ÀÌ¸ŞÀÏ
-homepage varchar(30),	È¨ÆäÀÌÁö
-subject varchar(30) not null,	±ÛÁ¦¸ñ
-content text not null,		±Û³»¿ë
-post int(11),		´ä±Û°ú ¿ø±Û ¼ø¼­Ã³¸®ÇÏ·Á°í
-depth int(5),		´ä±Û µé¿©¾²±â
-regdate date,		°Ô½Ã³¯Â¥
-pass varchar(20),		¾ÏÈ£
-count int(5) default 0,	Á¶È¸¼ö
+num int(4) auto_increment primary key, ì¼ë ¨ë²ˆí˜¸ p.k
+name varchar(2) not null,	ê¸€ì“´ì´
+email varchar(30),		ì´ë©”ì¼
+homepage varchar(30),	í™ˆí˜ì´ì§€
+subject varchar(30) not null,	ê¸€ì œëª©
+content text not null,		ê¸€ë‚´ìš©
+post int(11),		ë‹µê¸€ê³¼ ì›ê¸€ ìˆœì„œì²˜ë¦¬í•˜ë ¤ê³ 
+depth int(5),		ë‹µê¸€ ë“¤ì—¬ì“°ê¸°
+regdate date,		ê²Œì‹œë‚ ì§œ
+pass varchar(20),		ì•”í˜¸
+count int(5) default 0,	ì¡°íšŒìˆ˜
 ip varchar(20)
 ===========================================
 src/boardre.BoardDto.java
 src/boardre.BoardDao.java
 
 WebContent
-  ch19_boardre Æú´õ
-      ¹®¼­           Æú´õ
+  ch19_boardre í´ë”
+      ë¬¸ì„œ           í´ë”
 
-  ch19_boardre Æú´õ
+  ch19_boardre í´ë”
      Post.jsp ==> PostProc.jsp
 -------------------------------
-//DAO ÀÛ¾÷
+//DAO ì‘ì—…
 //List
-//¸®½ºÆ®, °Ë»ö
+//ë¦¬ìŠ¤íŠ¸, ê²€ìƒ‰
 public Vector getBoardList(String keyField, String keyWord){
 }
 
@@ -74,15 +74,15 @@ List.jsp
 
 Read.jsp
 --------------------------------
-DAO ÀÛ¾÷
+DAO ì‘ì—…
 
 Update.jsp
 UpdateProc.jsp
 --------------------------------
-DAO ÀÛ¾÷
+DAO ì‘ì—…
 Delete.jsp
 -------------------------------
-DAOÀÛ¾÷
+DAOì‘ì—…
 Reply.jsp
 ReplyProc.jsp
 -------------------------------
