@@ -1,4 +1,4 @@
-//package ch19.action;
+//package javaR.jsp.mvc.src.ch19.action;
 //
 //import javax.servlet.http.HttpServletRequest;
 //import javax.servlet.http.HttpServletResponse;

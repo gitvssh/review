@@ -1,4 +1,4 @@
-//package ch19.controller;
+//package javaR.jsp.mvc.src.ch19.controller;
 //
 //import javax.servlet.*;
 //import javax.servlet.http.*;
