@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+<!--  computer 타입의 pc1 빈 등록 --> 
+<bean id="pc1" class="com.spring.model.product.Computer">
+	<constructor-arg value="PC-22"/>
+	<property name="cpu" value="인텔 셀러론"/>
+	<property name="memory" value="1G"/>
+	<property name="disk" value="100G"/>
+</bean>
+
+<!--  Notebook 타입의 note1 빈 등록, pc1 빈을 상속받아서 -->
+<bean id="note1" parent="pc1" class="com.spring.model.product.Notebook">
+	<property name="battery" value="최신형"/>
+</bean>
+
+<!--  Computer 타입의 pc2 빈 등록 -->
+<!--  pc1 빈을 상속받아서, memory property를 overide하여 재정의 -->
+<bean id="pc2" parent="pc1">
+	<property name="memory" value="200G"/>
+</bean>
+
+<!--  property를 추상화한 baseSpec 빈 선언 -->
+<bean id="baseSpec" abstract="true">
+	<property name="cpu" value="인텔 셀러론"/>
+	<property name="memory" value="4G"/>
+	<property name="disk" value="100G"/>
+</bean>
+
+<!-- Notebook 타입의 note2 빈 등록, baseSpec 빈을 상속하여 -->
+<!-- battery property를 추가 -->
+<bean id="note2" parent="baseSpec" class="com.spring.model.product.Notebook">
+	<constructor-arg value="NB-2"/>
+	<property name="battery" value="구형"/>
+</bean>
+</beans>

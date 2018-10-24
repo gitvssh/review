@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+	<bean id="pc01" class="com.spring.model.product.Computer">
+		<constructor-arg value="PC-01"/><!-- 생성자 인수 -->
+		<property name="cpu" value="인텔셀러론"/><!--  setter작업 -->
+		<property name="memory" value="8G"/>
+		<property name="disk" value="100G"/>
+	</bean>
+
+	<bean id="pc02" class="com.spring.model.product.Computer">
+		<constructor-arg value="PC-02"/><!-- 생성자 인수 -->
+		<property name="cpu" value="인텔셀러론2"/><!--  setter작업 -->
+		<property name="memory" value="2G"/>
+		<property name="disk" value="200G"/>
+	</bean>
+	
+	<bean id="pc03" class="com.spring.model.product.Computer">
+		<constructor-arg value="PC-03"/><!-- 생성자 인수 -->
+		<property name="cpu" value="인텔셀러론3"/><!--  setter작업 -->
+		<property name="memory" value="3G"/>
+		<property name="disk" value="300G"/>
+	</bean>
+
+	<bean id="listRefBean" class="com.spring.model.CollectionBean">
+		<property name="itemList">
+			<list>
+				<ref bean="pc01"/>
+				<ref bean="pc02"/>
+				<ref bean="pc03"/>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="setRefBean" class="com.spring.model.CollectionBean">
+		<property name="itemSet">
+			<set>
+				<ref bean="pc01"/>
+				<ref bean="pc02"/>
+				<ref bean="pc03"/>
+			</set>
+		</property>
+	</bean>
+	
+	<bean id="mapRefBean" class="com.spring.model.CollectionBean">
+		<property name="itemMap">
+			<map>
+				<entry key="pc1" value-ref="pc01"/>
+				<entry key="pc2" value-ref="pc02"/>
+				<entry key="pc3" value-ref="pc03"/>
+			</map>
+		</property>
+	</bean>
+</beans>

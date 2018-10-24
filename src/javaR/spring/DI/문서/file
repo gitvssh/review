@@ -1,0 +1,96 @@
+spring 세팅
+
+spring 4.0 : 어노테이션 사용가능
+
+=========================
+동적배치
+JSP : layout(동적배치): template
+Spring : layout(동적배치) : tiles
+
+==========================
+
+스프링시작
+1. JDK 설치
+2. Tomcat 설치
+3. eclipse 설치
+
+=========================
+
+spring 실습
+03_spring_work
+이클립스에서 tomcat 설치
+
+javaProject : lib=라이브러리 보관하려고
+
+프로젝트 이름 : 01_Spring_lib
+
+javaProject 프로젝트
+
+프로젝트이름 : 02_Spring_DI
+
+02_Spring_DI -->우클릭->properties-->
+
+왼쪽 javabuild path 선택 --> libraries 탭 선택->
+
+Add jars 클릭
+
+01_Spring_lib/lib/*.jar 에 있는 모든 jar를 선택하고 OK
+=============================================
+xml폴더 만들기
+=======================
+
+02_Spring_DI 프로젝트에서 우클릭 properties 
+왼쪽 javaBuildPath 선택, 가운데 Libraries 탭 섵낵
+Add class Folder 버튼 클릭
+
+현재 프로젝트가 선택되엇는지 확인하고
+create new folder 버튼 클릭
+
+xml 입력하고 ok
+=================================
+classes 폴더 만들기
+========================
+02_Spring_DI 프로젝트에서 우클릭 properties 
+왼쪽 javaBuildPath 선택, 가운데 Libraries 탭 섵낵
+Add class Folder 버튼 클릭
+
+현재 프로젝트가 선택되엇는지 확인하고
+create new folder 버튼 클릭
+
+classes 입력하고 ok
+==========================
+세팅 끝
+
+실습
+
+1. 서버단작업
+    인터페이스
+    구현클래스 작성
+
+2. xml/hello.xml 작성(빈 등록)
+3. 클라이언트 작업/ 실행
+=====================
+
+인터페이스 작성
+src/com.spring.hello.HelloService.java
+
+
+==========================
+xml/hello.xml
+=========================
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+ 
+</beans>
+============================
+3. 클라이언트 작업/ 실행
+src/com.spring.client.HelloClient.java
+============================
+
+요청받는 클래스
+
+src/com.spring.hello.HelloServiceManager.java

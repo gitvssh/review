@@ -1,0 +1,100 @@
+DI 실습
+1.Computer 클래스 작성
+2. SaleItem 클래스 작성
+    - SaleItem(Computer item, int cnt, long price) 생성자
+
+3. saleItem.xml
+    Computer 빈 등록 pc01로
+    SaleItem 빈 등록 saleItem으로
+
+4. SaleItemClient. 클래스 작성
+
+	- saleItem.xml 파일을 참조하여 ApplicationContext 사용할 것임
+	- pc01 빈을 참조하여 pc01.getContents()메서드 호출한다.
+	- saleItem빈을 참조하여 saleItem.display()메서드 호출한다.
+==========================================================
+1. Computer 클래스 작성
+
+src/com.spring.model.product.Computer.java
+
+2. SaleItem 클래스 작성
+
+3. xml/saleItem.xml
+	Computer 빈 등록 pc01로
+	SaleItem 빈 등록 saleItem으로
+	
+src/com.spring.client.SaleItemClient
+
+
+실습 - Setter Injection
+SaleItem 클래스 수정
+	-default 생성자 추가
+	- item, cnt, price=>property에 대한 setter 메소드 추가
+	
+saleItem.xml 수정
+	- SaleItem 타입의 saleItem2 빈 등록
+	<property> 태그를 이용하여 pc01 참조
+	
+SaleItemClient 수정
+	- saleItem2 빈을 참조하여 saleItem2.display()을 호출하여 출력
+
+----------------------------------------------
+
+실습 - Collection 타입 참조
+
+1. CollectionBean 클래스 작성 (서버pg)
+	- List, Set, Map 타입의 property(변수) 선언
+	
+	
+2. collection.xml 작성
+	- Computer 타입의 pc01,pc02,pc03 빈 등록
+	
+	- CollectionBean 타입의 listRefBean빈 등록
+	<list> 타입의 property
+	
+	- CollectionBean 타입의 setRefBean 빈 등록
+	<set> 타입의 property 설정
+	
+	- CollectionBean타입의 mapRefBean 빈 등록
+	<map> 타입의 property 설정
+	
+3. CollectionClient 작성
+	- listRefBean 빈을 참조하여 printItemList() 메소드 실행
+	- setRefBean, mapRefBean 빈을 참조하여 메서드 실행	
+	
+1. CollectionBean 클래스 작성 (서버pg)
+	- List, Set, Map 타입의 property(변수) 선언
+
+src/com.spring.model.CollectionBean.java	
+
+src/com.spring.client.CollectionClient.java
+
+
+실습 - 빈의 상속과 추상화
+
+1. Notebook 클래스 작성
+	- Computer 클래스 상속 하여
+	
+2. abstract.xml 작성
+
+	- Computer 타입의 pc1 빈 등록
+	- Notebook 타입의 note1 빈 등록, pc1 빈을 상속받아서
+
+	- Computer 타입의 pc2 빈 등록
+	pc1 빈을 상속받아서, memory property를 override하여 재정의
+	
+	-property를 추상화한 baseSpec 빈 선언
+	-notebook 타입의 note2 빈 등록
+	baseSpec 빈을 상속, battery property 를 추가
+	
+3. AbstarctClient 작성
+- pc1, note1, pc2, note2 빈 참조하여 실행
+============================================
+실습
+1. Notebook 클래스 작성
+	- Computer 클래스 상속 하여
+	
+src/com.spring.model.product.Notebook.java
+
+src/com.spring.client.AbstractClient.java
+============================================	

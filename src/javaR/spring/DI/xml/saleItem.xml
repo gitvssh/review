@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+<!-- Computer 빈 등록 -->
+<bean id="pc01" class="com.spring.model.product.Computer">
+	<constructor-arg value="PC-01"/><!-- 생성자 인수 -->
+	<property name="cpu" value="인텔셀러론"/><!--  setter작업 -->
+	<property name="memory" value="8G"/>
+	<property name="disk" value="100G"/>
+</bean>
+
+<!-- SaleItem 빈 등록 생성자 Injection -->
+<bean id="saleItem" class="com.spring.model.product.SaleItem">
+	<constructor-arg ref="pc01"/><!-- 생성자 DI  -->
+	<constructor-arg value="2"/>
+	<constructor-arg value="750000"/>
+</bean>
+ 
+<bean id="saleItem2" class="com.spring.model.product.SaleItem">
+	<property name="item" ref="pc01"/><!-- 생성자 DI  -->
+	<property name="cnt" value="2"/>
+	<property name="price" value="750000"/>
+</bean>
+ 
+</beans>
