@@ -1,0 +1,84 @@
+Applet 생명주기
+
+init() -> start() -> paint() -> stop() -> destroy
+
+Servlet 생명주기
+
+init() -> service() -> destroy()
+	doGet()
+	doPost()
+
+JSP 생명주기
+jspInit() -> jspService() -> jspDestory()
+
+Spring 생명주기
+방법1)
+
+class 클래스이름 implements InitializingBean, DisposableBean
+
+//InitializingBean 의 메서드 오버라이등
+public void afterPropertiesSet() throws Exception{}
+
+//DisposableBean 의 메서드 오버라이딩
+public void destroy() throws Exception {}
+
+------------------------------------------
+
+방법2) CartService 클래스에 사용자 정의 메서드를 넣고
+
+public void loadItems(){}
+public void storeItem() {}
+
+cart.xml 에서
+init-method속성과 destroy-method 에다 메서드 설정한다.
+
+init-method="loadItems" destroy-method="storeItems"
+------------------------------------------
+실습
+----
+빈 라이프 사이클
+실습 - 빈의 Initializing과 Destroying
+
+1. CartService 클래스 작성
+- InitializingBean, DisposableBean 인터페이스 상속받아서 구현(overriding)
+
+<사용자정의 메서드>
+초기화 메서드 구현 : loadItems()
+소멸 메소드 구현 : storeItems()
+
+2. cart.xml 작성
+- CartService 타입의 cart 빈 등록
+<bean> 태그의 init-method 속성에 loadItems 설정
+<bean> 태그의 destroy-method 속성에 storeItems 설정
+
+3. CartClinet 작성
+
+----------------------------------------------
+
+src/com.spring.service.order.CartService.java
+
+cart.xml
+
+실습 - 외부자원 참조
+1. Config 클래스 작성
+2. config.property 작성
+3. config.xml 작성
+
+- PropertyPlaceholderConfigurer 타입의 propertyConfig 빈등록
+  location property에 config.property 설정
+
+- Config 타입의 config 빈 등록
+  config.property 값을 참조하여 property 설정
+
+4. ConfigClient 작성
+---
+실습
+---
+1.
+src/com.spring.model.Config.java
+2.
+xml/config.property
+3.
+config.xml
+4.
+src/com.spring.client.ConfigClient.java
