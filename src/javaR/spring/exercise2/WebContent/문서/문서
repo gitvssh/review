@@ -1,0 +1,13 @@
+05_SpringMVC
+
+1. web-inf/lib/*.jar 라이브러리 주입
+
+2. web-inf/web.xml 컨트롤러 등록
+
+3. web-inf/config/spring3-servlet.xml
+
+4. src/com.test.HelloController.java
+
+5. webcontent/board/resultPage.jsp
+
+6. webcontent/index.jsp

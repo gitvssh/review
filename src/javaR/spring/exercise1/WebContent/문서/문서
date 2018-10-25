@@ -1,0 +1,14 @@
+4. MBC
+
+web.xml 서블릿 등록
+
+~servlet.xml 작성
+
+springapp-servlet.xml 작성
+
+Controller(Action)크래스 작성
+
+src/com.spring.HelloController
+
+view(jsp) 작성
+hello.jsp
