@@ -1,0 +1,59 @@
+로그인
+
+데이터 유효성 체크
+
+작업순서
+
+db작성
+
+use spring;
+
+create table user_account(
+user_id varchar(20),
+user_name varchar(20),
+password varchar(20),
+postcode varchar(8),
+address varchar(50),
+email varchar(50),
+job varchar(30),
+birthday date,
+primary key (user_id)
+);
+
+c:\_shop\user.csv
+
+load data local infile 'c:\\_shop\\user.csv'
+into table user_account
+fields terminated by ','
+lines terminated by '\r\n';
+
+08_spring_shopping_3
+
+web-inf/lib/*.jar 복사
+
+web.xml : 인코딩문자 등록, 컨트롤러 등록
+
+web-inf/applicationContext.xml
+web-inf/shopping3-servlet.xml
+
+src/msg.properties
+
+서버측 작업
+logic.User.java 모델빈
+
+dao.UserDao.java
+dao.UserDaoImpl.java
+
+logic.UserCatalog.java
+logic.UserCatalogImpl.java
+
+logic.Shop.java 인터페이스
+logic.ShopImple.java 구현클래스
+
+utils.LoginValidator.java
+controller.LoginFormController.java
+
+웹작업
+web-inf/jsp/jsp_header.jsp
+web-inf/jsp/login.jsp
+web-inf/jsp/loginSuccess.jsp

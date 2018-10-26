@@ -1,0 +1,30 @@
+
+07_spring_shopping_2
+web.xml
+
+web-inf/lib/*.jar
+
+web-inf/web.xml 수정
+
+web-inf/applicationContext.xml(db설정, 빈등록)
+
+web-inf/shopping2-servlet.xml
+
+DB 관련 서버작업
+
+logic.Item.java
+
+추가
+dao.ItemDao.java -- ItemDaoImpl.java
+logic.ItemCatalog.java -- ItemCatalogImpl.java
+logic.Shop.java --- ShopImpl.java
+
+controller.IndexController(리스트)
+수정
+
+controller.DetailController.java(상세보기)
+
+webcontent/css 복사
+webcontent/img 복사
+
+web-inf/jsp/jsp_header.jsp

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+<!-- 
+shopping3-servlet.xml  핵심  
+
+SimpleUrlHandlerMapping 클래스 사용
+InternalResourceViewResolver 클래스 사용
+ 
+LoginFormController클래스는 요청 파라미터로 받은ID,PWD검증하기위해
+loginValidator클래스를 이용합니다(applicationContext.xml 에서 정의함) 
+-->
+
+<!-- HandlerMapping -->
+<bean id="handlerMapping"
+	class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+	<property name="mappings">
+		<value>
+			/login.html=loginFormController
+		</value>
+	</property>
+</bean>
+	
+<!-- Controller -->
+<bean id="loginFormController" class="controller.LoginFormController"
+ p:shopService-ref="shopService"
+ p:loginValidator-ref="loginValidator"> 
+</bean>
+ 
+	
+<!-- viewResolver -->
+<bean id="internalResourceViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+
+  <property name="viewClass" value="org.springframework.web.servlet.view.JstlView" />
+
+  <property name="prefix">
+    <value>WEB-INF/jsp/</value>
+  </property>
+  
+  <property name="suffix">
+    <value>.jsp</value>
+  </property>
+ 
+</bean>
+</beans>
