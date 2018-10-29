@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap      
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="Board">
+	<typeAlias alias="bboard" type="model.Board"/>
+	
+	<!-- 
+	리절트 맵 정의 
+	model.Board 필드명과 DB table 컬럼명과 연결	
+	-->
+	<resultMap id="BoardResult" class="model.Board">
+		<result property="num" column="num"/>
+		<result property="writer" column="writer"/>
+		<result property="subject" column="subject"/>
+		<result property="email" column="email"/>
+		<result property="content" column="content"/>
+		<result property="pwd" column="pwd"/>
+		<result property="wdate" column="wdate"/>
+		<result property="readcount" column="readcount"/>
+		<result property="ip" column="ip"/>
+	</resultMap>
+	
+	<!-- insert -->
+	<insert id="insertBoard" parameterClass="model.Board">
+		insert into board(writer, email, subject, content, pwd, wdate, ip)
+		values(#writer#, #email#, #subject#, #content#, #pwd#, curdate(), #ip#)
+	</insert>
+	
+	<!-- select all -->
+	<select id="selectAllBoard" resultMap="BoardResult">
+		select * from board
+	</select>
+	
+	<!-- 조회수 -->
+	<update id="readcountBoard" parameterClass="Integer">
+		update board set readcount=readcount+1 where num=#num#
+	</update>
+	
+	<!-- 글내용 보기 -->
+	<select id="selectBoard" parameterClass="Integer" resultClass="model.Board">
+		select * from board where num=#num#
+	</select>
+	
+	<update id="updateBoard" parameterClass="model.Board">
+		update board set writer=#writer#, subject=#subject#, email=#email#,
+		content=#content#,pwd=#pwd#,wdate=curdate()
+		where num=#num#
+	</update>
+	
+	<!-- delete -->
+	<delete id="deleteBoard" parameterClass="Integer">
+		delete from board where num=#num#
+	</delete>
+</sqlMap> 
+	

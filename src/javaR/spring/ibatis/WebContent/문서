@@ -1,0 +1,54 @@
+Spring + iBatis + MVC
+
+DB작업
+create database ibatisDB;
+use ibatisDB;
+
+테이블 생성
+create table board(
+num int not null auto_increment primary key,
+writer varchar(20) not null,
+subject varchar(30) not null,
+email varchar(30) not null,
+content text not null,
+pwd varchar(8) not null,
+wdate date,
+readcount int unsigned default 0,
+ip varchar(20)
+);
+
+새 프로젝트
+
+09_iBatis_web_board
+web.xml 
+
+lib/*.jar 
+ibatis-2.3.4.726.jar
+
+web.xml 수정( 인코딩 등록, DispatcherServlet 등록)
+
+설정
+src/config/dbconnect.properties 패키지
+
+src/config/SqlMapConfig.xml
+
+src/config/applicationContext.xml...서버단 설정
+
+src/model.Board.java (dto)모델빈
+src/config/Board.xml (DAO에 해당)
+
+인터페이스 board.service.BoardDao.java
+구현클래스 board.service.BoardDaoImpl. java
+src/board.service.ClientTest.java --- 테스트
+===========================================
+#dbconnect.properties
+driver=com.mysql.jdbc.Driver
+url=jdbc:mysql://localhost:3306/ibatisDB
+username=root
+pasword=12345
+===============================
+
+웹작업
+web-inf/board22-servlet.xml
+
+src/controller.BoardController.java
