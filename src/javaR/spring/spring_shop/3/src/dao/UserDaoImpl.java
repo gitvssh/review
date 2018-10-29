@@ -14,7 +14,7 @@ public class UserDaoImpl implements UserDao {
 		this.template=template;
 	}
 	
-	private static final String SELECT_ID_PWD= "select user_id, pasword, user_name, postcode,"
+	private static final String SELECT_ID_PWD= "select user_id, password, user_name, postcode,"
 			+ " address, email, job, birthday from user_account"
 			+ " where user_id=? and password=?";
 	

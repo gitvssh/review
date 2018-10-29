@@ -29,8 +29,7 @@
 			<value>12345</value>
 		</property>
 	</bean>
-	
- 	<!-- shopService 등록  -->
+		<!-- shopService 등록  -->
 	<bean id="shopService" class="logic.ShopImpl">
 		<property name="userCatalog"><!--setter -->
 			<ref bean="userCatalog"/>
@@ -73,4 +72,5 @@
 		</list>
 	</property>
 </bean>
+ 
 </beans>
