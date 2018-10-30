@@ -1,0 +1,49 @@
+spring + mybatis + mvc
+
+db작업
+
+show databases;
+
+create database BoardDB;
+
+use boarddb;
+
+create table myboard(
+num int not null auto_increment primary key,
+writer varchar(20) not null,
+subjecct varchar(30) not null,
+email varchar(30) not null,
+content text not null,
+pwd varchar(12) not null,
+wdate date,
+readcount int unsigned default 0,
+ip varchar(20)
+);
+
+mysql
+NOW() : 년월일 시분초 (datetime 자료형)
+curdate() : 년월일
+sysdate()
+
+==============================
+웹프로젝트
+10_myBatis_web_board
+web.xml
+
+web.xml 수정
+인코딩
+front 컨트롤러 등록
+
+web-inf/board2-servlet.xml
+
+src/board.sql.board.xml
+
+board.model.BoardDto.java(모델빈)
+
+board.controller.BoardController.java
+
+web-inf/board/
+	list.jsp
+	writeForm.jsp
+	content.jsp
+	updateForm.jsp
