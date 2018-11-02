@@ -1,0 +1,50 @@
+
+새프로젝트
+
+프로젝트이름 
+memboard
+
+패키지
+co.kr.memboard
+
+1. web.xml 인코딩
+2. pom.xml
+
+3.root-context.xml
+
+MemberDto.java
+
+
+mybatis/mybatis-config.xml
+       member.xml
+
+
+8. Controller 작업
+  MemberController.java
+  
+  
+7. views/member 폴더 복사
+
+
+
+   실행
+===================================
+DB 관련 작업 
+
+11. dto.java 파일
+
+10. src/main/resource
+    mybatis 패키지 만들고
+
+    mybatis-config.xml
+    board.xml
+    member.xml
+
+9. root-context.xml
+
+
+
+===================================
+   BoardController.java
+   MemeberController.java
+
