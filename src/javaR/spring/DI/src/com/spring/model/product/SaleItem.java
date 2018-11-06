@@ -1,40 +1,40 @@
-package com.spring.model.product;
-
-public class SaleItem {
-
-	Computer item;
-	int cnt;
-	long price;
-	
-	public SaleItem(){}
-
-	public SaleItem(Computer item, int cnt, long price) {
-		super();
-		this.item = item;
-		this.cnt = cnt;
-		this.price = price;
-	}
-
-	
-	public void setItem(Computer item) {
-		this.item = item;
-	}
-
-	public void setCnt(int cnt) {
-		this.cnt = cnt;
-	}
-
-	public void setPrice(long price) {
-		this.price = price;
-	}
-
-	public String display(){
-		StringBuffer sb=new StringBuffer();
-		sb.append("»óÇ°:"+item.getContents()+"\n");
-		sb.append("¼ö·®:"+cnt+"\n");
-		sb.append("±Ý¾×:"+price+"\n");
-		
-		return sb.toString();
-	}
-	
-}
+//package com.spring.model.product;
+//
+//public class SaleItem {
+//
+//	Computer item;
+//	int cnt;
+//	long price;
+//	
+//	public SaleItem(){}
+//
+//	public SaleItem(Computer item, int cnt, long price) {
+//		super();
+//		this.item = item;
+//		this.cnt = cnt;
+//		this.price = price;
+//	}
+//
+//	
+//	public void setItem(Computer item) {
+//		this.item = item;
+//	}
+//
+//	public void setCnt(int cnt) {
+//		this.cnt = cnt;
+//	}
+//
+//	public void setPrice(long price) {
+//		this.price = price;
+//	}
+//
+//	public String display(){
+//		StringBuffer sb=new StringBuffer();
+//		sb.append("ï¿½ï¿½Ç°:"+item.getContents()+"\n");
+//		sb.append("ï¿½ï¿½ï¿½ï¿½:"+cnt+"\n");
+//		sb.append("ï¿½Ý¾ï¿½:"+price+"\n");
+//		
+//		return sb.toString();
+//	}
+//	
+//}

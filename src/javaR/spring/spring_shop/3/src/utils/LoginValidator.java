@@ -1,46 +1,46 @@
-package utils;
-
-//ÀÔ·Â µ¥ÀÌÅÍ ÈÞÈ¿¼º Ã¼Å©
-//id , pwd 
-import logic.User;
-
-import org.springframework.util.StringUtils;
-import org.springframework.validation.Errors;
-import org.springframework.validation.Validator;
-
-public class LoginValidator implements Validator {
-
-	// supports´Â clazz °´Ã¼°¡ Validator·Î °ËÁõÀÌ °¡´ÉÇÑÁö 
-	// Ã¼Å©ÇÏ´Â ¸Þ¼ÒµåÀÔ´Ï´Ù.
-	public boolean supports(Class<?> clazz) {
-		return User.class.isAssignableFrom(clazz);
-	}
-	
-	//¿À¹ö¶óÀÌµù
-	//validate´Â °ËÁõÇÒ ¿ÀºêÁ§Æ®¸¦ ½ÇÁúÀûÀ¸·Î Ã¼Å©ÇÏ´Â ºÎºÐÀÔ´Ï´Ù.
-	public void validate(Object obj, Errors errors) {
-		User user=(User)obj;
-	      
-		//id°¡ °ø¹éÀÌ¸é ÇÊµå¿À·ù Á¤º¸¸¦ ¼³Á¤ÇÑ´Ù 
-	   if(!StringUtils.hasLength(user.getUserId())) {
-			errors.rejectValue("userId", "error.required");
-			//msg.properties
-			//error.required.userId=À¯ÀúID¸¦ ÀÔ·ÂÇØ ÁÖ¼¼¿ä
-	   }//if
-	   
-	   //password °¡ °ø¹éÀÌ¸é ÇÊµå¿À·ù Á¤º¸¸¦ ¼³Á¤ÇÑ´Ù
-	   if (!StringUtils.hasLength(user.getPassword())) {
-			errors.rejectValue("password", "error.required");
-			//msg.properties
-			//error.required.password=ÆÐ½º¿öµå¸¦ ÀÔ·ÂÇØ ÁÖ¼¼¿ä 
-	   }//if
-
-	   // °ËÁõ ´ë»óÀÎ Å¬·¡½º(User)ÀÚÃ¼¿¡ ´ëÇÑ ¿À·ùÀÌ¸é
-	   if (errors.hasErrors()) {
-	 		errors.reject("error.input.user");
-	 		//msg.properties
-	 		//error.input.user=ÀÔ·Â Á¤º¸¿¡ ¹®Á¦°¡ ÀÖ½À´Ï´Ù
-	   }//if
-	}//validate() end
-
-}//class
+//package utils;
+//
+////ï¿½Ô·ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¿ï¿½ï¿½ Ã¼Å©
+////id , pwd 
+//import logic.User;
+//
+//import org.springframework.util.StringUtils;
+//import org.springframework.validation.Errors;
+//import org.springframework.validation.Validator;
+//
+//public class LoginValidator implements Validator {
+//
+//	// supportsï¿½ï¿½ clazz ï¿½ï¿½Ã¼ï¿½ï¿½ Validatorï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
+//	// Ã¼Å©ï¿½Ï´ï¿½ ï¿½Þ¼Òµï¿½ï¿½Ô´Ï´ï¿½.
+//	public boolean supports(Class<?> clazz) {
+//		return User.class.isAssignableFrom(clazz);
+//	}
+//	
+//	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ìµï¿½
+//	//validateï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ã¼Å©ï¿½Ï´ï¿½ ï¿½Îºï¿½ï¿½Ô´Ï´ï¿½.
+//	public void validate(Object obj, Errors errors) {
+//		User user=(User)obj;
+//	      
+//		//idï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ì¸ï¿½ ï¿½Êµï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ñ´ï¿½ 
+//	   if(!StringUtils.hasLength(user.getUserId())) {
+//			errors.rejectValue("userId", "error.required");
+//			//msg.properties
+//			//error.required.userId=ï¿½ï¿½ï¿½ï¿½IDï¿½ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ ï¿½Ö¼ï¿½ï¿½ï¿½
+//	   }//if
+//	   
+//	   //password ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ì¸ï¿½ ï¿½Êµï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ñ´ï¿½
+//	   if (!StringUtils.hasLength(user.getPassword())) {
+//			errors.rejectValue("password", "error.required");
+//			//msg.properties
+//			//error.required.password=ï¿½Ð½ï¿½ï¿½ï¿½ï¿½å¸¦ ï¿½Ô·ï¿½ï¿½ï¿½ ï¿½Ö¼ï¿½ï¿½ï¿½ 
+//	   }//if
+//
+//	   // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ Å¬ï¿½ï¿½ï¿½ï¿½(User)ï¿½ï¿½Ã¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ì¸ï¿½
+//	   if (errors.hasErrors()) {
+//	 		errors.reject("error.input.user");
+//	 		//msg.properties
+//	 		//error.input.user=ï¿½Ô·ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö½ï¿½ï¿½Ï´ï¿½
+//	   }//if
+//	}//validate() end
+//
+//}//class

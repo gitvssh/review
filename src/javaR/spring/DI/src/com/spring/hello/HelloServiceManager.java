@@ -1,9 +1,9 @@
-package com.spring.hello;
-
-//¿äÃ»À» ¹Þ´Â Å¬·¡½º
-//ÀÌÅ¬¸³½º°¡ ÇÏ´Â ÀÏÀº ÀÏÇÏ´Â Å¬·¡½º °´Ã¼¸¦ Å¬¶óÀÌ¾ðÆ®¿¡°Ô ¸®ÅÏ
-public class HelloServiceManager {
-	public static HelloService getInstance(){
-		return new HelloServiceImpl();//ÀÏÇÏ´Â Å¬·¡½º¸¦ ¸®ÅÏ
-	}//getInstance()
-}//class
+//package com.spring.hello;
+//
+////ï¿½ï¿½Ã»ï¿½ï¿½ ï¿½Þ´ï¿½ Å¬ï¿½ï¿½ï¿½ï¿½
+////ï¿½ï¿½Å¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ï´ï¿½ Å¬ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã¼ï¿½ï¿½ Å¬ï¿½ï¿½ï¿½Ì¾ï¿½Æ®ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+//public class HelloServiceManager {
+//	public static HelloService getInstance(){
+//		return new HelloServiceImpl();//ï¿½ï¿½ï¿½Ï´ï¿½ Å¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+//	}//getInstance()
+//}//class

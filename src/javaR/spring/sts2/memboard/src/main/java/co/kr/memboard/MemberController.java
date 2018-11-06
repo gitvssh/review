@@ -1,129 +1,129 @@
-package co.kr.memboard;
-
-import java.io.IOException;
-import javax.naming.NamingException;
-import javax.servlet.http.HttpServletRequest;
-
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.apache.ibatis.session.SqlSession;
-import java.util.HashMap;
-import java.util.List;
-import org.springframework.ui.Model;
-
-import model.dto.MemberDto;//
-
-@Controller
-public class MemberController {
-
-	//º¯¼ö¼±¾ð ¾Õ¿¡ @Autowired ºÙÀÌ¸é ÀÚµ¿À¸·Î setterÀÛ¾÷ÀÌ µÈ´Ù
-	@Autowired
-    private SqlSession sqlSession;
-
-	/*public void setSqlSession(SqlSession sqlSession) {
-		this.sqlSession = sqlSession;
-	}*/
-    
-	@RequestMapping("/main.do")
-	public String mainTest() {
-		return "main";// views/main.jsp ºä ¸®ÅÏ
-	}//
-
-	
-	//È¸¿ø°¡ÀÔÆû
-	@RequestMapping("/insertForm.do")
-	public String userWrite() {
-		return "/member/insertForm";// ºä
-		// views/member/Æú´õ¸¸µé°í
-	}//
-
-	//idCheck.do
-	//idCheck.jsp »ç¿ë
-	@RequestMapping(value="/idCheck.do", method=RequestMethod.POST)
-	public String idCheck(String id,Model model) throws NamingException,IOException
-	{
-		int check=-1;
-		MemberDto memberDto=sqlSession.selectOne("member.selectOne", id);
-		 
-		if(memberDto==null){
-			check=1;//»ç¿ë °¡´ÉÇÑ id
-		}
-		model.addAttribute("check",check);
-		return "member/idCheck";// ºä¸®ÅÏ
-	 }//-----
-
-	//È¸¿ø°¡ÀÔ
-	@RequestMapping(value="/insertPro.do", method=RequestMethod.POST)
-	public String memberInsert(@ModelAttribute("MemberDto") MemberDto memberDto
-			,String addr,String details,HttpServletRequest request) throws NamingException,IOException
-			{
-			System.out.println("addr:"+addr);
-			System.out.println("request.getParameter(addr):"+request.getParameter("addr"));
-			
-			memberDto.setAddr(addr+" "+details);//settr
-	 		sqlSession.insert("member.insertMember", memberDto);
-			//return "redirect:list.do";
-			return "member/login";//ºäÀÌ¸§
-	}//---
-
-	//·Î±×ÀÎ Æû
-	@RequestMapping("/login.do")
-	public String userLogin() {
-		return "member/login";// ºä
-	}// ---
-
-	//·Î±×ÀÎ,ÀÎÁõÃ³¸®
-	@RequestMapping(value="/loginPro.do", method=RequestMethod.POST)
-	public String memberLogin(String id,String passwd,Model model)
-			throws NamingException,IOException
-		{
-		HashMap <String,String>map=new HashMap<String,String>();
-		map.put("id",id);
-		map.put("passwd",passwd);
-		
-		MemberDto memberDto=sqlSession.selectOne("member.selectLogin", map);
-		 
-		if(memberDto==null){//·Î±×ÀÎ ½ÇÆÐ
-			model.addAttribute("msg","·Î±×ÀÎ ½ÇÆÐ!!!");
-			return "member/login";//login.jsp
-		}//if
-		//·Î±×ÀÎ ¼º°øÇßÀ»¶§
-		model.addAttribute("memberDto",memberDto);
-		return "member/loginSuccess";//ºä ¸®ÅÏ , loginSuccess.jsp
-	}//---
-
-	//·Î±× ¾Æ¿ô
-	@RequestMapping("/logOut.do")
-	public String memOut() {
-		return "member/logOut";//ºä logOut.jsp
-	}//---
-
-	//È¸¿øÁ¤º¸ ¼öÁ¤Æû
-	@RequestMapping(value="/editForm.do",method=RequestMethod.POST)
-	public String editForm(String id,Model model) throws NamingException,IOException{
-		
-		MemberDto memberDto=sqlSession.selectOne("member.selectOne",id);
-		model.addAttribute("memberDto",memberDto);
-		return "member/editForm";
-	}
-	
-	//È¸¿ø ¼öÁ¤
-	@RequestMapping(value="/editPro.do", method=RequestMethod.POST)
-	public String editPro(@ModelAttribute("MemberDto") MemberDto memberDto,String npwd) throws NamingException,IOException{
-		memberDto.setPasswd(npwd);
-		sqlSession.update("member.memberUpdate",memberDto);
-		return "main";
-	}
-	
-	//È¸¿øÅ»Åð
-	@RequestMapping(value="/memberDelete.do", method=RequestMethod.POST)
-	public String userDelete(String id) throws NamingException,IOException{
-		sqlSession.delete("member.memberDelete", id);
-		return "main";
-	}
-}//class
+//package co.kr.memboard;
+//
+//import java.io.IOException;
+//import javax.naming.NamingException;
+//import javax.servlet.http.HttpServletRequest;
+//
+//import org.springframework.stereotype.Controller;
+//import org.springframework.ui.Model;
+//import org.springframework.web.bind.annotation.ModelAttribute;
+//import org.springframework.web.bind.annotation.RequestMapping;
+//import org.springframework.web.bind.annotation.RequestMethod;
+//
+//import org.springframework.beans.factory.annotation.Autowired;
+//import org.apache.ibatis.session.SqlSession;
+//import java.util.HashMap;
+//import java.util.List;
+//import org.springframework.ui.Model;
+//
+//import model.dto.MemberDto;//
+//
+//@Controller
+//public class MemberController {
+//
+//	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Õ¿ï¿½ @Autowired ï¿½ï¿½ï¿½Ì¸ï¿½ ï¿½Úµï¿½ï¿½ï¿½ï¿½ï¿½ setterï¿½Û¾ï¿½ï¿½ï¿½ ï¿½È´ï¿½
+//	@Autowired
+//    private SqlSession sqlSession;
+//
+//	/*public void setSqlSession(SqlSession sqlSession) {
+//		this.sqlSession = sqlSession;
+//	}*/
+//    
+//	@RequestMapping("/main.do")
+//	public String mainTest() {
+//		return "main";// views/main.jsp ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+//	}//
+//
+//	
+//	//È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+//	@RequestMapping("/insertForm.do")
+//	public String userWrite() {
+//		return "/member/insertForm";// ï¿½ï¿½
+//		// views/member/ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+//	}//
+//
+//	//idCheck.do
+//	//idCheck.jsp ï¿½ï¿½ï¿½
+//	@RequestMapping(value="/idCheck.do", method=RequestMethod.POST)
+//	public String idCheck(String id,Model model) throws NamingException,IOException
+//	{
+//		int check=-1;
+//		MemberDto memberDto=sqlSession.selectOne("member.selectOne", id);
+//		 
+//		if(memberDto==null){
+//			check=1;//ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ id
+//		}
+//		model.addAttribute("check",check);
+//		return "member/idCheck";// ï¿½ä¸®ï¿½ï¿½
+//	 }//-----
+//
+//	//È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+//	@RequestMapping(value="/insertPro.do", method=RequestMethod.POST)
+//	public String memberInsert(@ModelAttribute("MemberDto") MemberDto memberDto
+//			,String addr,String details,HttpServletRequest request) throws NamingException,IOException
+//			{
+//			System.out.println("addr:"+addr);
+//			System.out.println("request.getParameter(addr):"+request.getParameter("addr"));
+//			
+//			memberDto.setAddr(addr+" "+details);//settr
+//	 		sqlSession.insert("member.insertMember", memberDto);
+//			//return "redirect:list.do";
+//			return "member/login";//ï¿½ï¿½ï¿½Ì¸ï¿½
+//	}//---
+//
+//	//ï¿½Î±ï¿½ï¿½ï¿½ ï¿½ï¿½
+//	@RequestMapping("/login.do")
+//	public String userLogin() {
+//		return "member/login";// ï¿½ï¿½
+//	}// ---
+//
+//	//ï¿½Î±ï¿½ï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½Ã³ï¿½ï¿½
+//	@RequestMapping(value="/loginPro.do", method=RequestMethod.POST)
+//	public String memberLogin(String id,String passwd,Model model)
+//			throws NamingException,IOException
+//		{
+//		HashMap <String,String>map=new HashMap<String,String>();
+//		map.put("id",id);
+//		map.put("passwd",passwd);
+//		
+//		MemberDto memberDto=sqlSession.selectOne("member.selectLogin", map);
+//		 
+//		if(memberDto==null){//ï¿½Î±ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+//			model.addAttribute("msg","ï¿½Î±ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½!!!");
+//			return "member/login";//login.jsp
+//		}//if
+//		//ï¿½Î±ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+//		model.addAttribute("memberDto",memberDto);
+//		return "member/loginSuccess";//ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ , loginSuccess.jsp
+//	}//---
+//
+//	//ï¿½Î±ï¿½ ï¿½Æ¿ï¿½
+//	@RequestMapping("/logOut.do")
+//	public String memOut() {
+//		return "member/logOut";//ï¿½ï¿½ logOut.jsp
+//	}//---
+//
+//	//È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+//	@RequestMapping(value="/editForm.do",method=RequestMethod.POST)
+//	public String editForm(String id,Model model) throws NamingException,IOException{
+//		
+//		MemberDto memberDto=sqlSession.selectOne("member.selectOne",id);
+//		model.addAttribute("memberDto",memberDto);
+//		return "member/editForm";
+//	}
+//	
+//	//È¸ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+//	@RequestMapping(value="/editPro.do", method=RequestMethod.POST)
+//	public String editPro(@ModelAttribute("MemberDto") MemberDto memberDto,String npwd) throws NamingException,IOException{
+//		memberDto.setPasswd(npwd);
+//		sqlSession.update("member.memberUpdate",memberDto);
+//		return "main";
+//	}
+//	
+//	//È¸ï¿½ï¿½Å»ï¿½ï¿½
+//	@RequestMapping(value="/memberDelete.do", method=RequestMethod.POST)
+//	public String userDelete(String id) throws NamingException,IOException{
+//		sqlSession.delete("member.memberDelete", id);
+//		return "main";
+//	}
+//}//class

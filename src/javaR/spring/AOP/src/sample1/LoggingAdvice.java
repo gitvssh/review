@@ -1,29 +1,29 @@
-package sample1;
-
-import org.aopalliance.intercept.MethodInterceptor;
-import org.aopalliance.intercept.MethodInvocation;
-import org.springframework.util.StopWatch;
-
-public class LoggingAdvice implements MethodInterceptor{
-
-	@Override
-	public Object invoke(MethodInvocation invocation) throws Throwable {
-		
-		String methodName = invocation.getMethod().getName();//´ë»ó ¸Þ¼­µå ÀÌ¸§ ¾ò±â
-		
-		StopWatch sw=new StopWatch();//´Ü¼øÇÑ ½ºÅé¿öÄ¡ ±â´É Á¦°ø À¯Æ¿Å¬·¡½º
-		sw.start(methodName);//½Ã°£ ÃøÁ¤½ÃÀÛ
-		
-		System.out.println("method : "+methodName+" is calling.");
-		Object rtnObj = invocation.proceed();//´ëÇ¥¾÷¹« ¸Þ¼­µå ½ÇÇà
-		//sayhello() È£Ãâ
-		
-		
-		sw.stop();
-		
-		System.out.println("method : "+methodName+" is calling.");
-		System.out.println("Ã³¸®½Ã°£ "+sw.getTotalTimeSeconds()+"ÃÊ");
-		return rtnObj;
-	}
-
-}
+//package sample1;
+//
+//import org.aopalliance.intercept.MethodInterceptor;
+//import org.aopalliance.intercept.MethodInvocation;
+//import org.springframework.util.StopWatch;
+//
+//public class LoggingAdvice implements MethodInterceptor{
+//
+//	@Override
+//	public Object invoke(MethodInvocation invocation) throws Throwable {
+//		
+//		String methodName = invocation.getMethod().getName();//ï¿½ï¿½ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½ ï¿½Ì¸ï¿½ ï¿½ï¿½ï¿½
+//		
+//		StopWatch sw=new StopWatch();//ï¿½Ü¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ä¡ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Æ¿Å¬ï¿½ï¿½ï¿½ï¿½
+//		sw.start(methodName);//ï¿½Ã°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+//		
+//		System.out.println("method : "+methodName+" is calling.");
+//		Object rtnObj = invocation.proceed();//ï¿½ï¿½Ç¥ï¿½ï¿½ï¿½ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+//		//sayhello() È£ï¿½ï¿½
+//		
+//		
+//		sw.stop();
+//		
+//		System.out.println("method : "+methodName+" is calling.");
+//		System.out.println("Ã³ï¿½ï¿½ï¿½Ã°ï¿½ "+sw.getTotalTimeSeconds()+"ï¿½ï¿½");
+//		return rtnObj;
+//	}
+//
+//}

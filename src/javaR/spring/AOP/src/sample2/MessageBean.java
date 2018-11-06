@@ -1,5 +1,5 @@
-package sample2;
-
-public interface MessageBean {
-	void sayHello();
-}
+//package sample2;
+//
+//public interface MessageBean {
+//	void sayHello();
+//}

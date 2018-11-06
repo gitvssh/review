@@ -1,28 +1,28 @@
-package sample3;
-
-import org.aspectj.lang.annotation.Around;
-import org.aspectj.lang.annotation.Aspect;
-import org.aspectj.lang.ProceedingJoinPoint;
-import org.springframework.util.StopWatch;
-
-@Aspect
-public class LoggingAdvice3 {//POJO·Î ÀÛ¼º
-	
-	@Around("execution(public * sample3.*.sayHello())")
-	public Object logAround(ProceedingJoinPoint joinPoint) throws Throwable{
-		
-		String methodName=joinPoint.getKind();
-		StopWatch sw=new StopWatch();
-		
-		sw.start(methodName);
-		
-		System.out.println("method :"+methodName+" È£Ãâ Àü");
-		Object ob=joinPoint.proceed();
-		
-		sw.stop();
-		System.out.println("method : "+methodName+" È£Ãâ ÈÄ");
-		System.out.println("Ã³¸®½Ã°£ : "+sw.getTotalTimeSeconds()+"ÃÊ");
-		
-		return ob;
-	}
-}
+//package sample3;
+//
+//import org.aspectj.lang.annotation.Around;
+//import org.aspectj.lang.annotation.Aspect;
+//import org.aspectj.lang.ProceedingJoinPoint;
+//import org.springframework.util.StopWatch;
+//
+//@Aspect
+//public class LoggingAdvice3 {//POJOï¿½ï¿½ ï¿½Û¼ï¿½
+//	
+//	@Around("execution(public * sample3.*.sayHello())")
+//	public Object logAround(ProceedingJoinPoint joinPoint) throws Throwable{
+//		
+//		String methodName=joinPoint.getKind();
+//		StopWatch sw=new StopWatch();
+//		
+//		sw.start(methodName);
+//		
+//		System.out.println("method :"+methodName+" È£ï¿½ï¿½ ï¿½ï¿½");
+//		Object ob=joinPoint.proceed();
+//		
+//		sw.stop();
+//		System.out.println("method : "+methodName+" È£ï¿½ï¿½ ï¿½ï¿½");
+//		System.out.println("Ã³ï¿½ï¿½ï¿½Ã°ï¿½ : "+sw.getTotalTimeSeconds()+"ï¿½ï¿½");
+//		
+//		return ob;
+//	}
+//}

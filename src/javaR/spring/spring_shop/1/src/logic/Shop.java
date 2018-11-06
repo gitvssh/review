@@ -1,7 +1,7 @@
-package logic;
-
-import java.util.List;
-
-public interface Shop {
-	List<Item> getItemList();
-}
+//package logic;
+//
+//import java.util.List;
+//
+//public interface Shop {
+//	List<Item> getItemList();
+//}

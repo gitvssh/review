@@ -1,9 +1,9 @@
-package logic;
-
-import java.util.List;
-
-public interface Shop {
-	List<Item> getItemList();
-	
-	Item getItemByItemId(Integer item_id);
-}
+//package logic;
+//
+//import java.util.List;
+//
+//public interface Shop {
+//	List<Item> getItemList();
+//	
+//	Item getItemByItemId(Integer item_id);
+//}

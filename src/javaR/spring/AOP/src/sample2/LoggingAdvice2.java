@@ -1,28 +1,28 @@
-package sample2;
-
-import org.aspectj.lang.ProceedingJoinPoint;
-//POJO(PlainOldJavaObjecT)ÀÇ ·Î±× Ãâ·Â Å¬·¡½º¸¦
-//advice ·Î½á ÀÌ¿ëÇÏ´Â °ÍÀÌ ÇÙ½ÉÀÌ´Ù.
-import org.springframework.util.StopWatch;
-//°øÅë»ç¿ëºÎºÐ
-//proccedingJointPoint»ç¿ë
-
-public class LoggingAdvice2 {
-	public Object logAround(ProceedingJoinPoint joinpoint) throws Throwable{
-		String methodName=joinpoint.getKind();
-		StopWatch sw=new StopWatch();
-		
-		sw.start(methodName);
-		System.out.println("¸Þ¼­µå È£Ãâ Àü "+methodName);
-		
-		Object reobj=joinpoint.proceed();
-		
-		System.out.println("¸Þ¼­µå È£Ãâ ÈÄ "+methodName);
-		
-		sw.stop();
-		
-		System.out.println("Ã³¸®½Ã°£ :"+sw.getTotalTimeSeconds()+"ÃÊ");
-		
-		return reobj;
-	}
-}
+//package sample2;
+//
+//import org.aspectj.lang.ProceedingJoinPoint;
+////POJO(PlainOldJavaObjecT)ï¿½ï¿½ ï¿½Î±ï¿½ ï¿½ï¿½ï¿½ Å¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+////advice ï¿½Î½ï¿½ ï¿½Ì¿ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ù½ï¿½ï¿½Ì´ï¿½.
+//import org.springframework.util.StopWatch;
+////ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îºï¿½
+////proccedingJointPointï¿½ï¿½ï¿½
+//
+//public class LoggingAdvice2 {
+//	public Object logAround(ProceedingJoinPoint joinpoint) throws Throwable{
+//		String methodName=joinpoint.getKind();
+//		StopWatch sw=new StopWatch();
+//		
+//		sw.start(methodName);
+//		System.out.println("ï¿½Þ¼ï¿½ï¿½ï¿½ È£ï¿½ï¿½ ï¿½ï¿½ "+methodName);
+//		
+//		Object reobj=joinpoint.proceed();
+//		
+//		System.out.println("ï¿½Þ¼ï¿½ï¿½ï¿½ È£ï¿½ï¿½ ï¿½ï¿½ "+methodName);
+//		
+//		sw.stop();
+//		
+//		System.out.println("Ã³ï¿½ï¿½ï¿½Ã°ï¿½ :"+sw.getTotalTimeSeconds()+"ï¿½ï¿½");
+//		
+//		return reobj;
+//	}
+//}

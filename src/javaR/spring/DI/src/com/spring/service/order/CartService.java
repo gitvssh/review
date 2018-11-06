@@ -1,30 +1,30 @@
-package com.spring.service.order;
-
-import org.springframework.beans.factory.DisposableBean;
-import org.springframework.beans.factory.InitializingBean;
-
-public class CartService {
-	
-	String memId;
-	
-	public CartService(String memId){
-		this.memId = memId;
-	}
-	
-	public void afterPropertiesSet() throws Exception{
-		System.out.println(memId + ":Ä«Æ® ¸ñ·Ï ÀûÀç:InitializingBean.afterPropertiesSet()");
-	}
-	
-	public void destroy() throws Exception{
-		System.out.println(memId + ":Ä«Æ® ¸ñ·Ï ÀúÀå:DisposableBean.destroy()");
-	}
-	
-	public void loadItems(){
-		System.out.println(memId + ":Ä«Æ® ¸ñ·Ï ÀûÀç:init-method, loadItems() È£Ãâ");
-	}
-	
-	public void storeItems(){
-		System.out.println(memId + ":Ä«Æ® ¸ñ·Ï ÀúÀå:destroy-method, storeItems() È£Ãâ");
-	}
-	
-}
+//package com.spring.service.order;
+//
+//import org.springframework.beans.factory.DisposableBean;
+//import org.springframework.beans.factory.InitializingBean;
+//
+//public class CartService {
+//	
+//	String memId;
+//	
+//	public CartService(String memId){
+//		this.memId = memId;
+//	}
+//	
+//	public void afterPropertiesSet() throws Exception{
+//		System.out.println(memId + ":Ä«Æ® ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½:InitializingBean.afterPropertiesSet()");
+//	}
+//	
+//	public void destroy() throws Exception{
+//		System.out.println(memId + ":Ä«Æ® ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½:DisposableBean.destroy()");
+//	}
+//	
+//	public void loadItems(){
+//		System.out.println(memId + ":Ä«Æ® ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½:init-method, loadItems() È£ï¿½ï¿½");
+//	}
+//	
+//	public void storeItems(){
+//		System.out.println(memId + ":Ä«Æ® ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½:destroy-method, storeItems() È£ï¿½ï¿½");
+//	}
+//	
+//}
