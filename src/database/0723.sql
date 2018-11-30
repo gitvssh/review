@@ -55,6 +55,7 @@ group by department_id);
 
 desc kor_loan_status;
 
+
 select period, region, sum(loan_jan_amt)
 from kor_loan_status
 group by period, region
