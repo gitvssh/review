@@ -26,4 +26,3 @@ dataStructure
 android
 08.06.18 ~ 09.01.18
 
-git push test
