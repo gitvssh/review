@@ -239,3 +239,4 @@ select employee_id from employees where employee_id in(100,150,160,170);
 select employee_id from employees where employee_id = any(100,150,160,170);
 select employee_id from employees where employee_id = some(100,150,160,170);
 
+R
