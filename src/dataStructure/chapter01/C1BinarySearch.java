@@ -44,3 +44,5 @@ public class C1BinarySearch {
 	}
 
 }
+
+reviewed 071721
